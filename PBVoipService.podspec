@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "PBVoipService"
-  s.version      = "1.0.0"
+  s.version      = "1.1.0"
   s.summary      = "voip call module for iOS development."
   s.description  = "voip call module for FLK.Inc iOS Developers, such as sign in/sign up etc."
 
