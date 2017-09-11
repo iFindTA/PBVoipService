@@ -1,0 +1,636 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		60C817691F627C6100CEC5D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C817681F627C6100CEC5D6 /* main.m */; };
+		60C8176C1F627C6100CEC5D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C8176B1F627C6100CEC5D6 /* AppDelegate.m */; };
+		60C8176F1F627C6100CEC5D6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C8176E1F627C6100CEC5D6 /* ViewController.m */; };
+		60C817721F627C6100CEC5D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60C817701F627C6100CEC5D6 /* Main.storyboard */; };
+		60C817741F627C6100CEC5D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60C817731F627C6100CEC5D6 /* Assets.xcassets */; };
+		60C817771F627C6100CEC5D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60C817751F627C6100CEC5D6 /* LaunchScreen.storyboard */; };
+		60C817821F627C6100CEC5D6 /* PBVoipServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C817811F627C6100CEC5D6 /* PBVoipServiceTests.m */; };
+		60C8178D1F627C6100CEC5D6 /* PBVoipServiceUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C8178C1F627C6100CEC5D6 /* PBVoipServiceUITests.m */; };
+		60C818DA1F6524B100CEC5D6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C818D91F6524B100CEC5D6 /* AudioToolbox.framework */; };
+		75B1760C0FF7442235A1FAB6 /* libPods-PBVoipService.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4FEDF8975C074B5FB5FFE6F /* libPods-PBVoipService.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		60C8177E1F627C6100CEC5D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 60C8175C1F627C6100CEC5D6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 60C817631F627C6100CEC5D6;
+			remoteInfo = PBVoipService;
+		};
+		60C817891F627C6100CEC5D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 60C8175C1F627C6100CEC5D6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 60C817631F627C6100CEC5D6;
+			remoteInfo = PBVoipService;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		60C817641F627C6100CEC5D6 /* PBVoipService.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PBVoipService.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		60C817681F627C6100CEC5D6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		60C8176A1F627C6100CEC5D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		60C8176B1F627C6100CEC5D6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		60C8176D1F627C6100CEC5D6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		60C8176E1F627C6100CEC5D6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		60C817711F627C6100CEC5D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		60C817731F627C6100CEC5D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		60C817761F627C6100CEC5D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		60C817781F627C6100CEC5D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60C8177D1F627C6100CEC5D6 /* PBVoipServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PBVoipServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		60C817811F627C6100CEC5D6 /* PBVoipServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PBVoipServiceTests.m; sourceTree = "<group>"; };
+		60C817831F627C6100CEC5D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60C817881F627C6100CEC5D6 /* PBVoipServiceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PBVoipServiceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		60C8178C1F627C6100CEC5D6 /* PBVoipServiceUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PBVoipServiceUITests.m; sourceTree = "<group>"; };
+		60C8178E1F627C6100CEC5D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60C818D81F6524B100CEC5D6 /* PBVoipService.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PBVoipService.entitlements; sourceTree = "<group>"; };
+		60C818D91F6524B100CEC5D6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		A836CEC227F67AE0BE5BE76A /* Pods-PBVoipService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PBVoipService.release.xcconfig"; path = "Pods/Target Support Files/Pods-PBVoipService/Pods-PBVoipService.release.xcconfig"; sourceTree = "<group>"; };
+		B4FEDF8975C074B5FB5FFE6F /* libPods-PBVoipService.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PBVoipService.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3C46219D0F81BA9926DDD33 /* Pods-PBVoipService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PBVoipService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PBVoipService/Pods-PBVoipService.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		60C817611F627C6100CEC5D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75B1760C0FF7442235A1FAB6 /* libPods-PBVoipService.a in Frameworks */,
+				60C818DA1F6524B100CEC5D6 /* AudioToolbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60C8177A1F627C6100CEC5D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60C817851F627C6100CEC5D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		17C3518075052698078FFB9E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F3C46219D0F81BA9926DDD33 /* Pods-PBVoipService.debug.xcconfig */,
+				A836CEC227F67AE0BE5BE76A /* Pods-PBVoipService.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5F00DBEF9BCCB08039F6A18B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60C818D91F6524B100CEC5D6 /* AudioToolbox.framework */,
+				B4FEDF8975C074B5FB5FFE6F /* libPods-PBVoipService.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		60C8175B1F627C6100CEC5D6 = {
+			isa = PBXGroup;
+			children = (
+				60C817661F627C6100CEC5D6 /* PBVoipService */,
+				60C817801F627C6100CEC5D6 /* PBVoipServiceTests */,
+				60C8178B1F627C6100CEC5D6 /* PBVoipServiceUITests */,
+				60C817651F627C6100CEC5D6 /* Products */,
+				17C3518075052698078FFB9E /* Pods */,
+				5F00DBEF9BCCB08039F6A18B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		60C817651F627C6100CEC5D6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				60C817641F627C6100CEC5D6 /* PBVoipService.app */,
+				60C8177D1F627C6100CEC5D6 /* PBVoipServiceTests.xctest */,
+				60C817881F627C6100CEC5D6 /* PBVoipServiceUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		60C817661F627C6100CEC5D6 /* PBVoipService */ = {
+			isa = PBXGroup;
+			children = (
+				60C818D81F6524B100CEC5D6 /* PBVoipService.entitlements */,
+				60C8176A1F627C6100CEC5D6 /* AppDelegate.h */,
+				60C8176B1F627C6100CEC5D6 /* AppDelegate.m */,
+				60C8176D1F627C6100CEC5D6 /* ViewController.h */,
+				60C8176E1F627C6100CEC5D6 /* ViewController.m */,
+				60C817701F627C6100CEC5D6 /* Main.storyboard */,
+				60C817731F627C6100CEC5D6 /* Assets.xcassets */,
+				60C817751F627C6100CEC5D6 /* LaunchScreen.storyboard */,
+				60C817781F627C6100CEC5D6 /* Info.plist */,
+				60C817671F627C6100CEC5D6 /* Supporting Files */,
+			);
+			path = PBVoipService;
+			sourceTree = "<group>";
+		};
+		60C817671F627C6100CEC5D6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				60C817681F627C6100CEC5D6 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		60C817801F627C6100CEC5D6 /* PBVoipServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				60C817811F627C6100CEC5D6 /* PBVoipServiceTests.m */,
+				60C817831F627C6100CEC5D6 /* Info.plist */,
+			);
+			path = PBVoipServiceTests;
+			sourceTree = "<group>";
+		};
+		60C8178B1F627C6100CEC5D6 /* PBVoipServiceUITests */ = {
+			isa = PBXGroup;
+			children = (
+				60C8178C1F627C6100CEC5D6 /* PBVoipServiceUITests.m */,
+				60C8178E1F627C6100CEC5D6 /* Info.plist */,
+			);
+			path = PBVoipServiceUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		60C817631F627C6100CEC5D6 /* PBVoipService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 60C817911F627C6100CEC5D6 /* Build configuration list for PBXNativeTarget "PBVoipService" */;
+			buildPhases = (
+				4A5DCD354B2D0DBCE9386F19 /* [CP] Check Pods Manifest.lock */,
+				60C817601F627C6100CEC5D6 /* Sources */,
+				60C817611F627C6100CEC5D6 /* Frameworks */,
+				60C817621F627C6100CEC5D6 /* Resources */,
+				330EFF5B4D770D2B9A78DF46 /* [CP] Embed Pods Frameworks */,
+				623DBFCFCEF05E3A1277D370 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PBVoipService;
+			productName = PBVoipService;
+			productReference = 60C817641F627C6100CEC5D6 /* PBVoipService.app */;
+			productType = "com.apple.product-type.application";
+		};
+		60C8177C1F627C6100CEC5D6 /* PBVoipServiceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 60C817941F627C6100CEC5D6 /* Build configuration list for PBXNativeTarget "PBVoipServiceTests" */;
+			buildPhases = (
+				60C817791F627C6100CEC5D6 /* Sources */,
+				60C8177A1F627C6100CEC5D6 /* Frameworks */,
+				60C8177B1F627C6100CEC5D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				60C8177F1F627C6100CEC5D6 /* PBXTargetDependency */,
+			);
+			name = PBVoipServiceTests;
+			productName = PBVoipServiceTests;
+			productReference = 60C8177D1F627C6100CEC5D6 /* PBVoipServiceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		60C817871F627C6100CEC5D6 /* PBVoipServiceUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 60C817971F627C6100CEC5D6 /* Build configuration list for PBXNativeTarget "PBVoipServiceUITests" */;
+			buildPhases = (
+				60C817841F627C6100CEC5D6 /* Sources */,
+				60C817851F627C6100CEC5D6 /* Frameworks */,
+				60C817861F627C6100CEC5D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				60C8178A1F627C6100CEC5D6 /* PBXTargetDependency */,
+			);
+			name = PBVoipServiceUITests;
+			productName = PBVoipServiceUITests;
+			productReference = 60C817881F627C6100CEC5D6 /* PBVoipServiceUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		60C8175C1F627C6100CEC5D6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = nanhujiaju;
+				TargetAttributes = {
+					60C817631F627C6100CEC5D6 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = M8K6A7692X;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.InterAppAudio = {
+								enabled = 1;
+							};
+						};
+					};
+					60C8177C1F627C6100CEC5D6 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = M8K6A7692X;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 60C817631F627C6100CEC5D6;
+					};
+					60C817871F627C6100CEC5D6 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = M8K6A7692X;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 60C817631F627C6100CEC5D6;
+					};
+				};
+			};
+			buildConfigurationList = 60C8175F1F627C6100CEC5D6 /* Build configuration list for PBXProject "PBVoipService" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 60C8175B1F627C6100CEC5D6;
+			productRefGroup = 60C817651F627C6100CEC5D6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				60C817631F627C6100CEC5D6 /* PBVoipService */,
+				60C8177C1F627C6100CEC5D6 /* PBVoipServiceTests */,
+				60C817871F627C6100CEC5D6 /* PBVoipServiceUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		60C817621F627C6100CEC5D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60C817771F627C6100CEC5D6 /* LaunchScreen.storyboard in Resources */,
+				60C817741F627C6100CEC5D6 /* Assets.xcassets in Resources */,
+				60C817721F627C6100CEC5D6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60C8177B1F627C6100CEC5D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60C817861F627C6100CEC5D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		330EFF5B4D770D2B9A78DF46 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBVoipService/Pods-PBVoipService-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A5DCD354B2D0DBCE9386F19 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		623DBFCFCEF05E3A1277D370 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PBVoipService/Pods-PBVoipService-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		60C817601F627C6100CEC5D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60C8176F1F627C6100CEC5D6 /* ViewController.m in Sources */,
+				60C8176C1F627C6100CEC5D6 /* AppDelegate.m in Sources */,
+				60C817691F627C6100CEC5D6 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60C817791F627C6100CEC5D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60C817821F627C6100CEC5D6 /* PBVoipServiceTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60C817841F627C6100CEC5D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60C8178D1F627C6100CEC5D6 /* PBVoipServiceUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		60C8177F1F627C6100CEC5D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 60C817631F627C6100CEC5D6 /* PBVoipService */;
+			targetProxy = 60C8177E1F627C6100CEC5D6 /* PBXContainerItemProxy */;
+		};
+		60C8178A1F627C6100CEC5D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 60C817631F627C6100CEC5D6 /* PBVoipService */;
+			targetProxy = 60C817891F627C6100CEC5D6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		60C817701F627C6100CEC5D6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60C817711F627C6100CEC5D6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		60C817751F627C6100CEC5D6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60C817761F627C6100CEC5D6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		60C8178F1F627C6100CEC5D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		60C817901F627C6100CEC5D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		60C817921F627C6100CEC5D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3C46219D0F81BA9926DDD33 /* Pods-PBVoipService.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PBVoipService/PBVoipService.entitlements;
+				DEVELOPMENT_TEAM = M8K6A7692X;
+				INFOPLIST_FILE = PBVoipService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nanhu.PBVoipService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		60C817931F627C6100CEC5D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A836CEC227F67AE0BE5BE76A /* Pods-PBVoipService.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PBVoipService/PBVoipService.entitlements;
+				DEVELOPMENT_TEAM = M8K6A7692X;
+				INFOPLIST_FILE = PBVoipService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nanhu.PBVoipService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		60C817951F627C6100CEC5D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = M8K6A7692X;
+				INFOPLIST_FILE = PBVoipServiceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nanhu.PBVoipServiceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PBVoipService.app/PBVoipService";
+			};
+			name = Debug;
+		};
+		60C817961F627C6100CEC5D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = M8K6A7692X;
+				INFOPLIST_FILE = PBVoipServiceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nanhu.PBVoipServiceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PBVoipService.app/PBVoipService";
+			};
+			name = Release;
+		};
+		60C817981F627C6100CEC5D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = M8K6A7692X;
+				INFOPLIST_FILE = PBVoipServiceUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nanhu.PBVoipServiceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PBVoipService;
+			};
+			name = Debug;
+		};
+		60C817991F627C6100CEC5D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = M8K6A7692X;
+				INFOPLIST_FILE = PBVoipServiceUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nanhu.PBVoipServiceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PBVoipService;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		60C8175F1F627C6100CEC5D6 /* Build configuration list for PBXProject "PBVoipService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60C8178F1F627C6100CEC5D6 /* Debug */,
+				60C817901F627C6100CEC5D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		60C817911F627C6100CEC5D6 /* Build configuration list for PBXNativeTarget "PBVoipService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60C817921F627C6100CEC5D6 /* Debug */,
+				60C817931F627C6100CEC5D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		60C817941F627C6100CEC5D6 /* Build configuration list for PBXNativeTarget "PBVoipServiceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60C817951F627C6100CEC5D6 /* Debug */,
+				60C817961F627C6100CEC5D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		60C817971F627C6100CEC5D6 /* Build configuration list for PBXNativeTarget "PBVoipServiceUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60C817981F627C6100CEC5D6 /* Debug */,
+				60C817991F627C6100CEC5D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 60C8175C1F627C6100CEC5D6 /* Project object */;
+}

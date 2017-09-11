@@ -1,0 +1,1589 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01E09711F001C49F92A97060414E262B /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 01CBEFC390003DF29059BB13E6F00E7B /* MASCompositeConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		03024D8C5B3AAC47017E4E5AA197DF4C /* Pods-PBVoipService-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BE17096E6EB005B54BB7F5593746C2EF /* Pods-PBVoipService-dummy.m */; };
+		13635B78121B99E5C03C92506A161607 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E995AA4B6C7D91731D913DDB3E837A1 /* MASViewAttribute.m */; };
+		137A7FEC8A6E513ABD14937E70236688 /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AB523A3D4A5D0F68A7C2C610617C4A5 /* AFNetworkReachabilityManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		14CD0C295F6E20A6C281064016836F20 /* UIColor+PBHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 13E6DE2E35ACDCCBEDBC4483D7200E42 /* UIColor+PBHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A5249E3B874D57166B5E133E4C7EB79 /* NSDictionary+PBHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = FF2AF07F857AC38E19F452BEC9480B43 /* NSDictionary+PBHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1EC363D6911160B063DB6CC87F595A5B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDB365FBC4CAE78689CE7319ED4BA948 /* UIKit.framework */; };
+		1F3BD3BC28432BB5E2F73501E06E4579 /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B51CC5A5D10F40CA3B1E51C4B8B98E7 /* MASUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C3C51F434585B14770FBB4245BB390 /* NSArray+PBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F9FB1B832679E4358FB5166206E085 /* NSArray+PBHelper.m */; };
+		2DBB74B8B5DDB1F621433DD12BF35102 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B3BC3ECA9E2979E8C5174A511FC93F /* MASViewConstraint.m */; };
+		37EED7485603DF164C13071BB590B719 /* UIFont+PBHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FD202C7AAAB7B58FC425F88E23D3544 /* UIFont+PBHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3C1DEF2F0BE3C99EF3F263DF2CECF919 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520F14D3148ABCA47EC2E94C311071F8 /* Accelerate.framework */; };
+		3E8E6916C563B9CB12AA417275FC6EB3 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 656F54128FCB5CEB94AB1B959A605D62 /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		44D513D0F3214361CB671112FAAEA564 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDB365FBC4CAE78689CE7319ED4BA948 /* UIKit.framework */; };
+		474B708A44527BF78C74120257E5B0EA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA450731D4AB96512D17FC80D11491B /* SystemConfiguration.framework */; };
+		490CA524521F7D444EA58FA915D7E99C /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 390B245908B64DD8D90457D03279F510 /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49B903D576E09560C52AA92FDCC31A68 /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = 19E5CB13F04FA0C8D215D6B964825959 /* Masonry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B6E62C824B3D4A79564E01D3653C7C2 /* UIView+PBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8473548BD72EF1A7A414C02ABF8573BF /* UIView+PBHelper.m */; };
+		4CBE1B46550A3FB90FDD1CB9CBA7B7FE /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = FD2A64D03864A9D69CB8DBEB55928870 /* MASConstraint+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		527326B2CAAA18924DC1380EAB6DA98E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366AEA5084C5DCD1CBA554EA89E06543 /* Foundation.framework */; };
+		566EA65277D377CE9AF9BC125521965B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366AEA5084C5DCD1CBA554EA89E06543 /* Foundation.framework */; };
+		58697AB2B9A22026016745FAE07B3A63 /* UIView+PBHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = A9DABB54C1C75E2A0B30F2FEAC31A5DE /* UIView+PBHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B42A534B0B9BCDF97DEF2E07E4B462B /* NSArray+PBHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 218261AA054E439B628651778231F615 /* NSArray+PBHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		615A5B0CF81F528B3E3EB791AD55832A /* NSString+PBHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 851E2898A8F175E516D351E76665E8B8 /* NSString+PBHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		61CCEA01CBE8EFFA5515E7A0D8635AAE /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EBFF7D5F5770FF9C640B4FCEC80B25 /* MASCompositeConstraint.m */; };
+		6249770A7D163B0F3001D5A76C5FA01C /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = B4DD6594D76729990BCD9833FC4B5A1F /* MASConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		625DE6FFEB819C716EACEB1A4FAC1A86 /* PBDependency.h in Headers */ = {isa = PBXBuildFile; fileRef = 821D7A63A5E24705001937B647B3AF75 /* PBDependency.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		67A42E560846111B0CB669C75EF2C248 /* NSData+PBHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = EDDD55C2C14FC5F2C139FFE80E19E2CF /* NSData+PBHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		68F98758BA84B8EC3472A8C6FD646D16 /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 427DDC37ECCC27AEFDF8731F9CEA84D2 /* Masonry-dummy.m */; };
+		6AE9890049B7E497C64FF186E9F658FE /* UIDevice+PBHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 002E2FC371056AF5DC21C73DC9D6CF2A /* UIDevice+PBHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6BD5F5C07D06D19047C316086B60EB27 /* UIDevice+PBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D9A4953EFB54FC9F9ED6B22A2A6F3F /* UIDevice+PBHelper.m */; };
+		715F80C97859C4B716CA0CCC9327CF8D /* NSData+PBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2571FD0B3B33D1AE6B9366C284A7A7CA /* NSData+PBHelper.m */; };
+		726BC998C109B3B9DD1C2B4638A4994A /* NSDate+PBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 895573983269449BE75C6C298D0BD0A1 /* NSDate+PBHelper.m */; };
+		73C0D0E3FCDE0009B02B2B93B8013283 /* NSBundle+PBHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7663B74355572E479DF40710F623A706 /* NSBundle+PBHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B18F6320424FD8485711BF860F9F938 /* NSObject+PBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 857F39D2F501CBC5881B86600DB4A3B5 /* NSObject+PBHelper.m */; };
+		7BDDE51AF16FA53A09506EDB91E1C3C2 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BD6ECB822DDADA22BC2E4DD23E5E2CAA /* NSArray+MASAdditions.m */; };
+		7C2D06DD6D976C37568DFC9ADA682BBD /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 628CB579BCF233645595F8397B57E26E /* CoreText.framework */; };
+		8177377E7853C965D9C5B04D67B230E5 /* NSDictionary+PBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 452A04AFC9ADB6C355E84B2D29066B84 /* NSDictionary+PBHelper.m */; };
+		86D217417E69B8F6344405B0BC840FA9 /* UIImage+PBHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = C4C71176F8A748BDFE8AAE54ED2943F8 /* UIImage+PBHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		86EE1CB5473A4A07081D8DE3A2C45924 /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B724A8BE7DF2CF4884B28D9F9BC94F37 /* View+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		89450A58FD91E5B227171FC75160E4EA /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB74791CEAC5F7FF2F9548008800BD7 /* MASConstraint.m */; };
+		8D9252FF35C06F4AC323B7D5A779F930 /* NSDate+PBHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E60818ADB6190768D3F0B711E2E636D /* NSDate+PBHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		955BE39896CA35F2A585DC3309E5FDA5 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D5051B569DBEC9DB337F6A3A89FDA21 /* MASLayoutConstraint.m */; };
+		983CB852CBBFBC04C2A6BA407E34F59B /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E5D2BA08D0D438BD93F548A3F8E0957 /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9934AEA2C891C201D8ED5746FF42FE1B /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 18E199FD4C3A4E76092740FD2A91A1FB /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A12F42571C3178D2512D32B0E5C71964 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366AEA5084C5DCD1CBA554EA89E06543 /* Foundation.framework */; };
+		A1FA046FDFC42676D17FEC387B10D24A /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F2C7934B38D8762717F5038A87FB6 /* View+MASAdditions.m */; };
+		A447479BA6F555D87CEFC1E5BCD8FA87 /* NSBundle+PBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C686EA71FE63721C759FAA64365210 /* NSBundle+PBHelper.m */; };
+		A6436E3CFFCBFE591E2D2A68ED90CAC6 /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = B9C92681A62EAFC8EB299C5299778947 /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A83991D7C1373DF66020C2FDFC5D7564 /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F28127E95E49B7620DEC360099B667B /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A849F23AA9EE9067CA613400A272FBB1 /* AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F06F821ED5F37F9EDEF9C2FFDF4AA15 /* AFNetworking-dummy.m */; };
+		ADC4524CF563F9FBC73A3FAA6343E15B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366AEA5084C5DCD1CBA554EA89E06543 /* Foundation.framework */; };
+		B361A290B520149B73B379E5513B6F04 /* PBKits.h in Headers */ = {isa = PBXBuildFile; fileRef = 544A930EFD2B5F221C0D11D610A5D616 /* PBKits.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C88F85D3200060BD98FC13EA58121706 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B5A74E37AB2531ED23705D1F7D9313A /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D7CE05A743B7ACD50796191FA442814C /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DDDDE9EB8ECE705FEDF5D5B6AC9841 /* ViewController+MASAdditions.m */; };
+		DDA3351A8F5209CD34BD5872E0850FB2 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D8BE5FEF46A09A34F98767F6BBDD79 /* AFNetworkReachabilityManager.m */; };
+		DF7F88B58B564EDF169EC0C9CF8E5124 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8A46C6B0E4CA213F8C815A4611CAD8 /* MASConstraintMaker.m */; };
+		E072DA57403C4BFF9B10467BE05604C5 /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EC4D8FBD45DB34CA8C8A0767A974FDEE /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E1E771349813022263F549BDF33CB4BB /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DE3C9DDB91D2AC3A5103F439C6A0E8E /* MASViewAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3296AD2CA64B1A43F3D8372DB3B6397 /* NSObject+PBHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = C5FFFAFCD49BEDC058D99C92B4684193 /* NSObject+PBHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E4A1D2A509D6E55A07A4DCC96AAEE233 /* NSString+PBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 59614D5FF23484D021ACA37850A61F13 /* NSString+PBHelper.m */; };
+		E9B8053B08A5553E158AD67652903603 /* UIImage+PBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 613E0688144D5E1B1AAB7035B13DFD12 /* UIImage+PBHelper.m */; };
+		EB8D5D36096E65982FBE77FE96345A18 /* UIColor+PBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6DA1B8A21E57C4A6A251966F3D822F /* UIColor+PBHelper.m */; };
+		EC48DE078CA5E55922CCE02354D475CD /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B1C23E65DDF96F1C91922449D3E9C1B /* MASConstraintMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F5FCA3E5F468F5FE40191B4B09D1B2F1 /* PBKits-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 418512F1F0F84F69B7767111AABEAF83 /* PBKits-dummy.m */; };
+		F6952095C091D715D05FA417698C7F49 /* UIFont+PBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EA04C8638E359A5D9A818D57BE002 /* UIFont+PBHelper.m */; };
+		F6EBC7E894F6A8756D250A7674900A5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D9F8F9E87A34D8CF2E40BF6BFB978C /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		27F6102F0127CC9DBA9B0C13A6D8E794 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9DC8D9E02903E93BD0B2FEC9D846EA20;
+			remoteInfo = Masonry;
+		};
+		CAD8856E4BC8771E9E594E46F6266BFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96DD6BFF2B3AA1576C02E37DFE7BE21B;
+			remoteInfo = PBKits;
+		};
+		E6601ED6BF50F6B14AE12354F4E104F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE75687E418CFD08F4D088A267446E94;
+			remoteInfo = AFNetworking;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		002E2FC371056AF5DC21C73DC9D6CF2A /* UIDevice+PBHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIDevice+PBHelper.h"; path = "NHUtilSetsPro/Utils/UIDevice+PBHelper.h"; sourceTree = "<group>"; };
+		003B2E0A03C4D24855235FF1A563160F /* videodev_imp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = videodev_imp.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-videodev/videodev_imp.h"; sourceTree = "<group>"; };
+		004EA04C8638E359A5D9A818D57BE002 /* UIFont+PBHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIFont+PBHelper.m"; path = "NHUtilSetsPro/Utils/UIFont+PBHelper.m"; sourceTree = "<group>"; };
+		00E13415384E9D7D947C4E1597395433 /* videodev.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = videodev.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/videodev.h; sourceTree = "<group>"; };
+		0186166D102EEDDE876771C53F284750 /* pool_buf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pool_buf.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/pool_buf.h; sourceTree = "<group>"; };
+		01CBEFC390003DF29059BB13E6F00E7B /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
+		027EB413E284730D491AB4C47233A541 /* md5.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = md5.h; path = "PBPJSip/Pod/Classes/includes/pjlib-util/pjlib-util/md5.h"; sourceTree = "<group>"; };
+		02A888BAFC89F4221091B46B7D1CE318 /* resample.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = resample.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/resample.h; sourceTree = "<group>"; };
+		02B4831976007EA877DF9FB38EC7C938 /* pool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pool.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/pool.h; sourceTree = "<group>"; };
+		03856D8F1285818EB48DA7CDFEDBC669 /* sip_dialog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_dialog.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip/sip_dialog.h; sourceTree = "<group>"; };
+		039342446CE5D65F3E18C2B231EED728 /* libPBKits.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libPBKits.a; path = libPBKits.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		040D298280F4E68FD32DD7802927EBEF /* circbuf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = circbuf.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/circbuf.h; sourceTree = "<group>"; };
+		063B064C5BC8CCB72DCF10817A189E91 /* os_sunos.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = os_sunos.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/os_sunos.h; sourceTree = "<group>"; };
+		07A778694151E6FCC4CEEB1C828F9927 /* config_site.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = config_site.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/config_site.h; sourceTree = "<group>"; };
+		09388EDA2205A0891739977F2A73959F /* dns.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dns.h; path = "PBPJSip/Pod/Classes/includes/pjlib-util/pjlib-util/dns.h"; sourceTree = "<group>"; };
+		097F0D9F4D3B286730086D6733D54047 /* cli_console.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cli_console.h; path = "PBPJSip/Pod/Classes/includes/pjlib-util/pjlib-util/cli_console.h"; sourceTree = "<group>"; };
+		09D9A4953EFB54FC9F9ED6B22A2A6F3F /* UIDevice+PBHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+PBHelper.m"; path = "NHUtilSetsPro/Utils/UIDevice+PBHelper.m"; sourceTree = "<group>"; };
+		0A36B7D2DB1A65EAF44FCC1C6DF161F4 /* pjlib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pjlib.h; path = PBPJSip/Pod/Classes/includes/pjlib/pjlib.h; sourceTree = "<group>"; };
+		0AB523A3D4A5D0F68A7C2C610617C4A5 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		0B51CC5A5D10F40CA3B1E51C4B8B98E7 /* MASUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASUtilities.h; path = Masonry/MASUtilities.h; sourceTree = "<group>"; };
+		0B99E4EFF635D860AE56CC92EEC3BB0B /* fifobuf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = fifobuf.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/fifobuf.h; sourceTree = "<group>"; };
+		0CD7D6E70C1D46DC9E0F16AE43B9845E /* m_powerpc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = m_powerpc.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/m_powerpc.h; sourceTree = "<group>"; };
+		0D1BAFC1ACABF663E77C0D8959AB6875 /* sha1.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sha1.h; path = "PBPJSip/Pod/Classes/includes/pjlib-util/pjlib-util/sha1.h"; sourceTree = "<group>"; };
+		0EAC4C9E2EF16EE5410729835861804D /* gsm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = gsm.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-codec/gsm.h"; sourceTree = "<group>"; };
+		10D1B84D72717E0A89816168F36FED94 /* crc32.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = crc32.h; path = "PBPJSip/Pod/Classes/includes/pjlib-util/pjlib-util/crc32.h"; sourceTree = "<group>"; };
+		12EF44F5ABE91FCC15372C44CB449C7D /* silencedet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = silencedet.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/silencedet.h; sourceTree = "<group>"; };
+		1388E3EDFB844DA7E1720B6B8F1CB2C8 /* amr_helper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = amr_helper.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-codec/amr_helper.h"; sourceTree = "<group>"; };
+		13E6DE2E35ACDCCBEDBC4483D7200E42 /* UIColor+PBHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+PBHelper.h"; path = "NHUtilSetsPro/Utils/UIColor+PBHelper.h"; sourceTree = "<group>"; };
+		13F245E5677FD340A220DF9B2A22FD38 /* AFNetworking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AFNetworking.xcconfig; sourceTree = "<group>"; };
+		14628E77D7041AD6D742184E5DACED7B /* sip_100rel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_100rel.h; path = "PBPJSip/Pod/Classes/includes/pjsip/pjsip-ua/sip_100rel.h"; sourceTree = "<group>"; };
+		14A218956E29883E8BE4FB86AA97C5A3 /* stun_transaction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = stun_transaction.h; path = PBPJSip/Pod/Classes/includes/pjnath/pjnath/stun_transaction.h; sourceTree = "<group>"; };
+		14F78C236D09E85426CB84AD2F26B1EF /* pidf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pidf.h; path = "PBPJSip/Pod/Classes/includes/pjsip/pjsip-simple/pidf.h"; sourceTree = "<group>"; };
+		176D5B59D05E142A830FAA75172C1DAE /* endpoint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = endpoint.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/endpoint.h; sourceTree = "<group>"; };
+		18072AE669BF1FD42D803D84A4620211 /* sip_util.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_util.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip/sip_util.h; sourceTree = "<group>"; };
+		18BF9829E25448784DAF4CD938B1E881 /* errno.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = errno.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-videodev/errno.h"; sourceTree = "<group>"; };
+		18E199FD4C3A4E76092740FD2A91A1FB /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		19E5CB13F04FA0C8D215D6B964825959 /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
+		19EBFF7D5F5770FF9C640B4FCEC80B25 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
+		1D28EA537DE8672FF458781301BF7C3B /* stereo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = stereo.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/stereo.h; sourceTree = "<group>"; };
+		1F28127E95E49B7620DEC360099B667B /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
+		1F4158C52B278CF84720BD6AFFEA717D /* malloc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = malloc.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/malloc.h; sourceTree = "<group>"; };
+		1F6F063BDC25D25E3FD65BB17A846E4F /* addr_resolv.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = addr_resolv.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/addr_resolv.h; sourceTree = "<group>"; };
+		1F9702536ACF4155AE897F04933A9511 /* vid_codec_util.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = vid_codec_util.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/vid_codec_util.h; sourceTree = "<group>"; };
+		218261AA054E439B628651778231F615 /* NSArray+PBHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+PBHelper.h"; path = "NHUtilSetsPro/Utils/NSArray+PBHelper.h"; sourceTree = "<group>"; };
+		227D51BCE2AE8ABB162CF87E25FA64EC /* ip_helper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ip_helper.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/ip_helper.h; sourceTree = "<group>"; };
+		22B452BF122AAB44E057F0BD1DC12AE9 /* format.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = format.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/format.h; sourceTree = "<group>"; };
+		23AFEC1409F381D095D83572B0E80BA4 /* Pods-PBVoipService-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PBVoipService-acknowledgements.markdown"; sourceTree = "<group>"; };
+		24874595FAEAD9D5C24E3EE4AB0DAEC2 /* cc_msvc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cc_msvc.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/cc_msvc.h; sourceTree = "<group>"; };
+		249400F8B9E14542DDC09FD86BD2ABC3 /* libilbccodec.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libilbccodec.a; path = PBPJSip/Pod/Classes/libs/third_party/libilbccodec.a; sourceTree = "<group>"; };
+		2547881257D5C846AF909AEE6A5A61F2 /* config_auto.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = config_auto.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-codec/config_auto.h"; sourceTree = "<group>"; };
+		2571FD0B3B33D1AE6B9366C284A7A7CA /* NSData+PBHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+PBHelper.m"; path = "NHUtilSetsPro/Utils/NSData+PBHelper.m"; sourceTree = "<group>"; };
+		25F3F157CA04B2A558522D910CEE4CE5 /* sip_errno.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_errno.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip/sip_errno.h; sourceTree = "<group>"; };
+		26517C7D678DC071F4E0CBFCA052CFBD /* h263_packetizer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = h263_packetizer.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-codec/h263_packetizer.h"; sourceTree = "<group>"; };
+		270CB07A72AB2B3EF702C1232232E686 /* g7221_sdp_match.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = g7221_sdp_match.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-codec/g7221_sdp_match.h"; sourceTree = "<group>"; };
+		275A05CA1B6FAAD9CE68AB185C444FA4 /* transport_udp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = transport_udp.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/transport_udp.h; sourceTree = "<group>"; };
+		29EB98BD80A485864CAE2AF04EEF1043 /* types.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = types.h; path = "PBPJSip/Pod/Classes/includes/pjlib-util/pjlib-util/types.h"; sourceTree = "<group>"; };
+		2C532FCAE7DE49BB34B84C59150680DE /* unicode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = unicode.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/unicode.h; sourceTree = "<group>"; };
+		2CABBD36A5801FB32DEAB8FE5EF46D85 /* libpjsipua2.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libpjsipua2.a; path = PBPJSip/Pod/Classes/libs/pjsip/libpjsipua2.a; sourceTree = "<group>"; };
+		2E5D2BA08D0D438BD93F548A3F8E0957 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		2F38B332430E8E61FC11603531BCAC07 /* resolver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = resolver.h; path = "PBPJSip/Pod/Classes/includes/pjlib-util/pjlib-util/resolver.h"; sourceTree = "<group>"; };
+		2F954969A4BD2854EFD5F21CB83BDAD2 /* pjsip.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pjsip.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip.h; sourceTree = "<group>"; };
+		2FB45713EB509C15FD08FA63634BD424 /* rpid.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = rpid.h; path = "PBPJSip/Pod/Classes/includes/pjsip/pjsip-simple/rpid.h"; sourceTree = "<group>"; };
+		302CFDEBE6EAE38416F85BBAF8F21C39 /* os_darwinos.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = os_darwinos.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/os_darwinos.h; sourceTree = "<group>"; };
+		32668804F6981B400CE0DA609B0E60F4 /* pjmedia.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pjmedia.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia.h; sourceTree = "<group>"; };
+		32C40375088730C9DB9C5BBA8254EC1E /* m_alpha.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = m_alpha.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/m_alpha.h; sourceTree = "<group>"; };
+		32C686EA71FE63721C759FAA64365210 /* NSBundle+PBHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+PBHelper.m"; path = "NHUtilSetsPro/Utils/NSBundle+PBHelper.m"; sourceTree = "<group>"; };
+		32D790A73854C09F9AB439C9EE7CA05C /* converter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = converter.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/converter.h; sourceTree = "<group>"; };
+		3331311C7A2E778F49D298CD994A9DA3 /* silk.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = silk.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-codec/silk.h"; sourceTree = "<group>"; };
+		3433DC30C4F4A31C1605AD70708DC866 /* sock_select.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sock_select.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/sock_select.h; sourceTree = "<group>"; };
+		35EE6967E9EF3D9F4F004C4A0785B42D /* stun_sock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = stun_sock.h; path = PBPJSip/Pod/Classes/includes/pjnath/pjnath/stun_sock.h; sourceTree = "<group>"; };
+		363FB40B57BED8581007313FBC5C5CF3 /* avi_dev.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = avi_dev.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-videodev/avi_dev.h"; sourceTree = "<group>"; };
+		366AEA5084C5DCD1CBA554EA89E06543 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		36907707A611B7C9D4F5B5A49DA3E2CC /* amr_sdp_match.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = amr_sdp_match.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-codec/amr_sdp_match.h"; sourceTree = "<group>"; };
+		385F3620E43B32F850DB42F127112CFB /* vid_codec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = vid_codec.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/vid_codec.h; sourceTree = "<group>"; };
+		390B245908B64DD8D90457D03279F510 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		3AD14DBDB1D930639033511E9BCC2F3D /* sdp_neg.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sdp_neg.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/sdp_neg.h; sourceTree = "<group>"; };
+		3B1502034A9E9BE099FD6660D6E950C5 /* types.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = types.h; path = PBPJSip/Pod/Classes/includes/pjnath/pjnath/types.h; sourceTree = "<group>"; };
+		3C11C807D7EA1781813DD4F4F525A692 /* config.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = config.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-codec/config.h"; sourceTree = "<group>"; };
+		3C72C51F73BC51FA2B8DAA1DAD65B944 /* config_site_sample.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = config_site_sample.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/config_site_sample.h; sourceTree = "<group>"; };
+		3CB3564F488F7D7145DA117A57A4759D /* guid.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = guid.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/guid.h; sourceTree = "<group>"; };
+		3D4EABBC1938C825B2DBB740991363C9 /* m_armv4.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = m_armv4.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/m_armv4.h; sourceTree = "<group>"; };
+		3DE3C9DDB91D2AC3A5103F439C6A0E8E /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
+		412E6050AA78456D13ACE0558F3EC3ED /* doxygen.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = doxygen.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/doxygen.h; sourceTree = "<group>"; };
+		418512F1F0F84F69B7767111AABEAF83 /* PBKits-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PBKits-dummy.m"; sourceTree = "<group>"; };
+		427DDC37ECCC27AEFDF8731F9CEA84D2 /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
+		42B34CD7B56D284CDBC20D17B3DDBEED /* sdp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sdp.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/sdp.h; sourceTree = "<group>"; };
+		4470CB2090784B5F213617E278E9EBAC /* sip_auth_parser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_auth_parser.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip/sip_auth_parser.h; sourceTree = "<group>"; };
+		452A04AFC9ADB6C355E84B2D29066B84 /* NSDictionary+PBHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+PBHelper.m"; path = "NHUtilSetsPro/Utils/NSDictionary+PBHelper.m"; sourceTree = "<group>"; };
+		45C32C18043F12E90D5C24379D86BD6E /* sip_transport_udp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_transport_udp.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip/sip_transport_udp.h; sourceTree = "<group>"; };
+		48C5CD1235C6399B8B98CADB463E8AD9 /* wave.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = wave.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/wave.h; sourceTree = "<group>"; };
+		48E857E925CCFF6E6C00D66DB1ADB728 /* types.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = types.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/types.h; sourceTree = "<group>"; };
+		49D8BE5FEF46A09A34F98767F6BBDD79 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		49DDBD9097587E5A63CEA597A5276989 /* wsola.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = wsola.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/wsola.h; sourceTree = "<group>"; };
+		4A6EF889035DFBE942DC281D5EF618E5 /* libg7221codec.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libg7221codec.a; path = PBPJSip/Pod/Classes/libs/third_party/libg7221codec.a; sourceTree = "<group>"; };
+		4A7D799B700A634B876EF0714EE94055 /* Pods-PBVoipService-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PBVoipService-frameworks.sh"; sourceTree = "<group>"; };
+		4ADFAECBE896D8EA86318AE52CB2F842 /* assert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = assert.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/assert.h; sourceTree = "<group>"; };
+		4CA450731D4AB96512D17FC80D11491B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		4CEF56507CDC6569E0822B429107EA01 /* config.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = config.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/config.h; sourceTree = "<group>"; };
+		4E0B5E4621891E6B0457B8D3A8DBA5CA /* scanner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = scanner.h; path = "PBPJSip/Pod/Classes/includes/pjlib-util/pjlib-util/scanner.h"; sourceTree = "<group>"; };
+		4E5D3825DBCF5510EDCC9A901D7A9DDA /* libpjlib.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libpjlib.a; path = PBPJSip/Pod/Classes/libs/pjlib/libpjlib.a; sourceTree = "<group>"; };
+		4FA364296D4EBE89AD3C401BBC443E1C /* ilbc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ilbc.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-codec/ilbc.h"; sourceTree = "<group>"; };
+		4FE89C57D301D46890C253D881FF86FF /* opus.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = opus.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-codec/opus.h"; sourceTree = "<group>"; };
+		4FF52E7B45971636422A204D7BEFFA7D /* timer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = timer.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/timer.h; sourceTree = "<group>"; };
+		50AEA94A8728A3519ADA51554625C952 /* g711.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = g711.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/g711.h; sourceTree = "<group>"; };
+		51050385FEE22F1C89D45B8A804A87B4 /* m_x86_64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = m_x86_64.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/m_x86_64.h; sourceTree = "<group>"; };
+		51CA5A13D3DE361100683D340B1A47FA /* sip_resolve.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_resolve.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip/sip_resolve.h; sourceTree = "<group>"; };
+		51ED266EA510A0AA3234226B08A086DF /* bidirectional.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = bidirectional.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/bidirectional.h; sourceTree = "<group>"; };
+		520F14D3148ABCA47EC2E94C311071F8 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
+		523EEA03E5D52F7CB6E436E27911822B /* stun_config.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = stun_config.h; path = PBPJSip/Pod/Classes/includes/pjnath/pjnath/stun_config.h; sourceTree = "<group>"; };
+		5296B8568D0E954955B140AC801BF1BE /* audiodev.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = audiodev.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-audiodev/audiodev.h"; sourceTree = "<group>"; };
+		52CE2693EB958D856F629EB0466951CE /* pjsip_auth.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pjsip_auth.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip_auth.h; sourceTree = "<group>"; };
+		52E9FB75C789D933D08D7AB4A9169406 /* audiotest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = audiotest.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-audiodev/audiotest.h"; sourceTree = "<group>"; };
+		53F7ADF4519938461E6E1C6CA66F8704 /* libPods-PBVoipService.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-PBVoipService.a"; path = "libPods-PBVoipService.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		544A930EFD2B5F221C0D11D610A5D616 /* PBKits.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PBKits.h; path = NHUtilSetsPro/Utils/PBKits.h; sourceTree = "<group>"; };
+		54B4B305302D13264DCF82332859646D /* evsub.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = evsub.h; path = "PBPJSip/Pod/Classes/includes/pjsip/pjsip-simple/evsub.h"; sourceTree = "<group>"; };
+		55205159E330529E59FF99F5AC3FCB84 /* vid_tee.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = vid_tee.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/vid_tee.h; sourceTree = "<group>"; };
+		554E1F643AEE4DDA6F78BBB21785AC78 /* libpjlib-util.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = "libpjlib-util.a"; path = "PBPJSip/Pod/Classes/libs/pjlib-util/libpjlib-util.a"; sourceTree = "<group>"; };
+		57846952B1490615AFAA253291229EBC /* libspeex.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libspeex.a; path = PBPJSip/Pod/Classes/libs/third_party/libspeex.a; sourceTree = "<group>"; };
+		5911BFB1451188805E81E075074626A0 /* os_linux_kernel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = os_linux_kernel.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/os_linux_kernel.h; sourceTree = "<group>"; };
+		59306EA28B82E6B849ACDBDCF08A2B0F /* config.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = config.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-videodev/config.h"; sourceTree = "<group>"; };
+		59614D5FF23484D021ACA37850A61F13 /* NSString+PBHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+PBHelper.m"; path = "NHUtilSetsPro/Utils/NSString+PBHelper.m"; sourceTree = "<group>"; };
+		5A44784B0515ED0EA51673E7900E4BC0 /* sip_replaces.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_replaces.h; path = "PBPJSip/Pod/Classes/includes/pjsip/pjsip-ua/sip_replaces.h"; sourceTree = "<group>"; };
+		5A4F23C7663DFAE16115C508C4D76FF0 /* transport_ice.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = transport_ice.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/transport_ice.h; sourceTree = "<group>"; };
+		5A65D8E2BCBDC8E8488BDA50530748D0 /* plc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = plc.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/plc.h; sourceTree = "<group>"; };
+		5C7E0AF32BBCB3322FD84E6565375E44 /* pjsua.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pjsua.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsua.h; sourceTree = "<group>"; };
+		5D440672BFA56B3426EEE1581BC6C386 /* iscomposing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = iscomposing.h; path = "PBPJSip/Pod/Classes/includes/pjsip/pjsip-simple/iscomposing.h"; sourceTree = "<group>"; };
+		5F9F9671C6A3AB979038962CDF421651 /* libpjnath.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libpjnath.a; path = PBPJSip/Pod/Classes/libs/pjnath/libpjnath.a; sourceTree = "<group>"; };
+		5FDACCC0A308D45E6A1D9D5E5428CAF8 /* sip_event.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_event.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip/sip_event.h; sourceTree = "<group>"; };
+		600D40261D4E43F1B94BE5B6A866CD3D /* libpjsip-simple.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = "libpjsip-simple.a"; path = "PBPJSip/Pod/Classes/libs/pjsip/libpjsip-simple.a"; sourceTree = "<group>"; };
+		609DA4D8EF5BD3C60028E549FB6CDBDB /* hmac_sha1.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = hmac_sha1.h; path = "PBPJSip/Pod/Classes/includes/pjlib-util/pjlib-util/hmac_sha1.h"; sourceTree = "<group>"; };
+		60C27076689EE12EC3653D6297AB9A17 /* os_win32_wince.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = os_win32_wince.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/os_win32_wince.h; sourceTree = "<group>"; };
+		613E0688144D5E1B1AAB7035B13DFD12 /* UIImage+PBHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+PBHelper.m"; path = "NHUtilSetsPro/Utils/UIImage+PBHelper.m"; sourceTree = "<group>"; };
+		628CB579BCF233645595F8397B57E26E /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
+		637E0E2CB884B977F278868EA558DD35 /* os_symbian.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = os_symbian.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/os_symbian.h; sourceTree = "<group>"; };
+		6482F0CC4C594B3085A6C6E68492B602 /* pjlib-util.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "pjlib-util.h"; path = "PBPJSip/Pod/Classes/includes/pjlib-util/pjlib-util.h"; sourceTree = "<group>"; };
+		64DDDDE9EB8ECE705FEDF5D5B6AC9841 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		656F54128FCB5CEB94AB1B959A605D62 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		658FAA0DBDF4A8269D2EA764B71F8C0D /* pjmedia_audiodev.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pjmedia_audiodev.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia_audiodev.h; sourceTree = "<group>"; };
+		66990B93D6CB44D9A5215702B9F00692 /* sip_regc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_regc.h; path = "PBPJSip/Pod/Classes/includes/pjsip/pjsip-ua/sip_regc.h"; sourceTree = "<group>"; };
+		66AA5991F087639243219616DFA96386 /* srv_resolver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = srv_resolver.h; path = "PBPJSip/Pod/Classes/includes/pjlib-util/pjlib-util/srv_resolver.h"; sourceTree = "<group>"; };
+		67A322E3752FA38417CECCDFC8557AB6 /* config.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = config.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/config.h; sourceTree = "<group>"; };
+		695989EA7A17DEB9E3DE4306F86177E5 /* m_m68k.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = m_m68k.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/m_m68k.h; sourceTree = "<group>"; };
+		6A285094B2E156D990FB89DDE85621FB /* sip_tel_uri.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_tel_uri.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip/sip_tel_uri.h; sourceTree = "<group>"; };
+		6A99C3527A2EBB42FF09506E192266A8 /* string_i.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = string_i.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/string_i.h; sourceTree = "<group>"; };
+		6AE2EB3440BC63956CD9F182EB5E1D81 /* config_auto.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = config_auto.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/config_auto.h; sourceTree = "<group>"; };
+		6B1B476CEFC08BD7FF7CB947F675122F /* errno.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = errno.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/errno.h; sourceTree = "<group>"; };
+		6B1C23E65DDF96F1C91922449D3E9C1B /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
+		6BC7F802A3E0E7B644B101A6579C283C /* opengl_dev.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = opengl_dev.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-videodev/opengl_dev.h"; sourceTree = "<group>"; };
+		6C0DA45AFFA8F7A7E4FCCCC1A37B6944 /* audiodev.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = audiodev.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/audiodev.h; sourceTree = "<group>"; };
+		6DBCE6AD1A16197927F52447901099D2 /* tonegen.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = tonegen.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/tonegen.h; sourceTree = "<group>"; };
+		6E22F9A25EDE3D3E0558B39529A56AB5 /* mwi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mwi.h; path = "PBPJSip/Pod/Classes/includes/pjsip/pjsip-simple/mwi.h"; sourceTree = "<group>"; };
+		6F06F821ED5F37F9EDEF9C2FFDF4AA15 /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
+		6F55C907EBBA9ED81D03E7E9E68C22B6 /* Pods-PBVoipService-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PBVoipService-acknowledgements.plist"; sourceTree = "<group>"; };
+		6F872DF8F3836D35D0ABD80758082B32 /* rand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = rand.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/rand.h; sourceTree = "<group>"; };
+		6FE2CFEBB9146B3530C1F206DA5A96C4 /* os_winphone8.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = os_winphone8.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/os_winphone8.h; sourceTree = "<group>"; };
+		7008DBD77C70F3D54BCF5FDA1EC3EEDA /* xpidf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = xpidf.h; path = "PBPJSip/Pod/Classes/includes/pjsip/pjsip-simple/xpidf.h"; sourceTree = "<group>"; };
+		703D53CF8DC080EF0914F94645C9C3AF /* transport_loop.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = transport_loop.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/transport_loop.h; sourceTree = "<group>"; };
+		70B6D3884E713388EC66F4D3305551E2 /* transport_adapter_sample.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = transport_adapter_sample.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/transport_adapter_sample.h; sourceTree = "<group>"; };
+		71F8F3B88690A794BB4AA35FFC01A502 /* libMasonry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMasonry.a; path = libMasonry.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		72B8E5A5ED6F9426D5436B41A446E088 /* signatures.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = signatures.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/signatures.h; sourceTree = "<group>"; };
+		72D7BC43BF04FC0B391221E80EE044CB /* libpjmedia-videodev.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = "libpjmedia-videodev.a"; path = "PBPJSip/Pod/Classes/libs/pjmedia/libpjmedia-videodev.a"; sourceTree = "<group>"; };
+		749EC21B1966A61D5309F919418C1BBA /* errno.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = errno.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/errno.h; sourceTree = "<group>"; };
+		752C66A5155FFF07B1C1EE6686AC8510 /* echo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = echo.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/echo.h; sourceTree = "<group>"; };
+		75C2375D9E1ED3B1BEF98724EC9CBA3B /* json.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = json.h; path = "PBPJSip/Pod/Classes/includes/pjlib-util/pjlib-util/json.h"; sourceTree = "<group>"; };
+		7663B74355572E479DF40710F623A706 /* NSBundle+PBHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBundle+PBHelper.h"; path = "NHUtilSetsPro/Utils/NSBundle+PBHelper.h"; sourceTree = "<group>"; };
+		7696957498647798D2E89BBA8054335A /* types.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = types.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-codec/types.h"; sourceTree = "<group>"; };
+		76EC68C90845FB34C1694A2BE1A87024 /* libyuv.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libyuv.a; path = PBPJSip/Pod/Classes/libs/third_party/libyuv.a; sourceTree = "<group>"; };
+		78A8ABA0B09D2C83B389B2EB67EBE660 /* sip_multipart.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_multipart.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip/sip_multipart.h; sourceTree = "<group>"; };
+		78D9F8F9E87A34D8CF2E40BF6BFB978C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		794CD6E0C997228E8B0479CA0EB51291 /* errno.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = errno.h; path = "PBPJSip/Pod/Classes/includes/pjsip/pjsip-simple/errno.h"; sourceTree = "<group>"; };
+		79926B6E8C773E250FC293B30D4CAF13 /* types.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = types.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/types.h; sourceTree = "<group>"; };
+		7A6B0CCCB2637556784EAD4E2C9A66FD /* jbuf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = jbuf.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/jbuf.h; sourceTree = "<group>"; };
+		7AAA4EE03C005493689E243325E05922 /* pjsip_simple.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pjsip_simple.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip_simple.h; sourceTree = "<group>"; };
+		7B79FEBE2CB89BC81648D0A49CC0614B /* errno.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = errno.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-audiodev/errno.h"; sourceTree = "<group>"; };
+		7BA74127BE7EC11B459F70FB218EED99 /* base64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = base64.h; path = "PBPJSip/Pod/Classes/includes/pjlib-util/pjlib-util/base64.h"; sourceTree = "<group>"; };
+		7BD92C77FC701EE9DC48FD97BF90BBED /* g7221.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = g7221.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-codec/g7221.h"; sourceTree = "<group>"; };
+		7CCF6D57EDAC50AE22B4E7FBAE8E2743 /* ice_session.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ice_session.h; path = PBPJSip/Pod/Classes/includes/pjnath/pjnath/ice_session.h; sourceTree = "<group>"; };
+		7D5051B569DBEC9DB337F6A3A89FDA21 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
+		7E7D168843845DD816C38D4721BB87BD /* AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-prefix.pch"; sourceTree = "<group>"; };
+		7E995AA4B6C7D91731D913DDB3E837A1 /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
+		7EC33714F71344299C319711352AD240 /* log.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = log.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/log.h; sourceTree = "<group>"; };
+		803EC7461A1F6741FF24F2BA91A165BB /* videodev.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = videodev.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-videodev/videodev.h"; sourceTree = "<group>"; };
+		80510A3C67B64B05153D20B9BA0A72B0 /* vid_port.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = vid_port.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/vid_port.h; sourceTree = "<group>"; };
+		80DCA4A396B9B71BA17232019B3702FB /* ice_strans.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ice_strans.h; path = PBPJSip/Pod/Classes/includes/pjnath/pjnath/ice_strans.h; sourceTree = "<group>"; };
+		821D7A63A5E24705001937B647B3AF75 /* PBDependency.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PBDependency.h; path = NHUtilSetsPro/Utils/PBDependency.h; sourceTree = "<group>"; };
+		832B3D97364905275032B476FF32FA51 /* string.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = string.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/string.h; sourceTree = "<group>"; };
+		834E87780E5C7361E8941EDF8C2923A8 /* stun_msg.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = stun_msg.h; path = PBPJSip/Pod/Classes/includes/pjnath/pjnath/stun_msg.h; sourceTree = "<group>"; };
+		84185F41D05894EA768140B8FC6CCA7B /* libssl.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libssl.a; path = PBPJSip/Pod/Classes/libs/openssl/libssl.a; sourceTree = "<group>"; };
+		8473548BD72EF1A7A414C02ABF8573BF /* UIView+PBHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+PBHelper.m"; path = "NHUtilSetsPro/Utils/UIView+PBHelper.m"; sourceTree = "<group>"; };
+		84FCA66EDFE90FA9B18C6F32A8BE2028 /* assert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = assert.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/assert.h; sourceTree = "<group>"; };
+		851E2898A8F175E516D351E76665E8B8 /* NSString+PBHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+PBHelper.h"; path = "NHUtilSetsPro/Utils/NSString+PBHelper.h"; sourceTree = "<group>"; };
+		857F39D2F501CBC5881B86600DB4A3B5 /* NSObject+PBHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+PBHelper.m"; path = "NHUtilSetsPro/Utils/NSObject+PBHelper.m"; sourceTree = "<group>"; };
+		85CAA45194C8077AC5939CBD73A103DB /* libcrypto.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libcrypto.a; path = PBPJSip/Pod/Classes/libs/openssl/libcrypto.a; sourceTree = "<group>"; };
+		868AF7D9CE204F4967200ABFF5313432 /* sip_module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_module.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip/sip_module.h; sourceTree = "<group>"; };
+		8760D1E7409C158AE6E7D6BAA7D23D4E /* sound_port.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sound_port.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/sound_port.h; sourceTree = "<group>"; };
+		895573983269449BE75C6C298D0BD0A1 /* NSDate+PBHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+PBHelper.m"; path = "NHUtilSetsPro/Utils/NSDate+PBHelper.m"; sourceTree = "<group>"; };
+		89D7B7FEAD1AE77BD8D803D7EE5F9A3F /* port.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = port.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/port.h; sourceTree = "<group>"; };
+		8A1F2C7934B38D8762717F5038A87FB6 /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
+		8B5A74E37AB2531ED23705D1F7D9313A /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		8B6C03E7F4E59B8D6E21B68574F480BC /* null_port.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = null_port.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/null_port.h; sourceTree = "<group>"; };
+		8BC600AA572EE68CA91063C17A3EEA2D /* file_access.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = file_access.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/file_access.h; sourceTree = "<group>"; };
+		8C23921C3B9F366879B0AC0FAEC6B95A /* Masonry.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.xcconfig; sourceTree = "<group>"; };
+		8C357D055B6788B7EDC6292085F002D0 /* stream.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = stream.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/stream.h; sourceTree = "<group>"; };
+		8C5B28D8197E4E69F13BBA50876CE031 /* ipp_codecs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ipp_codecs.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-codec/ipp_codecs.h"; sourceTree = "<group>"; };
+		8E5206E7982C88F337763F29F09CC71E /* g722.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = g722.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-codec/g722.h"; sourceTree = "<group>"; };
+		8E60818ADB6190768D3F0B711E2E636D /* NSDate+PBHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+PBHelper.h"; path = "NHUtilSetsPro/Utils/NSDate+PBHelper.h"; sourceTree = "<group>"; };
+		8E7CF364AE9BE47F2B10FA673D918B6B /* stream_common.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = stream_common.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/stream_common.h; sourceTree = "<group>"; };
+		8F2E210EAD3C9BB1E5BC27AC97BFB2FD /* presence.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = presence.h; path = "PBPJSip/Pod/Classes/includes/pjsip/pjsip-simple/presence.h"; sourceTree = "<group>"; };
+		91AF43E47B51632B711152AB2D30135B /* sip_transport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_transport.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip/sip_transport.h; sourceTree = "<group>"; };
+		92582A52C27FAFF8E863F1DBEF0541BC /* passthrough.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = passthrough.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-codec/passthrough.h"; sourceTree = "<group>"; };
+		929BE21528675820856FAC384A7F0A45 /* libgsmcodec.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libgsmcodec.a; path = PBPJSip/Pod/Classes/libs/third_party/libgsmcodec.a; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94AD22DA8F7A46A6C584B39328707FE2 /* scanner_cis_uint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = scanner_cis_uint.h; path = "PBPJSip/Pod/Classes/includes/pjlib-util/pjlib-util/scanner_cis_uint.h"; sourceTree = "<group>"; };
+		95DC36A11D2A9B519CF4C6064EAFFD9F /* symbian_sound_aps.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = symbian_sound_aps.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/symbian_sound_aps.h; sourceTree = "<group>"; };
+		95F673642874E139822EE1117C0D792C /* pjnath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pjnath.h; path = PBPJSip/Pod/Classes/includes/pjnath/pjnath.h; sourceTree = "<group>"; };
+		9624CA46F08392EA5CDC91FBFF974B0A /* xml.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = xml.h; path = "PBPJSip/Pod/Classes/includes/pjlib-util/pjlib-util/xml.h"; sourceTree = "<group>"; };
+		966DF2FC203A40BB5A724462D4B81517 /* socket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = socket.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/socket.h; sourceTree = "<group>"; };
+		97BEA5BAAA744CD42C53BD85FC16E625 /* echo_port.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = echo_port.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/echo_port.h; sourceTree = "<group>"; };
+		980D34598EDB6187A3D1352B8974D516 /* sip_auth_msg.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_auth_msg.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip/sip_auth_msg.h; sourceTree = "<group>"; };
+		99B3BC3ECA9E2979E8C5174A511FC93F /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
+		99B6ABA4F6BC032B1B956D495C42DE96 /* libpjmedia-codec.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = "libpjmedia-codec.a"; path = "PBPJSip/Pod/Classes/libs/pjmedia/libpjmedia-codec.a"; sourceTree = "<group>"; };
+		9A13F9265F4B43910602DC60561A3C77 /* m_sparc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = m_sparc.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/m_sparc.h; sourceTree = "<group>"; };
+		9B3D9B37FD71518CA7AD14069E14CEA1 /* cc_gcc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cc_gcc.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/cc_gcc.h; sourceTree = "<group>"; };
+		9BD33D7A9B98E3907224E9B9DDBA496B /* Pods-PBVoipService-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PBVoipService-resources.sh"; sourceTree = "<group>"; };
+		9C330F1E02C39F02955F0714E23639C3 /* os_rtems.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = os_rtems.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/os_rtems.h; sourceTree = "<group>"; };
+		9CE398B0E38B3EDB46EC0EF086779A8B /* setjmp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = setjmp.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/setjmp.h; sourceTree = "<group>"; };
+		9D6D7F4F9922097091544FB031450350 /* stdfileio.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = stdfileio.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/stdfileio.h; sourceTree = "<group>"; };
+		9DDCB411BF6914E7A1A38391D07C698F /* file_io.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = file_io.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/file_io.h; sourceTree = "<group>"; };
+		9E96CC7F2F8B98A909A16871EC7D40C8 /* transport_srtp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = transport_srtp.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/transport_srtp.h; sourceTree = "<group>"; };
+		9EC70E76F9B4061CD10A3223A0D92A60 /* m_auto.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = m_auto.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/m_auto.h; sourceTree = "<group>"; };
+		9FD202C7AAAB7B58FC425F88E23D3544 /* UIFont+PBHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIFont+PBHelper.h"; path = "NHUtilSetsPro/Utils/UIFont+PBHelper.h"; sourceTree = "<group>"; };
+		A06636D304F7CD2C18D7785536729B1B /* errno.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = errno.h; path = PBPJSip/Pod/Classes/includes/pjnath/pjnath/errno.h; sourceTree = "<group>"; };
+		A1C55332245739CCDF3975C6874B381C /* libpjsip-ua.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = "libpjsip-ua.a"; path = "PBPJSip/Pod/Classes/libs/pjsip/libpjsip-ua.a"; sourceTree = "<group>"; };
+		A2962B01412A7D77E63E3EA8CE4E73CD /* turn_sock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = turn_sock.h; path = PBPJSip/Pod/Classes/includes/pjnath/pjnath/turn_sock.h; sourceTree = "<group>"; };
+		A29FEEB33F1C294AE8D6BAA6A6F001A0 /* sip_transport_loop.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_transport_loop.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip/sip_transport_loop.h; sourceTree = "<group>"; };
+		A2D0141B095A5689652EDF1269312130 /* errno.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = errno.h; path = "PBPJSip/Pod/Classes/includes/pjlib-util/pjlib-util/errno.h"; sourceTree = "<group>"; };
+		A30737A1D6B217E03E81AA169C52A205 /* config.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = config.h; path = "PBPJSip/Pod/Classes/includes/pjlib-util/pjlib-util/config.h"; sourceTree = "<group>"; };
+		A336A013663D7DFA1CCEEDF2977600F1 /* string.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = string.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/string.h; sourceTree = "<group>"; };
+		A3D300E4F0657D0E861811AB9800B316 /* sip_transaction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_transaction.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip/sip_transaction.h; sourceTree = "<group>"; };
+		A40EFA415E40B94C5870DD11D2B962AE /* Pods-PBVoipService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PBVoipService.release.xcconfig"; sourceTree = "<group>"; };
+		A52F9241634C6D3D693801652C234132 /* cc_mwcc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cc_mwcc.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/cc_mwcc.h; sourceTree = "<group>"; };
+		A65CFA014D4D61A168E0753AA8D7F278 /* libpjsipua.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libpjsipua.a; path = PBPJSip/Pod/Classes/libs/pjsip/libpjsipua.a; sourceTree = "<group>"; };
+		A6ED2EA62841D13056DB25600A66B8DF /* os.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = os.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/os.h; sourceTree = "<group>"; };
+		A7C8DC1FED2C28F57EC551AFC37B9AD2 /* wav_playlist.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = wav_playlist.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/wav_playlist.h; sourceTree = "<group>"; };
+		A9DABB54C1C75E2A0B30F2FEAC31A5DE /* UIView+PBHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+PBHelper.h"; path = "NHUtilSetsPro/Utils/UIView+PBHelper.h"; sourceTree = "<group>"; };
+		AA221914D3D6C194A5DD824D713DCB79 /* os_win32.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = os_win32.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/os_win32.h; sourceTree = "<group>"; };
+		AA4A3EB157BA31BAD6826097EAB23389 /* pcap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pcap.h; path = "PBPJSip/Pod/Classes/includes/pjlib-util/pjlib-util/pcap.h"; sourceTree = "<group>"; };
+		AADD9626645E09C2969F1396002E587D /* cc_armcc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cc_armcc.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/cc_armcc.h; sourceTree = "<group>"; };
+		AB983F5A3C88CD1061E4749CBC251B36 /* sip_parser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_parser.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip/sip_parser.h; sourceTree = "<group>"; };
+		ACF0F6C03E12E3D19446B36B6717CC14 /* getopt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = getopt.h; path = "PBPJSip/Pod/Classes/includes/pjlib-util/pjlib-util/getopt.h"; sourceTree = "<group>"; };
+		AD32E3441BC3548FD3DB2C164B0022DE /* PBKits-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PBKits-prefix.pch"; sourceTree = "<group>"; };
+		AD4B0CE5C63B70ED26F93EAA8A9F61F0 /* scanner_cis_bitwise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = scanner_cis_bitwise.h; path = "PBPJSip/Pod/Classes/includes/pjlib-util/pjlib-util/scanner_cis_bitwise.h"; sourceTree = "<group>"; };
+		B018F526CBEB4600DD9BFCC27C1DB233 /* stun_simple.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = stun_simple.h; path = "PBPJSip/Pod/Classes/includes/pjlib-util/pjlib-util/stun_simple.h"; sourceTree = "<group>"; };
+		B045BE419669492042CBCFF928D24900 /* sip_timer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_timer.h; path = "PBPJSip/Pod/Classes/includes/pjsip/pjsip-ua/sip_timer.h"; sourceTree = "<group>"; };
+		B19E74725D83EDC7D4E50510005560E1 /* sip_msg.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_msg.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip/sip_msg.h; sourceTree = "<group>"; };
+		B2F38112EC30D35CAA11A5BB40C205FF /* pool_i.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pool_i.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/pool_i.h; sourceTree = "<group>"; };
+		B37ABAD565E519E3E9B81A538B9C9D88 /* codec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = codec.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/codec.h; sourceTree = "<group>"; };
+		B4DD6594D76729990BCD9833FC4B5A1F /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
+		B5B3CA43DE54C2682F0125FDAC49AD3C /* nat_detect.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = nat_detect.h; path = PBPJSip/Pod/Classes/includes/pjnath/pjnath/nat_detect.h; sourceTree = "<group>"; };
+		B5CD047F96316791B0E878ECCBAC2B4D /* stun_session.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = stun_session.h; path = PBPJSip/Pod/Classes/includes/pjnath/pjnath/stun_session.h; sourceTree = "<group>"; };
+		B68C514D2236ACB49C7F2CD1056281A7 /* sip_transport_tls.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_transport_tls.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip/sip_transport_tls.h; sourceTree = "<group>"; };
+		B6DDBBEFD681402C3595D9FEDF16078E /* ioqueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ioqueue.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/ioqueue.h; sourceTree = "<group>"; };
+		B6E6CC4664047FABBE47A0C90CD13F85 /* libpjmedia-sdp.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = "libpjmedia-sdp.a"; path = "PBPJSip/Pod/Classes/libs/pjmedia/libpjmedia-sdp.a"; sourceTree = "<group>"; };
+		B724A8BE7DF2CF4884B28D9F9BC94F37 /* View+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASAdditions.h"; path = "Masonry/View+MASAdditions.h"; sourceTree = "<group>"; };
+		B7444E3FE768BAB7A441D3BDAD54E9D6 /* l16.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = l16.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-codec/l16.h"; sourceTree = "<group>"; };
+		B9C92681A62EAFC8EB299C5299778947 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
+		BB1C050EEC051AD9DD6D37B101EEE875 /* stdarg.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = stdarg.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/stdarg.h; sourceTree = "<group>"; };
+		BBB75312D37709752E6C55F632E03FC5 /* frame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = frame.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/frame.h; sourceTree = "<group>"; };
+		BD6ECB822DDADA22BC2E4DD23E5E2CAA /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		BDB365FBC4CAE78689CE7319ED4BA948 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		BDF7A9941FE17AFA3A7D07A747BDBF2E /* transport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = transport.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/transport.h; sourceTree = "<group>"; };
+		BE17096E6EB005B54BB7F5593746C2EF /* Pods-PBVoipService-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PBVoipService-dummy.m"; sourceTree = "<group>"; };
+		BE1EA847B22F8FE706894138823AD18F /* libpjmedia.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libpjmedia.a; path = PBPJSip/Pod/Classes/libs/pjmedia/libpjmedia.a; sourceTree = "<group>"; };
+		BE7AF1FB9E45F9B0370C4EA413F2F08D /* delaybuf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = delaybuf.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/delaybuf.h; sourceTree = "<group>"; };
+		BEB48466D83CE2723695DD83B0FAA3A6 /* PBKits.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PBKits.xcconfig; sourceTree = "<group>"; };
+		BFCE5C01ECA1353F425FDD5A2F8966AE /* ssl_sock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ssl_sock.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/ssl_sock.h; sourceTree = "<group>"; };
+		C0F4FEBE07DA53259E941E91E74CC67C /* pjsua.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pjsua.h; path = "PBPJSip/Pod/Classes/includes/pjsip/pjsua-lib/pjsua.h"; sourceTree = "<group>"; };
+		C2CE256AED3C2E9BB968E25DABE1C5C5 /* activesock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = activesock.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/activesock.h; sourceTree = "<group>"; };
+		C2F9FB1B832679E4358FB5166206E085 /* NSArray+PBHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PBHelper.m"; path = "NHUtilSetsPro/Utils/NSArray+PBHelper.m"; sourceTree = "<group>"; };
+		C321E05BA64D1C54A598E3926985F718 /* types.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = types.h; path = "PBPJSip/Pod/Classes/includes/pjsip/pjsip-simple/types.h"; sourceTree = "<group>"; };
+		C3A668373EF9E1C3327B3B057C65697D /* sip_auth_aka.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_auth_aka.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip/sip_auth_aka.h; sourceTree = "<group>"; };
+		C3B5AA4D82815F9EF2D55FE8C2806AD9 /* stun_auth.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = stun_auth.h; path = PBPJSip/Pod/Classes/includes/pjnath/pjnath/stun_auth.h; sourceTree = "<group>"; };
+		C43FEEADD847CA3D91B245D2B55E81DB /* array.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = array.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/array.h; sourceTree = "<group>"; };
+		C4C71176F8A748BDFE8AAE54ED2943F8 /* UIImage+PBHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+PBHelper.h"; path = "NHUtilSetsPro/Utils/UIImage+PBHelper.h"; sourceTree = "<group>"; };
+		C4FBAF091BAD919ADAE2E4C3C9B93517 /* os_auto.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = os_auto.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/os_auto.h; sourceTree = "<group>"; };
+		C5B44828717DF3B047065681EF4C1637 /* sock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sock.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/sock.h; sourceTree = "<group>"; };
+		C5E12F1809B0723232E33665F0014302 /* libresample.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libresample.a; path = PBPJSip/Pod/Classes/libs/third_party/libresample.a; sourceTree = "<group>"; };
+		C5FFFAFCD49BEDC058D99C92B4684193 /* NSObject+PBHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+PBHelper.h"; path = "NHUtilSetsPro/Utils/NSObject+PBHelper.h"; sourceTree = "<group>"; };
+		C67FAF0F0EC89E081BAD6488B05509FD /* sip_autoconf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_autoconf.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip/sip_autoconf.h; sourceTree = "<group>"; };
+		C8204927DFD902657BD7ABF680A9912A /* pjmedia-codec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "pjmedia-codec.h"; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-codec.h"; sourceTree = "<group>"; };
+		C87A8F25B555D828BD381C49DE58FFF9 /* config.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = config.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-audiodev/config.h"; sourceTree = "<group>"; };
+		C89B88E6F216AC8A9BF2C04FACA0F15D /* cli_imp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cli_imp.h; path = "PBPJSip/Pod/Classes/includes/pjlib-util/pjlib-util/cli_imp.h"; sourceTree = "<group>"; };
+		C8ED2071B3620A02C111B0965E1E4353 /* size_t.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = size_t.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/size_t.h; sourceTree = "<group>"; };
+		C90BC66938CD6F0BB118187529D0E9FE /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libAFNetworking.a; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90F47AADF70E1567E9274FD1A3BE62D /* rtcp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = rtcp.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/rtcp.h; sourceTree = "<group>"; };
+		CA65B713400B74093E3D4AB0CED3D3F5 /* rtp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = rtp.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/rtp.h; sourceTree = "<group>"; };
+		CA6C72752FC2009D67C1ACC19785A0B7 /* speex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = speex.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-codec/speex.h"; sourceTree = "<group>"; };
+		CB7A1BFE7DA8CC04F8240B724F1FBB5E /* ctype.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ctype.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/ctype.h; sourceTree = "<group>"; };
+		CC15BB08EFF50D5AFE2A55DFE37222D2 /* turn_session.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = turn_session.h; path = PBPJSip/Pod/Classes/includes/pjnath/pjnath/turn_session.h; sourceTree = "<group>"; };
+		D0AF1A5D2ACEE3A675EABCBC2A348546 /* time.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = time.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/time.h; sourceTree = "<group>"; };
+		D120D8CC090D2DAB1826EC8C1610762D /* Pods-PBVoipService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PBVoipService.debug.xcconfig"; sourceTree = "<group>"; };
+		D17684FF213302AEA396BE272ED86FA3 /* pjsua_internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pjsua_internal.h; path = "PBPJSip/Pod/Classes/includes/pjsip/pjsua-lib/pjsua_internal.h"; sourceTree = "<group>"; };
+		D18E56D129F589B564C74D2B62F3B7A0 /* audio_codecs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = audio_codecs.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-codec/audio_codecs.h"; sourceTree = "<group>"; };
+		D37F2F9B0D7C7FA6230E98FFE4B11384 /* list.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = list.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/list.h; sourceTree = "<group>"; };
+		D3F54B8F4E2640AA9A606D5DD4011AFF /* mem_port.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mem_port.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/mem_port.h; sourceTree = "<group>"; };
+		D4070874DE3036E89D9AC17B4548D232 /* sip_config.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_config.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip/sip_config.h; sourceTree = "<group>"; };
+		D5256B03AF7DBA712B5E39648D417E19 /* sip_private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_private.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip/sip_private.h; sourceTree = "<group>"; };
+		D55B3AF4786F727D965C4E3BDF1E8A8B /* errno.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = errno.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/errno.h; sourceTree = "<group>"; };
+		D61CF4C92BF3DCF27493C50A58274E3F /* http_client.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = http_client.h; path = "PBPJSip/Pod/Classes/includes/pjlib-util/pjlib-util/http_client.h"; sourceTree = "<group>"; };
+		D6872388D7F4A67C7B9FD0558F138E30 /* audiodev_imp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = audiodev_imp.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-audiodev/audiodev_imp.h"; sourceTree = "<group>"; };
+		D6B334D064CC4287D4EB007621F3DB1B /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
+		D7784F8995D39A25083C4CA24B2EF682 /* event.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = event.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/event.h; sourceTree = "<group>"; };
+		D93D15962B2D415DE1169C531839CEDB /* doxygen.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = doxygen.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/doxygen.h; sourceTree = "<group>"; };
+		D9DACBC5408FA96C89F693E56D69ABE5 /* rbtree.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = rbtree.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/rbtree.h; sourceTree = "<group>"; };
+		DA6BBABB78A778E8D0CEA5A692B954D3 /* wav_port.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = wav_port.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/wav_port.h; sourceTree = "<group>"; };
+		DAB74791CEAC5F7FF2F9548008800BD7 /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
+		DADFEC32A471813AC9F3B64980610793 /* cc_gcce.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cc_gcce.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/cc_gcce.h; sourceTree = "<group>"; };
+		DB882C2A10B512611C98112AC263E000 /* config.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = config.h; path = PBPJSip/Pod/Classes/includes/pjnath/pjnath/config.h; sourceTree = "<group>"; };
+		DC9C4EF002FDAF338D2887A6349B7E17 /* avi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = avi.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/avi.h; sourceTree = "<group>"; };
+		DD0FBDDD287988C1E84894AC75D8D1B0 /* libsrtp.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libsrtp.a; path = PBPJSip/Pod/Classes/libs/third_party/libsrtp.a; sourceTree = "<group>"; };
+		DD2072AD52C0E5E55E1E6A4F51257448 /* os_winuwp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = os_winuwp.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/os_winuwp.h; sourceTree = "<group>"; };
+		DF6DA1B8A21E57C4A6A251966F3D822F /* UIColor+PBHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+PBHelper.m"; path = "NHUtilSetsPro/Utils/UIColor+PBHelper.m"; sourceTree = "<group>"; };
+		DF80FCB3BA09CDE5B67C41BD8C37BB43 /* pool_alt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pool_alt.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/pool_alt.h; sourceTree = "<group>"; };
+		DFF5D3473098B4C2EE5D3D9D5EE47BE1 /* print_util.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = print_util.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip/print_util.h; sourceTree = "<group>"; };
+		E00A5653DA8B53A8F3253134AAD2926B /* clock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = clock.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/clock.h; sourceTree = "<group>"; };
+		E06B0E6D3271EC30B20997E988281A29 /* sip_auth.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_auth.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip/sip_auth.h; sourceTree = "<group>"; };
+		E0BA92DBE8AA5DEE52D0B7CE44DD437B /* ctype.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ctype.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/ctype.h; sourceTree = "<group>"; };
+		E1B347FA425CB109BA073D7829747A16 /* cli.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cli.h; path = "PBPJSip/Pod/Classes/includes/pjlib-util/pjlib-util/cli.h"; sourceTree = "<group>"; };
+		E1D20CCA6C49FBFC36166B1F67227DBD /* os_linux.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = os_linux.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/os_linux.h; sourceTree = "<group>"; };
+		E4B35C6486370A298B114D098FFA3D19 /* math.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = math.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/math.h; sourceTree = "<group>"; };
+		E4E359B2587551570F22593F9FE84712 /* rand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = rand.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/rand.h; sourceTree = "<group>"; };
+		E5151A9C8F8FFF6562DE5F39ADBF6276 /* string.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = string.h; path = "PBPJSip/Pod/Classes/includes/pjlib-util/pjlib-util/string.h"; sourceTree = "<group>"; };
+		E575F498C8C2B9F197EB0E6A7640FB42 /* list_i.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = list_i.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/list_i.h; sourceTree = "<group>"; };
+		E5A57F583CE1DDB92045F0BF03B52D5D /* libwebrtc.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libwebrtc.a; path = PBPJSip/Pod/Classes/libs/third_party/libwebrtc.a; sourceTree = "<group>"; };
+		E663576F757F8C5C77BBB2DB18DDF658 /* sip_uri.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_uri.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip/sip_uri.h; sourceTree = "<group>"; };
+		E89591A5D7B32139B1769AC5B9C89407 /* dns_server.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dns_server.h; path = "PBPJSip/Pod/Classes/includes/pjlib-util/pjlib-util/dns_server.h"; sourceTree = "<group>"; };
+		E91228D059A86F0565AB51AB124D71D7 /* libpjsip.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libpjsip.a; path = PBPJSip/Pod/Classes/libs/pjsip/libpjsip.a; sourceTree = "<group>"; };
+		EA7076A63DAABA7AD7DF910F8C7A2715 /* except.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = except.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/except.h; sourceTree = "<group>"; };
+		EA79254E0E86BFD94707251C193B3A50 /* high_precision.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = high_precision.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/high_precision.h; sourceTree = "<group>"; };
+		EC4D8FBD45DB34CA8C8A0767A974FDEE /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		ECFDD05DDF3F62E82D63B413BAAEA419 /* splitcomb.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = splitcomb.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/splitcomb.h; sourceTree = "<group>"; };
+		ED272260E6C05B44C16AFDD202CFF365 /* evsub_msg.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = evsub_msg.h; path = "PBPJSip/Pod/Classes/includes/pjsip/pjsip-simple/evsub_msg.h"; sourceTree = "<group>"; };
+		ED2F0FD7A899CB68D716DD409763E7D5 /* hash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = hash.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/hash.h; sourceTree = "<group>"; };
+		ED8A46C6B0E4CA213F8C815A4611CAD8 /* MASConstraintMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraintMaker.m; path = Masonry/MASConstraintMaker.m; sourceTree = "<group>"; };
+		EDDD55C2C14FC5F2C139FFE80E19E2CF /* NSData+PBHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+PBHelper.h"; path = "NHUtilSetsPro/Utils/NSData+PBHelper.h"; sourceTree = "<group>"; };
+		F000F95A48B55D9AA0CB727CAE3F2B9D /* session.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = session.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/session.h; sourceTree = "<group>"; };
+		F130392B2A9F15B398026ECABF9263C0 /* hmac_md5.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = hmac_md5.h; path = "PBPJSip/Pod/Classes/includes/pjlib-util/pjlib-util/hmac_md5.h"; sourceTree = "<group>"; };
+		F18008CF01738E697EA8B28AA7DDF492 /* opencore_amr.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = opencore_amr.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-codec/opencore_amr.h"; sourceTree = "<group>"; };
+		F18C51871F6B8CD0C0A85C6EA9249333 /* vid_stream.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = vid_stream.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/vid_stream.h; sourceTree = "<group>"; };
+		F25FD28DB8F7A9245FBBE617DA3904DD /* sock_qos.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sock_qos.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/sock_qos.h; sourceTree = "<group>"; };
+		F261757E1BF38BCCAB609129FCA784C3 /* publish.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = publish.h; path = "PBPJSip/Pod/Classes/includes/pjsip/pjsip-simple/publish.h"; sourceTree = "<group>"; };
+		F2C7D23D9812490BC6B94A6800DB12A6 /* m_i386.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = m_i386.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/m_i386.h; sourceTree = "<group>"; };
+		F3DF2D7989A3990CC5BBAC8656A291DB /* lock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = lock.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/lock.h; sourceTree = "<group>"; };
+		F4F535CE91678E7D879564BE5549CAA6 /* sip_xfer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_xfer.h; path = "PBPJSip/Pod/Classes/includes/pjsip/pjsip-ua/sip_xfer.h"; sourceTree = "<group>"; };
+		F62A19DF8E333DE025617F4152249839 /* openh264.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = openh264.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-codec/openh264.h"; sourceTree = "<group>"; };
+		F65BC9EE00E2C8A8CF3E969E4C82078A /* sip_endpoint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_endpoint.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip/sip_endpoint.h; sourceTree = "<group>"; };
+		F6FA7BE9E9C8A826CA21225DBC792D12 /* sip_ua_layer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_ua_layer.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip/sip_ua_layer.h; sourceTree = "<group>"; };
+		F7075BB141E4DE4849456CBF72097EAF /* os_palmos.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = os_palmos.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/os_palmos.h; sourceTree = "<group>"; };
+		F753DE8E8D74FBD41A87460358CDFFA7 /* avi_stream.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = avi_stream.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/avi_stream.h; sourceTree = "<group>"; };
+		F84731ED33C5089951B380C836E99688 /* h264_packetizer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = h264_packetizer.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-codec/h264_packetizer.h"; sourceTree = "<group>"; };
+		F8F87EE48B6A8BD0D09EF6F0AF798827 /* sound.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sound.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/sound.h; sourceTree = "<group>"; };
+		F99502956448ACBF16A9E92802D5F879 /* sip_transport_tcp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_transport_tcp.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip/sip_transport_tcp.h; sourceTree = "<group>"; };
+		F9DC6050C59FB11BBAA7AC055865BF45 /* alaw_ulaw.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = alaw_ulaw.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/alaw_ulaw.h; sourceTree = "<group>"; };
+		F9DD3BC28CE2A835FAE9F2CBAD5E3937 /* pjmedia_videodev.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pjmedia_videodev.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia_videodev.h; sourceTree = "<group>"; };
+		FA5EB12853754F74DCDBBC3F422528BD /* sip_types.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_types.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip/sip_types.h; sourceTree = "<group>"; };
+		FA8EA7FB755445C6B1E148A24D935786 /* rtcp_xr.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = rtcp_xr.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/rtcp_xr.h; sourceTree = "<group>"; };
+		FB2E24FF5B684A600D0BF02CEC140C95 /* master_port.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = master_port.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/master_port.h; sourceTree = "<group>"; };
+		FB822105A4D5E86B5247A0DA0176B537 /* conference.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = conference.h; path = PBPJSip/Pod/Classes/includes/pjmedia/pjmedia/conference.h; sourceTree = "<group>"; };
+		FC003FB0E9A5571AE83D7FD61397D9CF /* libpjmedia-audiodev.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = "libpjmedia-audiodev.a"; path = "PBPJSip/Pod/Classes/libs/pjmedia/libpjmedia-audiodev.a"; sourceTree = "<group>"; };
+		FCAB1174EE3E2AC1253D65CF742AF364 /* cc_codew.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cc_codew.h; path = PBPJSip/Pod/Classes/includes/pjlib/pj/compat/cc_codew.h; sourceTree = "<group>"; };
+		FD2A64D03864A9D69CB8DBEB55928870 /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
+		FE471C1733B401925133CCF50A01959A /* pjsip_ua.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pjsip_ua.h; path = PBPJSip/Pod/Classes/includes/pjsip/pjsip_ua.h; sourceTree = "<group>"; };
+		FEF1B34E0EF3C61A7D53B229824E4196 /* cli_telnet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cli_telnet.h; path = "PBPJSip/Pod/Classes/includes/pjlib-util/pjlib-util/cli_telnet.h"; sourceTree = "<group>"; };
+		FF2AF07F857AC38E19F452BEC9480B43 /* NSDictionary+PBHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+PBHelper.h"; path = "NHUtilSetsPro/Utils/NSDictionary+PBHelper.h"; sourceTree = "<group>"; };
+		FF2DE3AF896656ED45965B32D090B788 /* sip_inv.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sip_inv.h; path = "PBPJSip/Pod/Classes/includes/pjsip/pjsip-ua/sip_inv.h"; sourceTree = "<group>"; };
+		FFB3A66F85D10E8C766AC37F0C6DA08F /* ffmpeg_vid_codecs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ffmpeg_vid_codecs.h; path = "PBPJSip/Pod/Classes/includes/pjmedia/pjmedia-codec/ffmpeg_vid_codecs.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04E81A9B3EB86E29142058F9EFD6A2D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C1DEF2F0BE3C99EF3F263DF2CECF919 /* Accelerate.framework in Frameworks */,
+				7C2D06DD6D976C37568DFC9ADA682BBD /* CoreText.framework in Frameworks */,
+				A12F42571C3178D2512D32B0E5C71964 /* Foundation.framework in Frameworks */,
+				F6EBC7E894F6A8756D250A7674900A5D /* QuartzCore.framework in Frameworks */,
+				44D513D0F3214361CB671112FAAEA564 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		074BD7423B48E7BB40F4CDBE9C72D371 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADC4524CF563F9FBC73A3FAA6343E15B /* Foundation.framework in Frameworks */,
+				474B708A44527BF78C74120257E5B0EA /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FD8312A1AEB348F49A81C438DB25115 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				566EA65277D377CE9AF9BC125521965B /* Foundation.framework in Frameworks */,
+				1EC363D6911160B063DB6CC87F595A5B /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7FCF4D164BAA942BE0172B149F33AE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				527326B2CAAA18924DC1380EAB6DA98E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F75DF6C7C5F002280EC53F48E80B587 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF34F8EF0EB07025F5695298CDE34A46 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		18ADD81E8581190A996556F6229DBD81 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				910F5FEA1D7E39422F25D903578CA9FF /* Reachability */,
+				7005F96FE6CE8DEC06F7187FB818AE94 /* Support Files */,
+			);
+			name = AFNetworking;
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		239DC5C5F2EEC4141FABB992525452FF /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				01CBEFC390003DF29059BB13E6F00E7B /* MASCompositeConstraint.h */,
+				19EBFF7D5F5770FF9C640B4FCEC80B25 /* MASCompositeConstraint.m */,
+				B4DD6594D76729990BCD9833FC4B5A1F /* MASConstraint.h */,
+				DAB74791CEAC5F7FF2F9548008800BD7 /* MASConstraint.m */,
+				FD2A64D03864A9D69CB8DBEB55928870 /* MASConstraint+Private.h */,
+				6B1C23E65DDF96F1C91922449D3E9C1B /* MASConstraintMaker.h */,
+				ED8A46C6B0E4CA213F8C815A4611CAD8 /* MASConstraintMaker.m */,
+				B9C92681A62EAFC8EB299C5299778947 /* MASLayoutConstraint.h */,
+				7D5051B569DBEC9DB337F6A3A89FDA21 /* MASLayoutConstraint.m */,
+				19E5CB13F04FA0C8D215D6B964825959 /* Masonry.h */,
+				0B51CC5A5D10F40CA3B1E51C4B8B98E7 /* MASUtilities.h */,
+				3DE3C9DDB91D2AC3A5103F439C6A0E8E /* MASViewAttribute.h */,
+				7E995AA4B6C7D91731D913DDB3E837A1 /* MASViewAttribute.m */,
+				1F28127E95E49B7620DEC360099B667B /* MASViewConstraint.h */,
+				99B3BC3ECA9E2979E8C5174A511FC93F /* MASViewConstraint.m */,
+				390B245908B64DD8D90457D03279F510 /* NSArray+MASAdditions.h */,
+				BD6ECB822DDADA22BC2E4DD23E5E2CAA /* NSArray+MASAdditions.m */,
+				EC4D8FBD45DB34CA8C8A0767A974FDEE /* NSArray+MASShorthandAdditions.h */,
+				18E199FD4C3A4E76092740FD2A91A1FB /* NSLayoutConstraint+MASDebugAdditions.h */,
+				656F54128FCB5CEB94AB1B959A605D62 /* NSLayoutConstraint+MASDebugAdditions.m */,
+				B724A8BE7DF2CF4884B28D9F9BC94F37 /* View+MASAdditions.h */,
+				8A1F2C7934B38D8762717F5038A87FB6 /* View+MASAdditions.m */,
+				2E5D2BA08D0D438BD93F548A3F8E0957 /* View+MASShorthandAdditions.h */,
+				8B5A74E37AB2531ED23705D1F7D9313A /* ViewController+MASAdditions.h */,
+				64DDDDE9EB8ECE705FEDF5D5B6AC9841 /* ViewController+MASAdditions.m */,
+				E52BEB439B7AF02612DC64ED8FBBBF19 /* Support Files */,
+			);
+			name = Masonry;
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+		2903722BAC792CEEE1E42D12D3D83A3E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				85CAA45194C8077AC5939CBD73A103DB /* libcrypto.a */,
+				4A6EF889035DFBE942DC281D5EF618E5 /* libg7221codec.a */,
+				929BE21528675820856FAC384A7F0A45 /* libgsmcodec.a */,
+				249400F8B9E14542DDC09FD86BD2ABC3 /* libilbccodec.a */,
+				4E5D3825DBCF5510EDCC9A901D7A9DDA /* libpjlib.a */,
+				554E1F643AEE4DDA6F78BBB21785AC78 /* libpjlib-util.a */,
+				BE1EA847B22F8FE706894138823AD18F /* libpjmedia.a */,
+				FC003FB0E9A5571AE83D7FD61397D9CF /* libpjmedia-audiodev.a */,
+				99B6ABA4F6BC032B1B956D495C42DE96 /* libpjmedia-codec.a */,
+				B6E6CC4664047FABBE47A0C90CD13F85 /* libpjmedia-sdp.a */,
+				72D7BC43BF04FC0B391221E80EE044CB /* libpjmedia-videodev.a */,
+				5F9F9671C6A3AB979038962CDF421651 /* libpjnath.a */,
+				E91228D059A86F0565AB51AB124D71D7 /* libpjsip.a */,
+				600D40261D4E43F1B94BE5B6A866CD3D /* libpjsip-simple.a */,
+				A1C55332245739CCDF3975C6874B381C /* libpjsip-ua.a */,
+				A65CFA014D4D61A168E0753AA8D7F278 /* libpjsipua.a */,
+				2CABBD36A5801FB32DEAB8FE5EF46D85 /* libpjsipua2.a */,
+				C5E12F1809B0723232E33665F0014302 /* libresample.a */,
+				57846952B1490615AFAA253291229EBC /* libspeex.a */,
+				DD0FBDDD287988C1E84894AC75D8D1B0 /* libsrtp.a */,
+				84185F41D05894EA768140B8FC6CCA7B /* libssl.a */,
+				E5A57F583CE1DDB92045F0BF03B52D5D /* libwebrtc.a */,
+				76EC68C90845FB34C1694A2BE1A87024 /* libyuv.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		43BE9EF29F1C043FCCABD7C8A3F45651 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				18ADD81E8581190A996556F6229DBD81 /* AFNetworking */,
+				239DC5C5F2EEC4141FABB992525452FF /* Masonry */,
+				955D838DF7A6D5DC9AFE0B03043B5CB6 /* PBKits */,
+				96D597392AFBA690AA6A67F9A626C741 /* PBPJSip */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7005F96FE6CE8DEC06F7187FB818AE94 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				13F245E5677FD340A220DF9B2A22FD38 /* AFNetworking.xcconfig */,
+				6F06F821ED5F37F9EDEF9C2FFDF4AA15 /* AFNetworking-dummy.m */,
+				7E7D168843845DD816C38D4721BB87BD /* AFNetworking-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AFNetworking";
+			sourceTree = "<group>";
+		};
+		7042B5AF5920B749C064368577DCCB8D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BEB48466D83CE2723695DD83B0FAA3A6 /* PBKits.xcconfig */,
+				418512F1F0F84F69B7767111AABEAF83 /* PBKits-dummy.m */,
+				AD32E3441BC3548FD3DB2C164B0022DE /* PBKits-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PBKits";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				0F75DF6C7C5F002280EC53F48E80B587 /* Frameworks */,
+				43BE9EF29F1C043FCCABD7C8A3F45651 /* Pods */,
+				F741E33B8B25BAC9A773C1BCD5DE87E9 /* Products */,
+				B00570D61D9E2FA35097E6F007AD7EFD /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		910F5FEA1D7E39422F25D903578CA9FF /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				0AB523A3D4A5D0F68A7C2C610617C4A5 /* AFNetworkReachabilityManager.h */,
+				49D8BE5FEF46A09A34F98767F6BBDD79 /* AFNetworkReachabilityManager.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
+		955D838DF7A6D5DC9AFE0B03043B5CB6 /* PBKits */ = {
+			isa = PBXGroup;
+			children = (
+				218261AA054E439B628651778231F615 /* NSArray+PBHelper.h */,
+				C2F9FB1B832679E4358FB5166206E085 /* NSArray+PBHelper.m */,
+				7663B74355572E479DF40710F623A706 /* NSBundle+PBHelper.h */,
+				32C686EA71FE63721C759FAA64365210 /* NSBundle+PBHelper.m */,
+				EDDD55C2C14FC5F2C139FFE80E19E2CF /* NSData+PBHelper.h */,
+				2571FD0B3B33D1AE6B9366C284A7A7CA /* NSData+PBHelper.m */,
+				8E60818ADB6190768D3F0B711E2E636D /* NSDate+PBHelper.h */,
+				895573983269449BE75C6C298D0BD0A1 /* NSDate+PBHelper.m */,
+				FF2AF07F857AC38E19F452BEC9480B43 /* NSDictionary+PBHelper.h */,
+				452A04AFC9ADB6C355E84B2D29066B84 /* NSDictionary+PBHelper.m */,
+				C5FFFAFCD49BEDC058D99C92B4684193 /* NSObject+PBHelper.h */,
+				857F39D2F501CBC5881B86600DB4A3B5 /* NSObject+PBHelper.m */,
+				851E2898A8F175E516D351E76665E8B8 /* NSString+PBHelper.h */,
+				59614D5FF23484D021ACA37850A61F13 /* NSString+PBHelper.m */,
+				821D7A63A5E24705001937B647B3AF75 /* PBDependency.h */,
+				544A930EFD2B5F221C0D11D610A5D616 /* PBKits.h */,
+				13E6DE2E35ACDCCBEDBC4483D7200E42 /* UIColor+PBHelper.h */,
+				DF6DA1B8A21E57C4A6A251966F3D822F /* UIColor+PBHelper.m */,
+				002E2FC371056AF5DC21C73DC9D6CF2A /* UIDevice+PBHelper.h */,
+				09D9A4953EFB54FC9F9ED6B22A2A6F3F /* UIDevice+PBHelper.m */,
+				9FD202C7AAAB7B58FC425F88E23D3544 /* UIFont+PBHelper.h */,
+				004EA04C8638E359A5D9A818D57BE002 /* UIFont+PBHelper.m */,
+				C4C71176F8A748BDFE8AAE54ED2943F8 /* UIImage+PBHelper.h */,
+				613E0688144D5E1B1AAB7035B13DFD12 /* UIImage+PBHelper.m */,
+				A9DABB54C1C75E2A0B30F2FEAC31A5DE /* UIView+PBHelper.h */,
+				8473548BD72EF1A7A414C02ABF8573BF /* UIView+PBHelper.m */,
+				7042B5AF5920B749C064368577DCCB8D /* Support Files */,
+			);
+			name = PBKits;
+			path = PBKits;
+			sourceTree = "<group>";
+		};
+		96D597392AFBA690AA6A67F9A626C741 /* PBPJSip */ = {
+			isa = PBXGroup;
+			children = (
+				C2CE256AED3C2E9BB968E25DABE1C5C5 /* activesock.h */,
+				1F6F063BDC25D25E3FD65BB17A846E4F /* addr_resolv.h */,
+				F9DC6050C59FB11BBAA7AC055865BF45 /* alaw_ulaw.h */,
+				1388E3EDFB844DA7E1720B6B8F1CB2C8 /* amr_helper.h */,
+				36907707A611B7C9D4F5B5A49DA3E2CC /* amr_sdp_match.h */,
+				C43FEEADD847CA3D91B245D2B55E81DB /* array.h */,
+				4ADFAECBE896D8EA86318AE52CB2F842 /* assert.h */,
+				84FCA66EDFE90FA9B18C6F32A8BE2028 /* assert.h */,
+				D18E56D129F589B564C74D2B62F3B7A0 /* audio_codecs.h */,
+				6C0DA45AFFA8F7A7E4FCCCC1A37B6944 /* audiodev.h */,
+				5296B8568D0E954955B140AC801BF1BE /* audiodev.h */,
+				D6872388D7F4A67C7B9FD0558F138E30 /* audiodev_imp.h */,
+				52E9FB75C789D933D08D7AB4A9169406 /* audiotest.h */,
+				DC9C4EF002FDAF338D2887A6349B7E17 /* avi.h */,
+				363FB40B57BED8581007313FBC5C5CF3 /* avi_dev.h */,
+				F753DE8E8D74FBD41A87460358CDFFA7 /* avi_stream.h */,
+				7BA74127BE7EC11B459F70FB218EED99 /* base64.h */,
+				51ED266EA510A0AA3234226B08A086DF /* bidirectional.h */,
+				AADD9626645E09C2969F1396002E587D /* cc_armcc.h */,
+				FCAB1174EE3E2AC1253D65CF742AF364 /* cc_codew.h */,
+				9B3D9B37FD71518CA7AD14069E14CEA1 /* cc_gcc.h */,
+				DADFEC32A471813AC9F3B64980610793 /* cc_gcce.h */,
+				24874595FAEAD9D5C24E3EE4AB0DAEC2 /* cc_msvc.h */,
+				A52F9241634C6D3D693801652C234132 /* cc_mwcc.h */,
+				040D298280F4E68FD32DD7802927EBEF /* circbuf.h */,
+				E1B347FA425CB109BA073D7829747A16 /* cli.h */,
+				097F0D9F4D3B286730086D6733D54047 /* cli_console.h */,
+				C89B88E6F216AC8A9BF2C04FACA0F15D /* cli_imp.h */,
+				FEF1B34E0EF3C61A7D53B229824E4196 /* cli_telnet.h */,
+				E00A5653DA8B53A8F3253134AAD2926B /* clock.h */,
+				B37ABAD565E519E3E9B81A538B9C9D88 /* codec.h */,
+				FB822105A4D5E86B5247A0DA0176B537 /* conference.h */,
+				DB882C2A10B512611C98112AC263E000 /* config.h */,
+				4CEF56507CDC6569E0822B429107EA01 /* config.h */,
+				3C11C807D7EA1781813DD4F4F525A692 /* config.h */,
+				59306EA28B82E6B849ACDBDCF08A2B0F /* config.h */,
+				A30737A1D6B217E03E81AA169C52A205 /* config.h */,
+				C87A8F25B555D828BD381C49DE58FFF9 /* config.h */,
+				67A322E3752FA38417CECCDFC8557AB6 /* config.h */,
+				2547881257D5C846AF909AEE6A5A61F2 /* config_auto.h */,
+				6AE2EB3440BC63956CD9F182EB5E1D81 /* config_auto.h */,
+				07A778694151E6FCC4CEEB1C828F9927 /* config_site.h */,
+				3C72C51F73BC51FA2B8DAA1DAD65B944 /* config_site_sample.h */,
+				32D790A73854C09F9AB439C9EE7CA05C /* converter.h */,
+				10D1B84D72717E0A89816168F36FED94 /* crc32.h */,
+				CB7A1BFE7DA8CC04F8240B724F1FBB5E /* ctype.h */,
+				E0BA92DBE8AA5DEE52D0B7CE44DD437B /* ctype.h */,
+				BE7AF1FB9E45F9B0370C4EA413F2F08D /* delaybuf.h */,
+				09388EDA2205A0891739977F2A73959F /* dns.h */,
+				E89591A5D7B32139B1769AC5B9C89407 /* dns_server.h */,
+				412E6050AA78456D13ACE0558F3EC3ED /* doxygen.h */,
+				D93D15962B2D415DE1169C531839CEDB /* doxygen.h */,
+				752C66A5155FFF07B1C1EE6686AC8510 /* echo.h */,
+				97BEA5BAAA744CD42C53BD85FC16E625 /* echo_port.h */,
+				176D5B59D05E142A830FAA75172C1DAE /* endpoint.h */,
+				794CD6E0C997228E8B0479CA0EB51291 /* errno.h */,
+				A06636D304F7CD2C18D7785536729B1B /* errno.h */,
+				A2D0141B095A5689652EDF1269312130 /* errno.h */,
+				749EC21B1966A61D5309F919418C1BBA /* errno.h */,
+				D55B3AF4786F727D965C4E3BDF1E8A8B /* errno.h */,
+				7B79FEBE2CB89BC81648D0A49CC0614B /* errno.h */,
+				18BF9829E25448784DAF4CD938B1E881 /* errno.h */,
+				6B1B476CEFC08BD7FF7CB947F675122F /* errno.h */,
+				D7784F8995D39A25083C4CA24B2EF682 /* event.h */,
+				54B4B305302D13264DCF82332859646D /* evsub.h */,
+				ED272260E6C05B44C16AFDD202CFF365 /* evsub_msg.h */,
+				EA7076A63DAABA7AD7DF910F8C7A2715 /* except.h */,
+				FFB3A66F85D10E8C766AC37F0C6DA08F /* ffmpeg_vid_codecs.h */,
+				0B99E4EFF635D860AE56CC92EEC3BB0B /* fifobuf.h */,
+				8BC600AA572EE68CA91063C17A3EEA2D /* file_access.h */,
+				9DDCB411BF6914E7A1A38391D07C698F /* file_io.h */,
+				22B452BF122AAB44E057F0BD1DC12AE9 /* format.h */,
+				BBB75312D37709752E6C55F632E03FC5 /* frame.h */,
+				50AEA94A8728A3519ADA51554625C952 /* g711.h */,
+				8E5206E7982C88F337763F29F09CC71E /* g722.h */,
+				7BD92C77FC701EE9DC48FD97BF90BBED /* g7221.h */,
+				270CB07A72AB2B3EF702C1232232E686 /* g7221_sdp_match.h */,
+				ACF0F6C03E12E3D19446B36B6717CC14 /* getopt.h */,
+				0EAC4C9E2EF16EE5410729835861804D /* gsm.h */,
+				3CB3564F488F7D7145DA117A57A4759D /* guid.h */,
+				26517C7D678DC071F4E0CBFCA052CFBD /* h263_packetizer.h */,
+				F84731ED33C5089951B380C836E99688 /* h264_packetizer.h */,
+				ED2F0FD7A899CB68D716DD409763E7D5 /* hash.h */,
+				EA79254E0E86BFD94707251C193B3A50 /* high_precision.h */,
+				F130392B2A9F15B398026ECABF9263C0 /* hmac_md5.h */,
+				609DA4D8EF5BD3C60028E549FB6CDBDB /* hmac_sha1.h */,
+				D61CF4C92BF3DCF27493C50A58274E3F /* http_client.h */,
+				7CCF6D57EDAC50AE22B4E7FBAE8E2743 /* ice_session.h */,
+				80DCA4A396B9B71BA17232019B3702FB /* ice_strans.h */,
+				4FA364296D4EBE89AD3C401BBC443E1C /* ilbc.h */,
+				B6DDBBEFD681402C3595D9FEDF16078E /* ioqueue.h */,
+				227D51BCE2AE8ABB162CF87E25FA64EC /* ip_helper.h */,
+				8C5B28D8197E4E69F13BBA50876CE031 /* ipp_codecs.h */,
+				5D440672BFA56B3426EEE1581BC6C386 /* iscomposing.h */,
+				7A6B0CCCB2637556784EAD4E2C9A66FD /* jbuf.h */,
+				75C2375D9E1ED3B1BEF98724EC9CBA3B /* json.h */,
+				B7444E3FE768BAB7A441D3BDAD54E9D6 /* l16.h */,
+				D37F2F9B0D7C7FA6230E98FFE4B11384 /* list.h */,
+				E575F498C8C2B9F197EB0E6A7640FB42 /* list_i.h */,
+				F3DF2D7989A3990CC5BBAC8656A291DB /* lock.h */,
+				7EC33714F71344299C319711352AD240 /* log.h */,
+				32C40375088730C9DB9C5BBA8254EC1E /* m_alpha.h */,
+				3D4EABBC1938C825B2DBB740991363C9 /* m_armv4.h */,
+				9EC70E76F9B4061CD10A3223A0D92A60 /* m_auto.h */,
+				F2C7D23D9812490BC6B94A6800DB12A6 /* m_i386.h */,
+				695989EA7A17DEB9E3DE4306F86177E5 /* m_m68k.h */,
+				0CD7D6E70C1D46DC9E0F16AE43B9845E /* m_powerpc.h */,
+				9A13F9265F4B43910602DC60561A3C77 /* m_sparc.h */,
+				51050385FEE22F1C89D45B8A804A87B4 /* m_x86_64.h */,
+				1F4158C52B278CF84720BD6AFFEA717D /* malloc.h */,
+				FB2E24FF5B684A600D0BF02CEC140C95 /* master_port.h */,
+				E4B35C6486370A298B114D098FFA3D19 /* math.h */,
+				027EB413E284730D491AB4C47233A541 /* md5.h */,
+				D3F54B8F4E2640AA9A606D5DD4011AFF /* mem_port.h */,
+				6E22F9A25EDE3D3E0558B39529A56AB5 /* mwi.h */,
+				B5B3CA43DE54C2682F0125FDAC49AD3C /* nat_detect.h */,
+				8B6C03E7F4E59B8D6E21B68574F480BC /* null_port.h */,
+				F18008CF01738E697EA8B28AA7DDF492 /* opencore_amr.h */,
+				6BC7F802A3E0E7B644B101A6579C283C /* opengl_dev.h */,
+				F62A19DF8E333DE025617F4152249839 /* openh264.h */,
+				4FE89C57D301D46890C253D881FF86FF /* opus.h */,
+				A6ED2EA62841D13056DB25600A66B8DF /* os.h */,
+				C4FBAF091BAD919ADAE2E4C3C9B93517 /* os_auto.h */,
+				302CFDEBE6EAE38416F85BBAF8F21C39 /* os_darwinos.h */,
+				E1D20CCA6C49FBFC36166B1F67227DBD /* os_linux.h */,
+				5911BFB1451188805E81E075074626A0 /* os_linux_kernel.h */,
+				F7075BB141E4DE4849456CBF72097EAF /* os_palmos.h */,
+				9C330F1E02C39F02955F0714E23639C3 /* os_rtems.h */,
+				063B064C5BC8CCB72DCF10817A189E91 /* os_sunos.h */,
+				637E0E2CB884B977F278868EA558DD35 /* os_symbian.h */,
+				AA221914D3D6C194A5DD824D713DCB79 /* os_win32.h */,
+				60C27076689EE12EC3653D6297AB9A17 /* os_win32_wince.h */,
+				6FE2CFEBB9146B3530C1F206DA5A96C4 /* os_winphone8.h */,
+				DD2072AD52C0E5E55E1E6A4F51257448 /* os_winuwp.h */,
+				92582A52C27FAFF8E863F1DBEF0541BC /* passthrough.h */,
+				AA4A3EB157BA31BAD6826097EAB23389 /* pcap.h */,
+				14F78C236D09E85426CB84AD2F26B1EF /* pidf.h */,
+				0A36B7D2DB1A65EAF44FCC1C6DF161F4 /* pjlib.h */,
+				6482F0CC4C594B3085A6C6E68492B602 /* pjlib-util.h */,
+				32668804F6981B400CE0DA609B0E60F4 /* pjmedia.h */,
+				C8204927DFD902657BD7ABF680A9912A /* pjmedia-codec.h */,
+				658FAA0DBDF4A8269D2EA764B71F8C0D /* pjmedia_audiodev.h */,
+				F9DD3BC28CE2A835FAE9F2CBAD5E3937 /* pjmedia_videodev.h */,
+				95F673642874E139822EE1117C0D792C /* pjnath.h */,
+				2F954969A4BD2854EFD5F21CB83BDAD2 /* pjsip.h */,
+				52CE2693EB958D856F629EB0466951CE /* pjsip_auth.h */,
+				7AAA4EE03C005493689E243325E05922 /* pjsip_simple.h */,
+				FE471C1733B401925133CCF50A01959A /* pjsip_ua.h */,
+				5C7E0AF32BBCB3322FD84E6565375E44 /* pjsua.h */,
+				C0F4FEBE07DA53259E941E91E74CC67C /* pjsua.h */,
+				D17684FF213302AEA396BE272ED86FA3 /* pjsua_internal.h */,
+				5A65D8E2BCBDC8E8488BDA50530748D0 /* plc.h */,
+				02B4831976007EA877DF9FB38EC7C938 /* pool.h */,
+				DF80FCB3BA09CDE5B67C41BD8C37BB43 /* pool_alt.h */,
+				0186166D102EEDDE876771C53F284750 /* pool_buf.h */,
+				B2F38112EC30D35CAA11A5BB40C205FF /* pool_i.h */,
+				89D7B7FEAD1AE77BD8D803D7EE5F9A3F /* port.h */,
+				8F2E210EAD3C9BB1E5BC27AC97BFB2FD /* presence.h */,
+				DFF5D3473098B4C2EE5D3D9D5EE47BE1 /* print_util.h */,
+				F261757E1BF38BCCAB609129FCA784C3 /* publish.h */,
+				E4E359B2587551570F22593F9FE84712 /* rand.h */,
+				6F872DF8F3836D35D0ABD80758082B32 /* rand.h */,
+				D9DACBC5408FA96C89F693E56D69ABE5 /* rbtree.h */,
+				02A888BAFC89F4221091B46B7D1CE318 /* resample.h */,
+				2F38B332430E8E61FC11603531BCAC07 /* resolver.h */,
+				2FB45713EB509C15FD08FA63634BD424 /* rpid.h */,
+				C90F47AADF70E1567E9274FD1A3BE62D /* rtcp.h */,
+				FA8EA7FB755445C6B1E148A24D935786 /* rtcp_xr.h */,
+				CA65B713400B74093E3D4AB0CED3D3F5 /* rtp.h */,
+				4E0B5E4621891E6B0457B8D3A8DBA5CA /* scanner.h */,
+				AD4B0CE5C63B70ED26F93EAA8A9F61F0 /* scanner_cis_bitwise.h */,
+				94AD22DA8F7A46A6C584B39328707FE2 /* scanner_cis_uint.h */,
+				42B34CD7B56D284CDBC20D17B3DDBEED /* sdp.h */,
+				3AD14DBDB1D930639033511E9BCC2F3D /* sdp_neg.h */,
+				F000F95A48B55D9AA0CB727CAE3F2B9D /* session.h */,
+				9CE398B0E38B3EDB46EC0EF086779A8B /* setjmp.h */,
+				0D1BAFC1ACABF663E77C0D8959AB6875 /* sha1.h */,
+				72B8E5A5ED6F9426D5436B41A446E088 /* signatures.h */,
+				12EF44F5ABE91FCC15372C44CB449C7D /* silencedet.h */,
+				3331311C7A2E778F49D298CD994A9DA3 /* silk.h */,
+				14628E77D7041AD6D742184E5DACED7B /* sip_100rel.h */,
+				E06B0E6D3271EC30B20997E988281A29 /* sip_auth.h */,
+				C3A668373EF9E1C3327B3B057C65697D /* sip_auth_aka.h */,
+				980D34598EDB6187A3D1352B8974D516 /* sip_auth_msg.h */,
+				4470CB2090784B5F213617E278E9EBAC /* sip_auth_parser.h */,
+				C67FAF0F0EC89E081BAD6488B05509FD /* sip_autoconf.h */,
+				D4070874DE3036E89D9AC17B4548D232 /* sip_config.h */,
+				03856D8F1285818EB48DA7CDFEDBC669 /* sip_dialog.h */,
+				F65BC9EE00E2C8A8CF3E969E4C82078A /* sip_endpoint.h */,
+				25F3F157CA04B2A558522D910CEE4CE5 /* sip_errno.h */,
+				5FDACCC0A308D45E6A1D9D5E5428CAF8 /* sip_event.h */,
+				FF2DE3AF896656ED45965B32D090B788 /* sip_inv.h */,
+				868AF7D9CE204F4967200ABFF5313432 /* sip_module.h */,
+				B19E74725D83EDC7D4E50510005560E1 /* sip_msg.h */,
+				78A8ABA0B09D2C83B389B2EB67EBE660 /* sip_multipart.h */,
+				AB983F5A3C88CD1061E4749CBC251B36 /* sip_parser.h */,
+				D5256B03AF7DBA712B5E39648D417E19 /* sip_private.h */,
+				66990B93D6CB44D9A5215702B9F00692 /* sip_regc.h */,
+				5A44784B0515ED0EA51673E7900E4BC0 /* sip_replaces.h */,
+				51CA5A13D3DE361100683D340B1A47FA /* sip_resolve.h */,
+				6A285094B2E156D990FB89DDE85621FB /* sip_tel_uri.h */,
+				B045BE419669492042CBCFF928D24900 /* sip_timer.h */,
+				A3D300E4F0657D0E861811AB9800B316 /* sip_transaction.h */,
+				91AF43E47B51632B711152AB2D30135B /* sip_transport.h */,
+				A29FEEB33F1C294AE8D6BAA6A6F001A0 /* sip_transport_loop.h */,
+				F99502956448ACBF16A9E92802D5F879 /* sip_transport_tcp.h */,
+				B68C514D2236ACB49C7F2CD1056281A7 /* sip_transport_tls.h */,
+				45C32C18043F12E90D5C24379D86BD6E /* sip_transport_udp.h */,
+				FA5EB12853754F74DCDBBC3F422528BD /* sip_types.h */,
+				F6FA7BE9E9C8A826CA21225DBC792D12 /* sip_ua_layer.h */,
+				E663576F757F8C5C77BBB2DB18DDF658 /* sip_uri.h */,
+				18072AE669BF1FD42D803D84A4620211 /* sip_util.h */,
+				F4F535CE91678E7D879564BE5549CAA6 /* sip_xfer.h */,
+				C8ED2071B3620A02C111B0965E1E4353 /* size_t.h */,
+				C5B44828717DF3B047065681EF4C1637 /* sock.h */,
+				F25FD28DB8F7A9245FBBE617DA3904DD /* sock_qos.h */,
+				3433DC30C4F4A31C1605AD70708DC866 /* sock_select.h */,
+				966DF2FC203A40BB5A724462D4B81517 /* socket.h */,
+				F8F87EE48B6A8BD0D09EF6F0AF798827 /* sound.h */,
+				8760D1E7409C158AE6E7D6BAA7D23D4E /* sound_port.h */,
+				CA6C72752FC2009D67C1ACC19785A0B7 /* speex.h */,
+				ECFDD05DDF3F62E82D63B413BAAEA419 /* splitcomb.h */,
+				66AA5991F087639243219616DFA96386 /* srv_resolver.h */,
+				BFCE5C01ECA1353F425FDD5A2F8966AE /* ssl_sock.h */,
+				BB1C050EEC051AD9DD6D37B101EEE875 /* stdarg.h */,
+				9D6D7F4F9922097091544FB031450350 /* stdfileio.h */,
+				1D28EA537DE8672FF458781301BF7C3B /* stereo.h */,
+				8C357D055B6788B7EDC6292085F002D0 /* stream.h */,
+				8E7CF364AE9BE47F2B10FA673D918B6B /* stream_common.h */,
+				E5151A9C8F8FFF6562DE5F39ADBF6276 /* string.h */,
+				832B3D97364905275032B476FF32FA51 /* string.h */,
+				A336A013663D7DFA1CCEEDF2977600F1 /* string.h */,
+				6A99C3527A2EBB42FF09506E192266A8 /* string_i.h */,
+				C3B5AA4D82815F9EF2D55FE8C2806AD9 /* stun_auth.h */,
+				523EEA03E5D52F7CB6E436E27911822B /* stun_config.h */,
+				834E87780E5C7361E8941EDF8C2923A8 /* stun_msg.h */,
+				B5CD047F96316791B0E878ECCBAC2B4D /* stun_session.h */,
+				B018F526CBEB4600DD9BFCC27C1DB233 /* stun_simple.h */,
+				35EE6967E9EF3D9F4F004C4A0785B42D /* stun_sock.h */,
+				14A218956E29883E8BE4FB86AA97C5A3 /* stun_transaction.h */,
+				95DC36A11D2A9B519CF4C6064EAFFD9F /* symbian_sound_aps.h */,
+				D0AF1A5D2ACEE3A675EABCBC2A348546 /* time.h */,
+				4FF52E7B45971636422A204D7BEFFA7D /* timer.h */,
+				6DBCE6AD1A16197927F52447901099D2 /* tonegen.h */,
+				BDF7A9941FE17AFA3A7D07A747BDBF2E /* transport.h */,
+				70B6D3884E713388EC66F4D3305551E2 /* transport_adapter_sample.h */,
+				5A4F23C7663DFAE16115C508C4D76FF0 /* transport_ice.h */,
+				703D53CF8DC080EF0914F94645C9C3AF /* transport_loop.h */,
+				9E96CC7F2F8B98A909A16871EC7D40C8 /* transport_srtp.h */,
+				275A05CA1B6FAAD9CE68AB185C444FA4 /* transport_udp.h */,
+				CC15BB08EFF50D5AFE2A55DFE37222D2 /* turn_session.h */,
+				A2962B01412A7D77E63E3EA8CE4E73CD /* turn_sock.h */,
+				3B1502034A9E9BE099FD6660D6E950C5 /* types.h */,
+				C321E05BA64D1C54A598E3926985F718 /* types.h */,
+				79926B6E8C773E250FC293B30D4CAF13 /* types.h */,
+				7696957498647798D2E89BBA8054335A /* types.h */,
+				29EB98BD80A485864CAE2AF04EEF1043 /* types.h */,
+				48E857E925CCFF6E6C00D66DB1ADB728 /* types.h */,
+				2C532FCAE7DE49BB34B84C59150680DE /* unicode.h */,
+				385F3620E43B32F850DB42F127112CFB /* vid_codec.h */,
+				1F9702536ACF4155AE897F04933A9511 /* vid_codec_util.h */,
+				80510A3C67B64B05153D20B9BA0A72B0 /* vid_port.h */,
+				F18C51871F6B8CD0C0A85C6EA9249333 /* vid_stream.h */,
+				55205159E330529E59FF99F5AC3FCB84 /* vid_tee.h */,
+				803EC7461A1F6741FF24F2BA91A165BB /* videodev.h */,
+				00E13415384E9D7D947C4E1597395433 /* videodev.h */,
+				003B2E0A03C4D24855235FF1A563160F /* videodev_imp.h */,
+				A7C8DC1FED2C28F57EC551AFC37B9AD2 /* wav_playlist.h */,
+				DA6BBABB78A778E8D0CEA5A692B954D3 /* wav_port.h */,
+				48C5CD1235C6399B8B98CADB463E8AD9 /* wave.h */,
+				49DDBD9097587E5A63CEA597A5276989 /* wsola.h */,
+				9624CA46F08392EA5CDC91FBFF974B0A /* xml.h */,
+				7008DBD77C70F3D54BCF5FDA1EC3EEDA /* xpidf.h */,
+				2903722BAC792CEEE1E42D12D3D83A3E /* Frameworks */,
+			);
+			name = PBPJSip;
+			path = PBPJSip;
+			sourceTree = "<group>";
+		};
+		B00570D61D9E2FA35097E6F007AD7EFD /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F22CF5BD36A840C72E7C4571DC866A5F /* Pods-PBVoipService */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BF34F8EF0EB07025F5695298CDE34A46 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				520F14D3148ABCA47EC2E94C311071F8 /* Accelerate.framework */,
+				628CB579BCF233645595F8397B57E26E /* CoreText.framework */,
+				366AEA5084C5DCD1CBA554EA89E06543 /* Foundation.framework */,
+				78D9F8F9E87A34D8CF2E40BF6BFB978C /* QuartzCore.framework */,
+				4CA450731D4AB96512D17FC80D11491B /* SystemConfiguration.framework */,
+				BDB365FBC4CAE78689CE7319ED4BA948 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		E52BEB439B7AF02612DC64ED8FBBBF19 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8C23921C3B9F366879B0AC0FAEC6B95A /* Masonry.xcconfig */,
+				427DDC37ECCC27AEFDF8731F9CEA84D2 /* Masonry-dummy.m */,
+				D6B334D064CC4287D4EB007621F3DB1B /* Masonry-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Masonry";
+			sourceTree = "<group>";
+		};
+		F22CF5BD36A840C72E7C4571DC866A5F /* Pods-PBVoipService */ = {
+			isa = PBXGroup;
+			children = (
+				23AFEC1409F381D095D83572B0E80BA4 /* Pods-PBVoipService-acknowledgements.markdown */,
+				6F55C907EBBA9ED81D03E7E9E68C22B6 /* Pods-PBVoipService-acknowledgements.plist */,
+				BE17096E6EB005B54BB7F5593746C2EF /* Pods-PBVoipService-dummy.m */,
+				4A7D799B700A634B876EF0714EE94055 /* Pods-PBVoipService-frameworks.sh */,
+				9BD33D7A9B98E3907224E9B9DDBA496B /* Pods-PBVoipService-resources.sh */,
+				D120D8CC090D2DAB1826EC8C1610762D /* Pods-PBVoipService.debug.xcconfig */,
+				A40EFA415E40B94C5870DD11D2B962AE /* Pods-PBVoipService.release.xcconfig */,
+			);
+			name = "Pods-PBVoipService";
+			path = "Target Support Files/Pods-PBVoipService";
+			sourceTree = "<group>";
+		};
+		F741E33B8B25BAC9A773C1BCD5DE87E9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C90BC66938CD6F0BB118187529D0E9FE /* libAFNetworking.a */,
+				71F8F3B88690A794BB4AA35FFC01A502 /* libMasonry.a */,
+				039342446CE5D65F3E18C2B231EED728 /* libPBKits.a */,
+				53F7ADF4519938461E6E1C6CA66F8704 /* libPods-PBVoipService.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AB2AA8D1CE602640DDD7E0C087250023 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B42A534B0B9BCDF97DEF2E07E4B462B /* NSArray+PBHelper.h in Headers */,
+				73C0D0E3FCDE0009B02B2B93B8013283 /* NSBundle+PBHelper.h in Headers */,
+				67A42E560846111B0CB669C75EF2C248 /* NSData+PBHelper.h in Headers */,
+				8D9252FF35C06F4AC323B7D5A779F930 /* NSDate+PBHelper.h in Headers */,
+				1A5249E3B874D57166B5E133E4C7EB79 /* NSDictionary+PBHelper.h in Headers */,
+				E3296AD2CA64B1A43F3D8372DB3B6397 /* NSObject+PBHelper.h in Headers */,
+				615A5B0CF81F528B3E3EB791AD55832A /* NSString+PBHelper.h in Headers */,
+				625DE6FFEB819C716EACEB1A4FAC1A86 /* PBDependency.h in Headers */,
+				B361A290B520149B73B379E5513B6F04 /* PBKits.h in Headers */,
+				14CD0C295F6E20A6C281064016836F20 /* UIColor+PBHelper.h in Headers */,
+				6AE9890049B7E497C64FF186E9F658FE /* UIDevice+PBHelper.h in Headers */,
+				37EED7485603DF164C13071BB590B719 /* UIFont+PBHelper.h in Headers */,
+				86D217417E69B8F6344405B0BC840FA9 /* UIImage+PBHelper.h in Headers */,
+				58697AB2B9A22026016745FAE07B3A63 /* UIView+PBHelper.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDF73468622762862D2FB76ED4AC0D8E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01E09711F001C49F92A97060414E262B /* MASCompositeConstraint.h in Headers */,
+				4CBE1B46550A3FB90FDD1CB9CBA7B7FE /* MASConstraint+Private.h in Headers */,
+				6249770A7D163B0F3001D5A76C5FA01C /* MASConstraint.h in Headers */,
+				EC48DE078CA5E55922CCE02354D475CD /* MASConstraintMaker.h in Headers */,
+				A6436E3CFFCBFE591E2D2A68ED90CAC6 /* MASLayoutConstraint.h in Headers */,
+				49B903D576E09560C52AA92FDCC31A68 /* Masonry.h in Headers */,
+				1F3BD3BC28432BB5E2F73501E06E4579 /* MASUtilities.h in Headers */,
+				E1E771349813022263F549BDF33CB4BB /* MASViewAttribute.h in Headers */,
+				A83991D7C1373DF66020C2FDFC5D7564 /* MASViewConstraint.h in Headers */,
+				490CA524521F7D444EA58FA915D7E99C /* NSArray+MASAdditions.h in Headers */,
+				E072DA57403C4BFF9B10467BE05604C5 /* NSArray+MASShorthandAdditions.h in Headers */,
+				9934AEA2C891C201D8ED5746FF42FE1B /* NSLayoutConstraint+MASDebugAdditions.h in Headers */,
+				86EE1CB5473A4A07081D8DE3A2C45924 /* View+MASAdditions.h in Headers */,
+				983CB852CBBFBC04C2A6BA407E34F59B /* View+MASShorthandAdditions.h in Headers */,
+				C88F85D3200060BD98FC13EA58121706 /* ViewController+MASAdditions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E03E69BEC7471111A3BFCABA44ECE611 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				137A7FEC8A6E513ABD14937E70236688 /* AFNetworkReachabilityManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		96DD6BFF2B3AA1576C02E37DFE7BE21B /* PBKits */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E12967EFF10744574AF87EB5E66C86CA /* Build configuration list for PBXNativeTarget "PBKits" */;
+			buildPhases = (
+				AECA018B759A6E8899939918C7AF75ED /* Sources */,
+				04E81A9B3EB86E29142058F9EFD6A2D7 /* Frameworks */,
+				AB2AA8D1CE602640DDD7E0C087250023 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PBKits;
+			productName = PBKits;
+			productReference = 039342446CE5D65F3E18C2B231EED728 /* libPBKits.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		9DC8D9E02903E93BD0B2FEC9D846EA20 /* Masonry */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34CAE1CB89EDBF2E53735CC5D4E5E69F /* Build configuration list for PBXNativeTarget "Masonry" */;
+			buildPhases = (
+				C4BE2DC1E815E7367562323223772531 /* Sources */,
+				6FD8312A1AEB348F49A81C438DB25115 /* Frameworks */,
+				BDF73468622762862D2FB76ED4AC0D8E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Masonry;
+			productName = Masonry;
+			productReference = 71F8F3B88690A794BB4AA35FFC01A502 /* libMasonry.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		AE75687E418CFD08F4D088A267446E94 /* AFNetworking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9290BACC364A2A7D9A1BC74D7B6B04FD /* Build configuration list for PBXNativeTarget "AFNetworking" */;
+			buildPhases = (
+				C0635EDB112200DA09882326CFAD939D /* Sources */,
+				074BD7423B48E7BB40F4CDBE9C72D371 /* Frameworks */,
+				E03E69BEC7471111A3BFCABA44ECE611 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AFNetworking;
+			productName = AFNetworking;
+			productReference = C90BC66938CD6F0BB118187529D0E9FE /* libAFNetworking.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C070379709450663C387550683390762 /* Pods-PBVoipService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E48FFC26CC4E2052F25A510EBD14FE7F /* Build configuration list for PBXNativeTarget "Pods-PBVoipService" */;
+			buildPhases = (
+				BC7405240CE186A3CD535A2AD349978C /* Sources */,
+				A7FCF4D164BAA942BE0172B149F33AE6 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E9F93070B327064A5FAE77D8C4002DC1 /* PBXTargetDependency */,
+				01A8C68A511ED6FABB8F8128F23E5F86 /* PBXTargetDependency */,
+				A079066C9B83C5802CD7D3140AF01E58 /* PBXTargetDependency */,
+			);
+			name = "Pods-PBVoipService";
+			productName = "Pods-PBVoipService";
+			productReference = 53F7ADF4519938461E6E1C6CA66F8704 /* libPods-PBVoipService.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = F741E33B8B25BAC9A773C1BCD5DE87E9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AE75687E418CFD08F4D088A267446E94 /* AFNetworking */,
+				9DC8D9E02903E93BD0B2FEC9D846EA20 /* Masonry */,
+				96DD6BFF2B3AA1576C02E37DFE7BE21B /* PBKits */,
+				C070379709450663C387550683390762 /* Pods-PBVoipService */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AECA018B759A6E8899939918C7AF75ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24C3C51F434585B14770FBB4245BB390 /* NSArray+PBHelper.m in Sources */,
+				A447479BA6F555D87CEFC1E5BCD8FA87 /* NSBundle+PBHelper.m in Sources */,
+				715F80C97859C4B716CA0CCC9327CF8D /* NSData+PBHelper.m in Sources */,
+				726BC998C109B3B9DD1C2B4638A4994A /* NSDate+PBHelper.m in Sources */,
+				8177377E7853C965D9C5B04D67B230E5 /* NSDictionary+PBHelper.m in Sources */,
+				7B18F6320424FD8485711BF860F9F938 /* NSObject+PBHelper.m in Sources */,
+				E4A1D2A509D6E55A07A4DCC96AAEE233 /* NSString+PBHelper.m in Sources */,
+				F5FCA3E5F468F5FE40191B4B09D1B2F1 /* PBKits-dummy.m in Sources */,
+				EB8D5D36096E65982FBE77FE96345A18 /* UIColor+PBHelper.m in Sources */,
+				6BD5F5C07D06D19047C316086B60EB27 /* UIDevice+PBHelper.m in Sources */,
+				F6952095C091D715D05FA417698C7F49 /* UIFont+PBHelper.m in Sources */,
+				E9B8053B08A5553E158AD67652903603 /* UIImage+PBHelper.m in Sources */,
+				4B6E62C824B3D4A79564E01D3653C7C2 /* UIView+PBHelper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC7405240CE186A3CD535A2AD349978C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03024D8C5B3AAC47017E4E5AA197DF4C /* Pods-PBVoipService-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0635EDB112200DA09882326CFAD939D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A849F23AA9EE9067CA613400A272FBB1 /* AFNetworking-dummy.m in Sources */,
+				DDA3351A8F5209CD34BD5872E0850FB2 /* AFNetworkReachabilityManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4BE2DC1E815E7367562323223772531 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61CCEA01CBE8EFFA5515E7A0D8635AAE /* MASCompositeConstraint.m in Sources */,
+				89450A58FD91E5B227171FC75160E4EA /* MASConstraint.m in Sources */,
+				DF7F88B58B564EDF169EC0C9CF8E5124 /* MASConstraintMaker.m in Sources */,
+				955BE39896CA35F2A585DC3309E5FDA5 /* MASLayoutConstraint.m in Sources */,
+				68F98758BA84B8EC3472A8C6FD646D16 /* Masonry-dummy.m in Sources */,
+				13635B78121B99E5C03C92506A161607 /* MASViewAttribute.m in Sources */,
+				2DBB74B8B5DDB1F621433DD12BF35102 /* MASViewConstraint.m in Sources */,
+				7BDDE51AF16FA53A09506EDB91E1C3C2 /* NSArray+MASAdditions.m in Sources */,
+				3E8E6916C563B9CB12AA417275FC6EB3 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				A1FA046FDFC42676D17FEC387B10D24A /* View+MASAdditions.m in Sources */,
+				D7CE05A743B7ACD50796191FA442814C /* ViewController+MASAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		01A8C68A511ED6FABB8F8128F23E5F86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Masonry;
+			target = 9DC8D9E02903E93BD0B2FEC9D846EA20 /* Masonry */;
+			targetProxy = 27F6102F0127CC9DBA9B0C13A6D8E794 /* PBXContainerItemProxy */;
+		};
+		A079066C9B83C5802CD7D3140AF01E58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PBKits;
+			target = 96DD6BFF2B3AA1576C02E37DFE7BE21B /* PBKits */;
+			targetProxy = CAD8856E4BC8771E9E594E46F6266BFB /* PBXContainerItemProxy */;
+		};
+		E9F93070B327064A5FAE77D8C4002DC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AFNetworking;
+			target = AE75687E418CFD08F4D088A267446E94 /* AFNetworking */;
+			targetProxy = E6601ED6BF50F6B14AE12354F4E104F6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		015A368F878AC3E2CEAE21DDE8026304 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		28575A72030611B2EB1183A9A3006FFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEB48466D83CE2723695DD83B0FAA3A6 /* PBKits.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PBKits/PBKits-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		34D827115B1D978262B496D28BAFFF6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A40EFA415E40B94C5870DD11D2B962AE /* Pods-PBVoipService.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		44CDBB6D11DE06DB64D6268622BDC47E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5A6ACE61C4D128598EA7472C87982601 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C23921C3B9F366879B0AC0FAEC6B95A /* Masonry.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6CA42F62CE0652819ED46936FE31E065 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C23921C3B9F366879B0AC0FAEC6B95A /* Masonry.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		9370E65A7161BFE0ABE6692BE35EDBED /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEB48466D83CE2723695DD83B0FAA3A6 /* PBKits.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PBKits/PBKits-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		9D17C6E2ECA7502F91F9409D335126CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D120D8CC090D2DAB1826EC8C1610762D /* Pods-PBVoipService.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B67C21AF08A865D0700857CBF3E543C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13F245E5677FD340A220DF9B2A22FD38 /* AFNetworking.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		DB37278174ADBF38FD77F56202FD1AB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13F245E5677FD340A220DF9B2A22FD38 /* AFNetworking.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				015A368F878AC3E2CEAE21DDE8026304 /* Debug */,
+				44CDBB6D11DE06DB64D6268622BDC47E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34CAE1CB89EDBF2E53735CC5D4E5E69F /* Build configuration list for PBXNativeTarget "Masonry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A6ACE61C4D128598EA7472C87982601 /* Debug */,
+				6CA42F62CE0652819ED46936FE31E065 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9290BACC364A2A7D9A1BC74D7B6B04FD /* Build configuration list for PBXNativeTarget "AFNetworking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B67C21AF08A865D0700857CBF3E543C8 /* Debug */,
+				DB37278174ADBF38FD77F56202FD1AB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E12967EFF10744574AF87EB5E66C86CA /* Build configuration list for PBXNativeTarget "PBKits" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28575A72030611B2EB1183A9A3006FFB /* Debug */,
+				9370E65A7161BFE0ABE6692BE35EDBED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E48FFC26CC4E2052F25A510EBD14FE7F /* Build configuration list for PBXNativeTarget "Pods-PBVoipService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D17C6E2ECA7502F91F9409D335126CE /* Debug */,
+				34D827115B1D978262B496D28BAFFF6F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
