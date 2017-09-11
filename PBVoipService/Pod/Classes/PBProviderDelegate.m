@@ -1,22 +1,22 @@
 //
-//  FLKProviderDelegate.m
-//  FLKVoipCallPro
+//  PBProviderDelegate.m
+//  PBVoipService
 //
-//  Created by nanhujiaju on 2017/3/17.
+//  Created by nanhujiaju on 2017/9/11.
 //  Copyright © 2017年 nanhujiaju. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "PBProviderDelegate.h"
 #import <PBKits/PBKits.h>
-#import "FLKCallManager.h"
-#import "FLKSipConstants.h"
+#import "PBCallManager.h"
+#import "PBSipConstants.h"
 //#import "AudioController.h"
-#import "FLKProviderDelegate.h"
+#import "PBProviderDelegate.h"
 #import <AVFoundation/AVFoundation.h>
 
-static unsigned int const FLK_AUDIO_UNIT_TOOL_KIT                     = 0;
+#define PB_AUDIO_UNIT_TOOL_KIT                     0
 
-@implementation FLKCall
+@implementation PBCall
 
 - (id)initWithUUID:(NSUUID *)uuid withHandle:(NSString *)handle whetherOutgoing:(BOOL)outgoing {
     self = [super init];
@@ -27,11 +27,11 @@ static unsigned int const FLK_AUDIO_UNIT_TOOL_KIT                     = 0;
     }
     return self;
 }
-+ (FLKCall *)callWithUUID:(NSUUID *)uuid withHandle:(NSString *)handle whetherOutgoing:(BOOL)outgoing {
-    return [[FLKCall alloc] initWithUUID:uuid withHandle:handle whetherOutgoing:outgoing];
++ (PBCall *)callWithUUID:(NSUUID *)uuid withHandle:(NSString *)handle whetherOutgoing:(BOOL)outgoing {
+    return [[PBCall alloc] initWithUUID:uuid withHandle:handle whetherOutgoing:outgoing];
 }
 
-- (BOOL)isEqualToCall:(FLKCall *)call {
+- (BOOL)isEqualToCall:(PBCall *)call {
     if (call == nil) {
         return false;
     }
@@ -49,8 +49,7 @@ static unsigned int const FLK_AUDIO_UNIT_TOOL_KIT                     = 0;
 
 @end
 
-
-@interface FLKProviderDelegate () <CXProviderDelegate, CXCallObserverDelegate>
+@interface PBProviderDelegate ()<CXProviderDelegate, CXCallObserverDelegate>
 
 @property (nonatomic, strong) CXProvider * provider;
 @property (nonatomic, strong) CXProviderConfiguration * configuration;
@@ -65,21 +64,21 @@ static unsigned int const FLK_AUDIO_UNIT_TOOL_KIT                     = 0;
 @property (nonatomic, strong, nullable) NSUUID *currentUUID;
 @property (nonatomic, copy, nullable) NSString *currentHandle;
 
-@property (nonatomic, strong) FLKCallManager *callManager;
+@property (nonatomic, strong) PBCallManager *callManager;
 
-#if FLK_AUDIO_UNIT_TOOL_KIT
+#if PB_AUDIO_UNIT_TOOL_KIT
 @property (nonatomic, strong, nullable) AudioController *audioController;
 #endif
 
 @end
 
-@implementation FLKProviderDelegate
+@implementation PBProviderDelegate
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (id)initWithCallManager:(FLKCallManager *)manager {
+- (id)initWithCallManager:(PBCallManager *)manager {
     self = [super init];
     if (self) {
         NSAssert(manager != nil, @"can not pass an empty value for call manager!");
@@ -144,7 +143,7 @@ static unsigned int const FLK_AUDIO_UNIT_TOOL_KIT                     = 0;
     }
     return _currentUUID;
 }
-#if FLK_AUDIO_UNIT_TOOL_KIT
+#if PB_AUDIO_UNIT_TOOL_KIT
 - (AudioController *)audioController {
     if (!_audioController) {
         _audioController = [[AudioController alloc] init];
@@ -153,18 +152,18 @@ static unsigned int const FLK_AUDIO_UNIT_TOOL_KIT                     = 0;
     return _audioController;
 }
 
- - (void)startAudio {
-     if ([self.audioController startIOUnit] != kAudioServicesNoError) {
-         [self.audioController setMuteAudio:false];
-         NSLog(@"failed to start audio io unit!!!");
-     };
- }
- 
- - (void)stopAudio {
-     if ([self.audioController stopIOUnit] != kAudioSessionNoError) {
-         NSLog(@"failed to stop audio io unit!!!");
-     }
- }
+- (void)startAudio {
+    if ([self.audioController startIOUnit] != kAudioServicesNoError) {
+        [self.audioController setMuteAudio:false];
+        NSLog(@"failed to start audio io unit!!!");
+    };
+}
+
+- (void)stopAudio {
+    if ([self.audioController stopIOUnit] != kAudioSessionNoError) {
+        NSLog(@"failed to stop audio io unit!!!");
+    }
+}
 
 - (void)configureAudioSession {
     [self.audioController setupAudioChain];
@@ -238,7 +237,7 @@ static unsigned int const FLK_AUDIO_UNIT_TOOL_KIT                     = 0;
         if (theInterruptionType == AVAudioSessionInterruptionTypeBegan) {
             CXSetMutedCallAction *muteAction = [[CXSetMutedCallAction alloc] initWithCallUUID:self.currentUUID muted:false];
             if (self.delegate && [self.delegate respondsToSelector:@selector(systemProviderDidUpdateAction:withType:)]) {
-                [self.delegate systemProviderDidUpdateAction:muteAction withType:FLKSystemCallActionTypeAudio];
+                [self.delegate systemProviderDidUpdateAction:muteAction withType:PBSystemCallActionTypeAudio];
             }
         }else if (theInterruptionType == AVAudioSessionInterruptionTypeEnded) {
             // make sure to activate the session
@@ -248,7 +247,7 @@ static unsigned int const FLK_AUDIO_UNIT_TOOL_KIT                     = 0;
             
             CXSetMutedCallAction *muteAction = [[CXSetMutedCallAction alloc] initWithCallUUID:self.currentUUID muted:true];
             if (self.delegate && [self.delegate respondsToSelector:@selector(systemProviderDidUpdateAction:withType:)]) {
-                [self.delegate systemProviderDidUpdateAction:muteAction withType:FLKSystemCallActionTypeAudio];
+                [self.delegate systemProviderDidUpdateAction:muteAction withType:PBSystemCallActionTypeAudio];
             }
         }
     } @catch (NSException *exception) {
@@ -310,9 +309,9 @@ static unsigned int const FLK_AUDIO_UNIT_TOOL_KIT                     = 0;
     });
     
     //method 2
-//    CXEndCallAction *endAction = [[CXEndCallAction alloc] initWithCallUUID:self.currentUUID];
-//    CXTransaction *transaction = [[CXTransaction alloc] initWithAction:endAction];
-//    [self requestTransaction:transaction withCompletion:completion];
+    //    CXEndCallAction *endAction = [[CXEndCallAction alloc] initWithCallUUID:self.currentUUID];
+    //    CXTransaction *transaction = [[CXTransaction alloc] initWithAction:endAction];
+    //    [self requestTransaction:transaction withCompletion:completion];
     
     [self releaseCall];
 }
@@ -360,28 +359,28 @@ static unsigned int const FLK_AUDIO_UNIT_TOOL_KIT                     = 0;
      Configure the audio session, but do not start call audio here, since it must be done once
      the audio session has been activated by the system after having its priority elevated.
      */
-#if FLK_AUDIO_UNIT_TOOL_KIT
+#if PB_AUDIO_UNIT_TOOL_KIT
     [self configureAudioSession];
 #else
     [self configureAudioSessionStart];
 #endif
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(systemProviderDidUpdateAction:withType:)]) {
-        [self.delegate systemProviderDidUpdateAction:action withType:FLKSystemCallActionTypeAnswer];
+        [self.delegate systemProviderDidUpdateAction:action withType:PBSystemCallActionTypeAnswer];
     }
     [action fulfill];
 }
 
 - (void)provider:(CXProvider *)provider performEndCallAction:(CXEndCallAction *)action {
     NSLog(@"provider __%s", __FUNCTION__);
-#if FLK_AUDIO_UNIT_TOOL_KIT
+#if PB_AUDIO_UNIT_TOOL_KIT
     [self stopAudio];
 #else
     [self configureAudioSessionEnd];
 #endif
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(systemProviderDidUpdateAction:withType:)]) {
-        [self.delegate systemProviderDidUpdateAction:action withType:FLKSystemCallActionTypeEnd];
+        [self.delegate systemProviderDidUpdateAction:action withType:PBSystemCallActionTypeEnd];
     }
     [action fulfill];
     
@@ -391,7 +390,7 @@ static unsigned int const FLK_AUDIO_UNIT_TOOL_KIT                     = 0;
 - (void)provider:(CXProvider *)provider performSetHeldCallAction:(CXSetHeldCallAction *)action {
     NSLog(@"provider __%s", __FUNCTION__);
     if (self.delegate && [self.delegate respondsToSelector:@selector(systemProviderDidUpdateAction:withType:)]) {
-        [self.delegate systemProviderDidUpdateAction:action withType:FLKSystemCallActionTypeHold];
+        [self.delegate systemProviderDidUpdateAction:action withType:PBSystemCallActionTypeHold];
     }
     [action fulfill];
 }
@@ -399,7 +398,7 @@ static unsigned int const FLK_AUDIO_UNIT_TOOL_KIT                     = 0;
 - (void)provider:(CXProvider *)provider performSetMutedCallAction:(CXSetMutedCallAction *)action {
     NSLog(@"provider __%s", __FUNCTION__);
     
-#if FLK_AUDIO_UNIT_TOOL_KIT
+#if PB_AUDIO_UNIT_TOOL_KIT
     BOOL mute = action.muted;
     if (mute) {
         [self stopAudio];
@@ -410,35 +409,35 @@ static unsigned int const FLK_AUDIO_UNIT_TOOL_KIT                     = 0;
     //*/
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(systemProviderDidUpdateAction:withType:)]) {
-        [self.delegate systemProviderDidUpdateAction:action withType:FLKSystemCallActionTypeMute];
+        [self.delegate systemProviderDidUpdateAction:action withType:PBSystemCallActionTypeMute];
     }
     [action fulfill];
 }
 
 - (void)provider:(CXProvider *)provider didActivateAudioSession:(AVAudioSession *)audioSession {
-#if FLK_AUDIO_UNIT_TOOL_KIT
+#if PB_AUDIO_UNIT_TOOL_KIT
     [self startAudio];
 #endif
     
     CXSetMutedCallAction *muteAction = [[CXSetMutedCallAction alloc] initWithCallUUID:self.currentUUID muted:true];
     if (self.delegate && [self.delegate respondsToSelector:@selector(systemProviderDidUpdateAction:withType:)]) {
-        [self.delegate systemProviderDidUpdateAction:muteAction withType:FLKSystemCallActionTypeAudio];
+        [self.delegate systemProviderDidUpdateAction:muteAction withType:PBSystemCallActionTypeAudio];
     }
 }
 
 - (void)provider:(CXProvider *)provider didDeactivateAudioSession:(nonnull AVAudioSession *)audioSession {
     /*
-    CXSetMutedCallAction *muteAction = [[CXSetMutedCallAction alloc] initWithCallUUID:self.currentUUID muted:false];
-    if (self.delegate && [self.delegate respondsToSelector:@selector(systemProviderDidUpdateAction:withType:)]) {
-        [self.delegate systemProviderDidUpdateAction:muteAction withType:FLKSystemCallActionTypeAudio];
-    }
-    //*/
+     CXSetMutedCallAction *muteAction = [[CXSetMutedCallAction alloc] initWithCallUUID:self.currentUUID muted:false];
+     if (self.delegate && [self.delegate respondsToSelector:@selector(systemProviderDidUpdateAction:withType:)]) {
+     [self.delegate systemProviderDidUpdateAction:muteAction withType:PBSystemCallActionTypeAudio];
+     }
+     //*/
 }
 
 - (void)provider:(CXProvider *)provider timedOutPerformingAction:(CXAction *)action {
     NSLog(@"provider __%s", __FUNCTION__);
     if (self.delegate && [self.delegate respondsToSelector:@selector(systemProviderDidUpdateAction:withType:)]) {
-        [self.delegate systemProviderDidUpdateAction:action withType:FLKSystemCallActionTypeTimeout];
+        [self.delegate systemProviderDidUpdateAction:action withType:PBSystemCallActionTypeTimeout];
     }
     [action fulfill];
 }
@@ -453,12 +452,12 @@ static unsigned int const FLK_AUDIO_UNIT_TOOL_KIT                     = 0;
      Configure the audio session, but do not start call audio here, since it must be done once
      the audio session has been activated by the system after having its priority elevated.
      */
-#if FLK_AUDIO_UNIT_TOOL_KIT
+#if PB_AUDIO_UNIT_TOOL_KIT
     [self configureAudioSession];
 #endif
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(systemProviderDidUpdateAction:withType:)]) {
-        [self.delegate systemProviderDidUpdateAction:action withType:FLKSystemCallActionTypeStart];
+        [self.delegate systemProviderDidUpdateAction:action withType:PBSystemCallActionTypeStart];
     }
     if (action.handle != nil) {
         [action fulfill];
@@ -477,7 +476,7 @@ static unsigned int const FLK_AUDIO_UNIT_TOOL_KIT                     = 0;
     
     CXCallAction *action = [[CXCallAction alloc] initWithCallUUID:call.UUID];
     if (self.delegate && [self.delegate respondsToSelector:@selector(systemProviderDidUpdateAction:withType:)]) {
-        [self.delegate systemProviderDidUpdateAction:action withType:FLKSystemCallActionTypeCallIncoming];
+        [self.delegate systemProviderDidUpdateAction:action withType:PBSystemCallActionTypeCallIncoming];
     }
 }
 

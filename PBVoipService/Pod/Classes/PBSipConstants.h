@@ -1,29 +1,29 @@
 //
-//  FLKSipConstants.h
-//  FLKVoipCallPro
+//  PBSipConstants.h
+//  PBVoipService
 //
-//  Created by nanhujiaju on 2017/1/8.
+//  Created by nanhujiaju on 2017/9/11.
 //  Copyright © 2017年 nanhujiaju. All rights reserved.
 //
 
-#ifndef FLKSipConstants_h
-#define FLKSipConstants_h
+#ifndef PBSipConstants_h
+#define PBSipConstants_h
 
 /* handle this for build time */
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
 #import <CallKit/CallKit.h>
 #endif
-#ifndef FLK_CALLKIT_ENABLE
+#ifndef PB_CALLKIT_ENABLE
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
-#define FLK_CALLKIT_ENABLE              1
+#define PB_CALLKIT_ENABLE              1
 #else
-#define FLK_CALLKIT_ENABLE              0
+#define PB_CALLKIT_ENABLE              0
 #endif
 #endif
 
-#define THIS_FILE                                                           "FLKSipService.m"
-static NSString * const      PJ_SIP_THREAD                              =   @"com.flk.pjsua-thread.io";
-static const   char *        PJ_SIP_POOL                                =   "com.flk.pjsua-pool.io";
+#define THIS_FILE                                                           "PBVoipService.m"
+static NSString * const      PJ_SIP_THREAD                              =   @"com.PB.pjsua-thread.io";
+static const   char *        PJ_SIP_POOL                                =   "com.PB.pjsua-pool.io";
 static NSString * const      PJ_SIP_SERVER_HOST                         =   @"112.74.77.9";
 static uint64_t const        PJ_SIP_SERVER_PORT                         =   8443;
 static NSString * const      PJ_SIP_BACKUP_SERVER                       =   @"talk.mihuatong.com:8443";
@@ -48,15 +48,15 @@ static NSString * const      PJ_SIP_RING_FILE_EXT                       =   @"ca
 /**
  此通知是为了与其他模块解耦合(主要是appDelegate) 中收到voip push时 自动启动/关闭（用户cancel）／结束 sip服务
  */
-FOUNDATION_EXTERN NSString * const FLK_VOIPCALL_DID_RECEIVED_INCOMING_PUSH;
+FOUNDATION_EXTERN NSString * const PB_VOIPCALL_DID_RECEIVED_INCOMING_PUSH;
 
 
 /**
  枚举类型 voipCall接收到呼叫时app所处于的状态
  */
-typedef NS_ENUM(NSUInteger, FLKVoipCallRisePoint) {
-    FLKVoipCallRisePointActive                          =   1   <<  0,
-    FLKVoipCallRisePointUnActive                        =   1   <<  1,
+typedef NS_ENUM(NSUInteger, PBVoipCallRisePoint) {
+    PBVoipCallRisePointActive                          =   1   <<  0,
+    PBVoipCallRisePointUnActive                        =   1   <<  1,
 };
 
-#endif /* FLKSipConstants_h */
+#endif /* PBSipConstants_h */

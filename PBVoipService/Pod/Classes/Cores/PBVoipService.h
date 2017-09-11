@@ -1,15 +1,15 @@
 //
-//  FLKSipService.h
-//  PJSip2.5.5Pro
+//  PBVoipService.h
+//  PBVoipService
 //
-//  Created by nanhujiaju on 2017/1/3.
-//  Copyright © 2017年 nanhu. All rights reserved.
+//  Created by nanhujiaju on 2017/9/11.
+//  Copyright © 2017年 nanhujiaju. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 #import <pjsua-lib/pjsua.h>
-#import "FLKSipServiceDelegate.h"
+#import "PBSipServiceDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -47,7 +47,7 @@ typedef struct {
 
 #pragma mark -- sip configuration
 
-@interface FLKSipConfigure : NSObject
+@interface PBSipConfigure : NSObject
 
 /**
  server host
@@ -65,43 +65,43 @@ typedef struct {
 @property (nonatomic, copy, readonly) NSString * ringFile;
 
 /**
- the default configure for flk
+ the default configure for PB
  */
-+ (FLKSipConfigure *)defaultConfiguration;
++ (PBSipConfigure *)defaultConfiguration;
 
 /**
  generate configuration with host:port
-
+ 
  @param host the sip server host
  @param port the sip server port
  @param ringFile the sip server ring file full name, default is ring26.caf
  @return the configuration
  */
-+ (FLKSipConfigure *)configureWithServerHost:(NSString *)host withPort:(uint64_t)port withRingFile:(NSString * _Nullable)ringFile;
++ (PBSipConfigure *)configureWithServerHost:(NSString *)host withPort:(uint64_t)port withRingFile:(NSString * _Nullable)ringFile;
 
 @end
 
 #pragma mark -- sip service --
 //号码转换为显示的名字
-typedef NSString * _Nullable(^FLKVoipConvertDisplayBlock)(NSString * account);
+typedef NSString * _Nullable(^PBVoipConvertDisplayBlock)(NSString * account);
 
 
 /**
  通话记录的回调
  */
-typedef void(^_Nullable FLKVoipCallbackBlock)(NSDictionary * _Nullable error);
+typedef void(^_Nullable PBVoipCallbackBlock)(NSDictionary * _Nullable error);
 
 /**
  profile for voip call whether show
  */
-typedef void(^FLKVoipCallProfileBlock)(BOOL show);
+typedef void(^PBVoipCallProfileBlock)(BOOL show);
 
 /**
  是否允许sip服务断网（在有网的情况下）重联 如果用户注销则不用重联
  */
-typedef BOOL(^FLKVoipServiceRestartBlock)(void);
+typedef BOOL(^PBVoipServiceRestartBlock)(void);
 
-@interface FLKSipService : NSObject
+@interface PBVoipService : NSObject
 
 /**
  the call id
@@ -131,28 +131,28 @@ typedef BOOL(^FLKVoipServiceRestartBlock)(void);
 /**
  sip service delegate
  */
-@property (nonatomic, weak) id <FLKSipServiceDelegate> delegate;
+@property (nonatomic, weak) id <PBSipServiceDelegate> delegate;
 
 /**
  singletone mode
  
  @return the instance
  */
-+ (FLKSipService *)shared;
++ (PBVoipService *)shared;
 
 /**
- start sip connect to server 
+ start sip connect to server
  
  @discussion 此方法其实是只有用户登录时才会要调取的 其他情形下后台自启动的调用用另外方法启动@see:'outterAutoStartSipServiceWithCompletion:'
-
+ 
  @param config sip configurations
  @param completion the callback block
  */
-- (void)startWithConfiguration:(FLKSipConfigure *)config withCompletion:(void(^_Nullable)(NSError * _Nullable error))completion;
+- (void)startWithConfiguration:(PBSipConfigure *)config withCompletion:(void(^_Nullable)(NSError * _Nullable error))completion;
 
 /**
  start sip server automaticly
-
+ 
  @param completion the callback block
  */
 - (void)outterAutoStartSipServiceWithCompletion:(void(^_Nullable)(NSError * _Nullable error))completion;
@@ -167,7 +167,7 @@ typedef BOOL(^FLKVoipServiceRestartBlock)(void);
 
 /**
  query wether sip server avaliable
-
+ 
  @return :the result
  */
 - (BOOL)serviceAvaliable;
@@ -195,7 +195,7 @@ typedef BOOL(^FLKVoipServiceRestartBlock)(void);
 
 /**
  wether enable hands-free mode
-
+ 
  @param enable wether enable
  @return result
  */
@@ -233,28 +233,28 @@ typedef BOOL(^FLKVoipServiceRestartBlock)(void);
 /**
  handle voip call callback event
  */
-- (void)registerVoipCallbackEventHandler:(_Nullable FLKVoipCallbackBlock)completion;
+- (void)registerVoipCallbackEventHandler:(_Nullable PBVoipCallbackBlock)completion;
 
 /**
  handle voip call convert user's account to display name
-
+ 
  @param completion callback event
  */
-- (void)registerVoipCallConvertDisplayEventHandler:(_Nullable FLKVoipConvertDisplayBlock)completion;
+- (void)registerVoipCallConvertDisplayEventHandler:(_Nullable PBVoipConvertDisplayBlock)completion;
 
 /**
  handle voip call profile whether show or not, such as resignFirstResponder for current window
-
+ 
  @param completion callback event
  */
-- (void)registerVoipCallProfileShowEventHandler:(_Nullable FLKVoipCallProfileBlock)completion;
+- (void)registerVoipCallProfileShowEventHandler:(_Nullable PBVoipCallProfileBlock)completion;
 
 /**
  handle voip service re-start or not, default was true
-
+ 
  @param completion callback event
  */
-- (void)registerVoipServiceShouldRestartWhenNetworkAvailable:(_Nullable FLKVoipServiceRestartBlock)completion;
+- (void)registerVoipServiceShouldRestartWhenNetworkAvailable:(_Nullable PBVoipServiceRestartBlock)completion;
 
 #pragma mark -- auto test extentions --
 
@@ -262,7 +262,7 @@ typedef BOOL(^FLKVoipServiceRestartBlock)(void);
 
 /**
  get the remote endian sip account
-
+ 
  @param sip :<sips:10086@112.74.77.9>
  
  @return 10086

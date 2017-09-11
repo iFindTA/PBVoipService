@@ -5,6 +5,6 @@ platform :ios, 8.0
 target 'PBVoipService' do
 pod 'Masonry'
 pod 'PBKits', '~> 1.2.0'
-pod 'PBPJSip', '~> 1.0.0'
+pod 'PBPJSip', '~> 1.1.0'
 pod 'AFNetworking/Reachability'
 end

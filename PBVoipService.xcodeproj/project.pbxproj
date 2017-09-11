@@ -16,6 +16,12 @@
 		60C817821F627C6100CEC5D6 /* PBVoipServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C817811F627C6100CEC5D6 /* PBVoipServiceTests.m */; };
 		60C8178D1F627C6100CEC5D6 /* PBVoipServiceUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C8178C1F627C6100CEC5D6 /* PBVoipServiceUITests.m */; };
 		60C818DA1F6524B100CEC5D6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C818D91F6524B100CEC5D6 /* AudioToolbox.framework */; };
+		60C818FC1F661F7600CEC5D6 /* sipService.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 60C818F81F661F7600CEC5D6 /* sipService.bundle */; };
+		60C818FD1F661F7600CEC5D6 /* voipCall.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60C818F91F661F7600CEC5D6 /* voipCall.xcassets */; };
+		60C819001F661FC600CEC5D6 /* PBVoipService.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C818FF1F661FC600CEC5D6 /* PBVoipService.m */; };
+		60C819051F66277700CEC5D6 /* PBVoipCallProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C819041F66277700CEC5D6 /* PBVoipCallProfile.m */; };
+		60C819091F662D5E00CEC5D6 /* PBProviderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C819081F662D5E00CEC5D6 /* PBProviderDelegate.m */; };
+		60C8190C1F662E2C00CEC5D6 /* PBCallManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C8190B1F662E2C00CEC5D6 /* PBCallManager.m */; };
 		75B1760C0FF7442235A1FAB6 /* libPods-PBVoipService.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4FEDF8975C074B5FB5FFE6F /* libPods-PBVoipService.a */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +61,19 @@
 		60C8178E1F627C6100CEC5D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60C818D81F6524B100CEC5D6 /* PBVoipService.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PBVoipService.entitlements; sourceTree = "<group>"; };
 		60C818D91F6524B100CEC5D6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		60C818F81F661F7600CEC5D6 /* sipService.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = sipService.bundle; sourceTree = "<group>"; };
+		60C818F91F661F7600CEC5D6 /* voipCall.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = voipCall.xcassets; sourceTree = "<group>"; };
+		60C818FE1F661FC600CEC5D6 /* PBVoipService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBVoipService.h; sourceTree = "<group>"; };
+		60C818FF1F661FC600CEC5D6 /* PBVoipService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBVoipService.m; sourceTree = "<group>"; };
+		60C819011F6626F100CEC5D6 /* PBSipServiceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBSipServiceDelegate.h; sourceTree = "<group>"; };
+		60C819021F66273500CEC5D6 /* PBVoipCallProfileDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBVoipCallProfileDelegate.h; sourceTree = "<group>"; };
+		60C819031F66277700CEC5D6 /* PBVoipCallProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBVoipCallProfile.h; sourceTree = "<group>"; };
+		60C819041F66277700CEC5D6 /* PBVoipCallProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBVoipCallProfile.m; sourceTree = "<group>"; };
+		60C819061F66279F00CEC5D6 /* PBSipConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBSipConstants.h; sourceTree = "<group>"; };
+		60C819071F662D5E00CEC5D6 /* PBProviderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBProviderDelegate.h; sourceTree = "<group>"; };
+		60C819081F662D5E00CEC5D6 /* PBProviderDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBProviderDelegate.m; sourceTree = "<group>"; };
+		60C8190A1F662E2C00CEC5D6 /* PBCallManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBCallManager.h; sourceTree = "<group>"; };
+		60C8190B1F662E2C00CEC5D6 /* PBCallManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBCallManager.m; sourceTree = "<group>"; };
 		A836CEC227F67AE0BE5BE76A /* Pods-PBVoipService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PBVoipService.release.xcconfig"; path = "Pods/Target Support Files/Pods-PBVoipService/Pods-PBVoipService.release.xcconfig"; sourceTree = "<group>"; };
 		B4FEDF8975C074B5FB5FFE6F /* libPods-PBVoipService.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PBVoipService.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3C46219D0F81BA9926DDD33 /* Pods-PBVoipService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PBVoipService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PBVoipService/Pods-PBVoipService.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +149,7 @@
 		60C817661F627C6100CEC5D6 /* PBVoipService */ = {
 			isa = PBXGroup;
 			children = (
+				60C818F61F661F7600CEC5D6 /* Pod */,
 				60C818D81F6524B100CEC5D6 /* PBVoipService.entitlements */,
 				60C8176A1F627C6100CEC5D6 /* AppDelegate.h */,
 				60C8176B1F627C6100CEC5D6 /* AppDelegate.m */,
@@ -168,6 +188,50 @@
 				60C8178E1F627C6100CEC5D6 /* Info.plist */,
 			);
 			path = PBVoipServiceUITests;
+			sourceTree = "<group>";
+		};
+		60C818F61F661F7600CEC5D6 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				60C818F71F661F7600CEC5D6 /* Assets */,
+				60C818FA1F661F7600CEC5D6 /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		60C818F71F661F7600CEC5D6 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				60C818F81F661F7600CEC5D6 /* sipService.bundle */,
+				60C818F91F661F7600CEC5D6 /* voipCall.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		60C818FA1F661F7600CEC5D6 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				60C818FB1F661F7600CEC5D6 /* Cores */,
+				60C819011F6626F100CEC5D6 /* PBSipServiceDelegate.h */,
+				60C819021F66273500CEC5D6 /* PBVoipCallProfileDelegate.h */,
+				60C819031F66277700CEC5D6 /* PBVoipCallProfile.h */,
+				60C819041F66277700CEC5D6 /* PBVoipCallProfile.m */,
+				60C819061F66279F00CEC5D6 /* PBSipConstants.h */,
+				60C819071F662D5E00CEC5D6 /* PBProviderDelegate.h */,
+				60C819081F662D5E00CEC5D6 /* PBProviderDelegate.m */,
+				60C8190A1F662E2C00CEC5D6 /* PBCallManager.h */,
+				60C8190B1F662E2C00CEC5D6 /* PBCallManager.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		60C818FB1F661F7600CEC5D6 /* Cores */ = {
+			isa = PBXGroup;
+			children = (
+				60C818FE1F661FC600CEC5D6 /* PBVoipService.h */,
+				60C818FF1F661FC600CEC5D6 /* PBVoipService.m */,
+			);
+			path = Cores;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,8 +351,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60C818FD1F661F7600CEC5D6 /* voipCall.xcassets in Resources */,
 				60C817771F627C6100CEC5D6 /* LaunchScreen.storyboard in Resources */,
 				60C817741F627C6100CEC5D6 /* Assets.xcassets in Resources */,
+				60C818FC1F661F7600CEC5D6 /* sipService.bundle in Resources */,
 				60C817721F627C6100CEC5D6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,9 +428,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60C8190C1F662E2C00CEC5D6 /* PBCallManager.m in Sources */,
+				60C819051F66277700CEC5D6 /* PBVoipCallProfile.m in Sources */,
 				60C8176F1F627C6100CEC5D6 /* ViewController.m in Sources */,
 				60C8176C1F627C6100CEC5D6 /* AppDelegate.m in Sources */,
 				60C817691F627C6100CEC5D6 /* main.m in Sources */,
+				60C819001F661FC600CEC5D6 /* PBVoipService.m in Sources */,
+				60C819091F662D5E00CEC5D6 /* PBProviderDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

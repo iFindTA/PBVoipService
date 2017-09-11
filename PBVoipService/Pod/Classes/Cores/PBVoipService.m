@@ -1,21 +1,20 @@
 //
-//  FLKSipService.m
-//  PJSip2.5.5Pro
+//  PBVoipService.m
+//  PBVoipService
 //
-//  Created by nanhujiaju on 2017/1/3.
-//  Copyright © 2017年 nanhu. All rights reserved.
+//  Created by nanhujiaju on 2017/9/11.
+//  Copyright © 2017年 nanhujiaju. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "PBVoipService.h"
 #import <PBKits/PBKits.h>
-#import "FLKSipService.h"
 #import <pjsua-lib/pjsua_internal.h>
 #import <pjmedia/wav_port.h>
-#import "FLKSipConstants.h"
-#import "FLKVoipCallProfile.h"
-#import "FLKVoipCallProfileDelegate.h"
-#import "FLKCallManager.h"
-#import "FLKProviderDelegate.h"
+#import "PBSipConstants.h"
+#import "PBVoipCallProfile.h"
+#import "PBVoipCallProfileDelegate.h"
+#import "PBCallManager.h"
+#import "PBProviderDelegate.h"
 #import <CoreTelephony/CTCall.h>
 #import <CoreTelephony/CTCallCenter.h>
 #import <UserNotifications/UserNotifications.h>
@@ -24,8 +23,8 @@
 
 #pragma mark == application lock screen notification
 
-#define FLKSCREEN_LOCK                          CFSTR("com.apple.springboard.lockcomplete")
-#define FLKSCREEN_CAHNGE                        CFSTR("com.apple.springboard.lockstate")
+#define PBSCREEN_LOCK                          CFSTR("com.apple.springboard.lockcomplete")
+#define PBSCREEN_CAHNGE                        CFSTR("com.apple.springboard.lockstate")
 #define NotificationPwdUI                       CFSTR("com.apple.springboard.hasBlankedScreen")
 
 /**
@@ -35,7 +34,7 @@ static void screenLockStateChanged(CFNotificationCenterRef center,void* observer
 
 #pragma mark == extern vars defines
 
-NSString * const FLK_VOIPCALL_DID_RECEIVED_INCOMING_PUSH                =   @"com.flk.microchat-voip.call.push";
+NSString * const PB_VOIPCALL_DID_RECEIVED_INCOMING_PUSH                =   @"com.PB.microchat-voip.call.push";
 
 #pragma mark == helper util methods ==
 
@@ -91,7 +90,7 @@ static pjsip_redirect_op on_call_redirected(pjsua_call_id call_id, const pjsip_u
 
 #pragma mark =======================================================================================
 
-@interface FLKSipConfigure ()
+@interface PBSipConfigure ()
 
 @property (nonatomic, copy, readwrite) NSString * host;
 @property (nonatomic, assign, readwrite) uint64_t port;
@@ -105,14 +104,14 @@ static pjsip_redirect_op on_call_redirected(pjsua_call_id call_id, const pjsip_u
 
 @end
 
-@implementation FLKSipConfigure
+@implementation PBSipConfigure
 
-+ (FLKSipConfigure *)defaultConfiguration {
-    return [FLKSipConfigure configureWithServerHost:PJ_SIP_SERVER_HOST withPort:PJ_SIP_SERVER_PORT withRingFile:[NSString stringWithFormat:@"%@.%@", PJ_SIP_RING_FILE, PJ_SIP_RING_FILE_EXT]];
++ (PBSipConfigure *)defaultConfiguration {
+    return [PBSipConfigure configureWithServerHost:PJ_SIP_SERVER_HOST withPort:PJ_SIP_SERVER_PORT withRingFile:[NSString stringWithFormat:@"%@.%@", PJ_SIP_RING_FILE, PJ_SIP_RING_FILE_EXT]];
 }
 
-+ (FLKSipConfigure *)configureWithServerHost:(NSString *)host withPort:(uint64_t)port withRingFile:(NSString * _Nullable)ringFile {
-    FLKSipConfigure * config = [[FLKSipConfigure alloc] init];
++ (PBSipConfigure *)configureWithServerHost:(NSString *)host withPort:(uint64_t)port withRingFile:(NSString * _Nullable)ringFile {
+    PBSipConfigure * config = [[PBSipConfigure alloc] init];
     config.host = host.copy;
     config.port = port;
     if (ringFile.length == 0) {
@@ -127,9 +126,7 @@ static pjsip_redirect_op on_call_redirected(pjsua_call_id call_id, const pjsip_u
 
 #pragma mark ===========================================================================
 
-
-
-@interface FLKSipService () <FLKVoipCallProfileDelegate, FLKSystemProviderDelegate> {
+@interface PBVoipService ()<PBVoipCallProfileDelegate, PBSystemProviderDelegate> {
     pjsua_app_config_t                              _app_cfg;
 }
 
@@ -159,24 +156,24 @@ static pjsip_redirect_op on_call_redirected(pjsua_call_id call_id, const pjsip_u
 
 #pragma mark -- voip callback handler
 
-@property (nonatomic, copy, nullable) FLKVoipCallbackBlock voipCallBackBlock;
-@property (nonatomic, copy, nullable) FLKVoipConvertDisplayBlock voipCallConvertBlock;
-@property (nonatomic, copy, nullable) FLKVoipCallProfileBlock voipCallProfileBlock;
-@property (nonatomic, copy, nullable) FLKVoipServiceRestartBlock voipServiceRestartBlock;
+@property (nonatomic, copy, nullable) PBVoipCallbackBlock voipCallBackBlock;
+@property (nonatomic, copy, nullable) PBVoipConvertDisplayBlock voipCallConvertBlock;
+@property (nonatomic, copy, nullable) PBVoipCallProfileBlock voipCallProfileBlock;
+@property (nonatomic, copy, nullable) PBVoipServiceRestartBlock voipServiceRestartBlock;
 
 /**
  the app configure
  */
 //@property (nonatomic, assign, readwrite) pjsua_app_config_t app_cfg;
 
-@property (nonatomic, strong) FLKSipConfigure *serverConfiguration;
+@property (nonatomic, strong) PBSipConfigure *serverConfiguration;
 
 #pragma mark -- audio player
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 
 #pragma mark -- voip call custom profile
-@property (nonatomic, strong, nullable) FLKVoipCallProfile *voipProfile;
-@property (nonatomic, strong, nullable) FLKProviderDelegate *systemDelegate;
+@property (nonatomic, strong, nullable) PBVoipCallProfile *voipProfile;
+@property (nonatomic, strong, nullable) PBProviderDelegate *systemDelegate;
 
 /**
  标示当前电话 是否由系统接起来
@@ -198,15 +195,15 @@ static pjsip_redirect_op on_call_redirected(pjsua_call_id call_id, const pjsip_u
 
 @end
 
-static FLKSipService *instance = nil;
-static CGFloat const FLK_BACKGROUND_MODE_EXCUTE_INTERVAL                        =   6.f;
+static PBVoipService *instance = nil;
+static CGFloat const PB_BACKGROUND_MODE_EXCUTE_INTERVAL                        =   6.f;
 
-@implementation FLKSipService
+@implementation PBVoipService
 
-+ (FLKSipService *)shared {
++ (PBVoipService *)shared {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        instance = [[FLKSipService alloc] init];
+        instance = [[PBVoipService alloc] init];
     });
     
     return instance;
@@ -231,10 +228,10 @@ static CGFloat const FLK_BACKGROUND_MODE_EXCUTE_INTERVAL                        
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sipApplicationWillEnterForegroundMode) name:UIApplicationWillEnterForegroundNotification object:nil];
         //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sipApplicationDidBecomeActiveForegroundMode) name:UIApplicationDidBecomeActiveNotification object:nil];
         //此处通知为下下策
-        //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sipApplicationDidReceivedVoipPushInfo:) name:FLK_VOIPCALL_DID_RECEIVED_INCOMING_PUSH object:nil];
+        //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sipApplicationDidReceivedVoipPushInfo:) name:PB_VOIPCALL_DID_RECEIVED_INCOMING_PUSH object:nil];
         //screen lock notification
-        CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, screenLockStateChanged, FLKSCREEN_LOCK, NULL, CFNotificationSuspensionBehaviorDeliverImmediately);
-        CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, screenLockStateChanged, FLKSCREEN_CAHNGE, NULL, CFNotificationSuspensionBehaviorDeliverImmediately);
+        CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, screenLockStateChanged, PBSCREEN_LOCK, NULL, CFNotificationSuspensionBehaviorDeliverImmediately);
+        CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, screenLockStateChanged, PBSCREEN_CAHNGE, NULL, CFNotificationSuspensionBehaviorDeliverImmediately);
         
         [[AFNetworkReachabilityManager sharedManager] startMonitoring];
         weakify(self)
@@ -340,7 +337,7 @@ static CGFloat const FLK_BACKGROUND_MODE_EXCUTE_INTERVAL                        
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     queue = self.sipServiceQueue;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(FLK_BACKGROUND_MODE_EXCUTE_INTERVAL * NSEC_PER_SEC)), queue, ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(PB_BACKGROUND_MODE_EXCUTE_INTERVAL * NSEC_PER_SEC)), queue, ^{
         [application endBackgroundTask:self.taskIdentifier];
     });
 }
@@ -367,7 +364,7 @@ static CGFloat const FLK_BACKGROUND_MODE_EXCUTE_INTERVAL                        
             if (self.voipProfile == nil) {
                 NSLog(@"创建profile");
                 PBMAINDelay(PBANIMATE_DURATION, ^{
-                    [self showCustomProfile4LaunchType:FLKCallLaunchTypeTalking withUsrAccount:remoteEndia];
+                    [self showCustomProfile4LaunchType:PBCallLaunchTypeTalking withUsrAccount:remoteEndia];
                 });
             }
         } else {
@@ -375,9 +372,9 @@ static CGFloat const FLK_BACKGROUND_MODE_EXCUTE_INTERVAL                        
             //取消本地通知
             //[self cancelSystemVoipCallLocalNotification];
             //10以下系统 此时状态在振铃
-            FLKCallLaunchType type = FLKCallLaunchTypeCalled;
+            PBCallLaunchType type = PBCallLaunchTypeCalled;
             if (_callState == PJSIP_INV_STATE_CONFIRMED) {
-                type = FLKCallLaunchTypeTalking;
+                type = PBCallLaunchTypeTalking;
                 //[self stopRingWithSpeaker];
             } else if (_callState == PJSIP_INV_STATE_EARLY) {
                 [self startRingWithSpeaker];
@@ -404,7 +401,7 @@ static CGFloat const FLK_BACKGROUND_MODE_EXCUTE_INTERVAL                        
 
 - (dispatch_queue_t)sipServiceQueue {
     if (!_sipServiceQueue) {
-        _sipServiceQueue = dispatch_queue_create("com.flk.sip-service.io", NULL);
+        _sipServiceQueue = dispatch_queue_create("com.PB.sip-service.io", NULL);
     }
     return _sipServiceQueue;
 }
@@ -524,41 +521,41 @@ static CGFloat const FLK_BACKGROUND_MODE_EXCUTE_INTERVAL                        
      2，生成未接来电
      */
     /*
-    NSError * _Nullable(^excuteBlock)() = ^(){
-        __block NSError *err;
-        if (self.serverConfiguration.localUsrAcc.length == 0 || self.serverConfiguration.host.length == 0) {
-            _serverConfiguration = nil;
-            NSDictionary *cfgMap = [self fetchLocalConfiguration];
-            if (cfgMap == nil) {
-                err = [NSError errorWithDomain:@"failed to auto sign in with empty params!" code:-1 userInfo:nil];
-                return err;//直接失败
-            }
-            self.serverConfiguration = [self convertMap2SipConfigure:cfgMap];
-        }
+     NSError * _Nullable(^excuteBlock)() = ^(){
+     __block NSError *err;
+     if (self.serverConfiguration.localUsrAcc.length == 0 || self.serverConfiguration.host.length == 0) {
+     _serverConfiguration = nil;
+     NSDictionary *cfgMap = [self fetchLocalConfiguration];
+     if (cfgMap == nil) {
+     err = [NSError errorWithDomain:@"failed to auto sign in with empty params!" code:-1 userInfo:nil];
+     return err;//直接失败
+     }
+     self.serverConfiguration = [self convertMap2SipConfigure:cfgMap];
+     }
      
-        //这时能确定sip service 不正常（有可能是链接 也有可能是用户未认证）
-        
-        __weak typeof(FLKSipService *)weakSelf = self;
-        dispatch_semaphore_t sem = dispatch_semaphore_create(0);
+     //这时能确定sip service 不正常（有可能是链接 也有可能是用户未认证）
+     
+     __weak typeof(PBSipService *)weakSelf = self;
+     dispatch_semaphore_t sem = dispatch_semaphore_create(0);
      //此处不可以加信号量 会锁住线程
-        [self startWithConfiguration:self.serverConfiguration withCompletion:^(NSError * _Nullable error) {
-            if (error != nil) {
-                err = error;
-                dispatch_semaphore_signal(sem);
-            } else {
-                [weakSelf autherizeUsr:self.serverConfiguration.localUsrAcc withPwd:self.serverConfiguration.localUsrPwd withCompletion:^(NSError * _Nullable error) {
-                    err = error;
-                    dispatch_semaphore_signal(sem);
-                }];
-            }
-        }];
-        dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
-        
-        return err;
-    };
-    
-    [self excuteBlockEvent:excuteBlock withCompletion:completion];
-    //*/
+     [self startWithConfiguration:self.serverConfiguration withCompletion:^(NSError * _Nullable error) {
+     if (error != nil) {
+     err = error;
+     dispatch_semaphore_signal(sem);
+     } else {
+     [weakSelf autherizeUsr:self.serverConfiguration.localUsrAcc withPwd:self.serverConfiguration.localUsrPwd withCompletion:^(NSError * _Nullable error) {
+     err = error;
+     dispatch_semaphore_signal(sem);
+     }];
+     }
+     }];
+     dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
+     
+     return err;
+     };
+     
+     [self excuteBlockEvent:excuteBlock withCompletion:completion];
+     //*/
     /*
      
      dispatch_semaphore_t sem = dispatch_semaphore_create(0);
@@ -568,31 +565,31 @@ static CGFloat const FLK_BACKGROUND_MODE_EXCUTE_INTERVAL                        
      });
      dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
      
-    __block NSError * blockError;
-    if (self.serverConfiguration.localUsrAcc.length == 0 || self.serverConfiguration.host.length == 0) {
-        _serverConfiguration = nil;
-        NSDictionary *cfgMap = [self fetchLocalConfiguration];
-        if (cfgMap == nil) {
-            blockError = [NSError errorWithDomain:@"failed to auto sign in with empty params!" code:-1 userInfo:nil];
-            if (completion) {
-                completion(blockError);
-            }
-            return ;//直接失败
-        }
-        self.serverConfiguration = [self convertMap2SipConfigure:cfgMap];
-    }
-    __weak typeof(FLKSipService *)weakSelf = self;
-    [self startWithConfiguration:self.serverConfiguration withCompletion:^(NSError * _Nullable error) {
-        //当重新唤醒程序时，如果当前有'合法'用户则自动登录上去并添加localusr，否则不做登录（用户退出登录时记得clean usr/resign usr）
-        if (error != nil) {
-            if (completion) {
-                completion(error);
-            }
-        } else {
-            [weakSelf autherizeUsr:self.serverConfiguration.localUsrAcc withPwd:self.serverConfiguration.localUsrPwd withCompletion:completion];
-        }
-    }];
-    //*/
+     __block NSError * blockError;
+     if (self.serverConfiguration.localUsrAcc.length == 0 || self.serverConfiguration.host.length == 0) {
+     _serverConfiguration = nil;
+     NSDictionary *cfgMap = [self fetchLocalConfiguration];
+     if (cfgMap == nil) {
+     blockError = [NSError errorWithDomain:@"failed to auto sign in with empty params!" code:-1 userInfo:nil];
+     if (completion) {
+     completion(blockError);
+     }
+     return ;//直接失败
+     }
+     self.serverConfiguration = [self convertMap2SipConfigure:cfgMap];
+     }
+     __weak typeof(PBSipService *)weakSelf = self;
+     [self startWithConfiguration:self.serverConfiguration withCompletion:^(NSError * _Nullable error) {
+     //当重新唤醒程序时，如果当前有'合法'用户则自动登录上去并添加localusr，否则不做登录（用户退出登录时记得clean usr/resign usr）
+     if (error != nil) {
+     if (completion) {
+     completion(error);
+     }
+     } else {
+     [weakSelf autherizeUsr:self.serverConfiguration.localUsrAcc withPwd:self.serverConfiguration.localUsrPwd withCompletion:completion];
+     }
+     }];
+     //*/
     
     //启动sip server
     NSError * _Nullable(^excuteBlock)() = ^(){
@@ -683,7 +680,7 @@ static CGFloat const FLK_BACKGROUND_MODE_EXCUTE_INTERVAL                        
 
 #pragma mark -- 用户信息存储／读取
 static NSString * const voipConfigFileName     =       @"voipConfigMap.json";
-static NSString * const voipConfigAESKey       =       @"com.flk.ios-voip.key";
+static NSString * const voipConfigAESKey       =       @"com.PB.ios-voip.key";
 - (NSString *)getVoipConfigMapPath {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true);
     NSString *documentPath = [paths firstObject];
@@ -747,39 +744,39 @@ static NSString * const voipConfigAESKey       =       @"com.flk.ios-voip.key";
     }
     return [mapEnData writeToFile:path atomically:true];
 }
-static NSString * const FLK_SIP_USR_KEY_HOST                =   @"voip.cfg.key.host";
-static NSString * const FLK_SIP_USR_KEY_PORT                =   @"voip.cfg.key.port";
-static NSString * const FLK_SIP_USR_KEY_ACC                 =   @"voip.cfg.key.acc";
-static NSString * const FLK_SIP_USR_KEY_PWD                 =   @"voip.cfg.key.pwd";
-static NSString * const FLK_SIP_USR_KEY_RING                =   @"voip.cfg.key.ring";
-- (FLKSipConfigure * _Nullable)convertMap2SipConfigure:(NSDictionary *)map {
+static NSString * const PB_SIP_USR_KEY_HOST                =   @"voip.cfg.key.host";
+static NSString * const PB_SIP_USR_KEY_PORT                =   @"voip.cfg.key.port";
+static NSString * const PB_SIP_USR_KEY_ACC                 =   @"voip.cfg.key.acc";
+static NSString * const PB_SIP_USR_KEY_PWD                 =   @"voip.cfg.key.pwd";
+static NSString * const PB_SIP_USR_KEY_RING                =   @"voip.cfg.key.ring";
+- (PBSipConfigure * _Nullable)convertMap2SipConfigure:(NSDictionary *)map {
     if (map == nil) {
         return nil;
     }
-    NSString *host = [map objectForKey:FLK_SIP_USR_KEY_HOST];
-    NSNumber *port = [map objectForKey:FLK_SIP_USR_KEY_PORT];
-    NSString *acc = [map objectForKey:FLK_SIP_USR_KEY_ACC];
-    NSString *pwd = [map objectForKey:FLK_SIP_USR_KEY_PWD];
-    NSString *ring = [map objectForKey:FLK_SIP_USR_KEY_RING];
-    FLKSipConfigure *cfg = [FLKSipConfigure configureWithServerHost:host withPort:port.unsignedShortValue withRingFile:ring.length==0?PBFormat(@"%@.%@",PJ_SIP_RING_FILE,PJ_SIP_RING_FILE_EXT):ring];
+    NSString *host = [map objectForKey:PB_SIP_USR_KEY_HOST];
+    NSNumber *port = [map objectForKey:PB_SIP_USR_KEY_PORT];
+    NSString *acc = [map objectForKey:PB_SIP_USR_KEY_ACC];
+    NSString *pwd = [map objectForKey:PB_SIP_USR_KEY_PWD];
+    NSString *ring = [map objectForKey:PB_SIP_USR_KEY_RING];
+    PBSipConfigure *cfg = [PBSipConfigure configureWithServerHost:host withPort:port.unsignedShortValue withRingFile:ring.length==0?PBFormat(@"%@.%@",PJ_SIP_RING_FILE,PJ_SIP_RING_FILE_EXT):ring];
     cfg.localUsrAcc = acc.copy;
     cfg.localUsrPwd = pwd.copy;
     return cfg;
 }
 
-- (NSDictionary * _Nullable)convertSipConfigre2Map:(FLKSipConfigure *)cfg {
+- (NSDictionary * _Nullable)convertSipConfigre2Map:(PBSipConfigure *)cfg {
     if (cfg == nil) {
         return nil;
     }
     NSMutableDictionary *mutMap = [NSMutableDictionary dictionaryWithCapacity:0];
-    [mutMap setObject:cfg.host forKey:FLK_SIP_USR_KEY_HOST];
+    [mutMap setObject:cfg.host forKey:PB_SIP_USR_KEY_HOST];
     NSNumber *port = [NSNumber numberWithUnsignedInteger:(NSUInteger)cfg.port];
-    [mutMap setObject:port forKey:FLK_SIP_USR_KEY_PORT];
-    [mutMap setObject:cfg.localUsrAcc forKey:FLK_SIP_USR_KEY_ACC];
-    [mutMap setObject:cfg.localUsrPwd forKey:FLK_SIP_USR_KEY_PWD];
+    [mutMap setObject:port forKey:PB_SIP_USR_KEY_PORT];
+    [mutMap setObject:cfg.localUsrAcc forKey:PB_SIP_USR_KEY_ACC];
+    [mutMap setObject:cfg.localUsrPwd forKey:PB_SIP_USR_KEY_PWD];
     NSString *ring = cfg.ringFile;
     ring = ring.length==0?PBFormat(@"%@.%@",PJ_SIP_RING_FILE,PJ_SIP_RING_FILE_EXT):ring;
-    [mutMap setObject:ring forKey:FLK_SIP_USR_KEY_RING];
+    [mutMap setObject:ring forKey:PB_SIP_USR_KEY_RING];
     return [mutMap copy];
 }
 /**
@@ -816,7 +813,7 @@ static NSString * const FLK_SIP_USR_KEY_RING                =   @"voip.cfg.key.r
 
 #pragma mark == 启动sip 服务
 
-- (void)startWithConfiguration:(FLKSipConfigure *)config withCompletion:(void (^ _Nullable)(NSError * _Nullable))completion {
+- (void)startWithConfiguration:(PBSipConfigure *)config withCompletion:(void (^ _Nullable)(NSError * _Nullable))completion {
     
     NSError * _Nullable(^excuteBlock)() = ^(){
         /* first is to check current sip service state */
@@ -843,7 +840,7 @@ static NSString * const FLK_SIP_USR_KEY_RING                =   @"voip.cfg.key.r
 - (void)outterAutoStartSipServiceWithCompletion:(void (^)(NSError * _Nullable))completion {
     
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(stop) object:nil];
-   
+    
     __block NSError *blockError;
     
     if ([self serviceAvaliable]) {
@@ -874,7 +871,7 @@ static NSString * const FLK_SIP_USR_KEY_RING                =   @"voip.cfg.key.r
      */
     //这时能确定sip service 不正常（有可能是链接 也有可能是用户未认证）
     
-    __weak typeof(FLKSipService *)weakSelf = self;
+    __weak typeof(self)weakSelf = self;
     [self startWithConfiguration:self.serverConfiguration withCompletion:^(NSError * _Nullable error) {//当重新唤醒程序时，如果当前有'合法'用户则自动登录上去并添加localusr，否则不做登录（用户退出登录时记得clean usr/resign usr）
         if (error != nil) {
             if (completion) {
@@ -929,7 +926,7 @@ static NSString * const FLK_SIP_USR_KEY_RING                =   @"voip.cfg.key.r
      */
     //这时能确定sip service 不正常（有可能是链接 也有可能是用户未认证）
     
-    __weak typeof(FLKSipService *)weakSelf = self;
+    __weak typeof(self)weakSelf = self;
     [self startWithConfiguration:self.serverConfiguration withCompletion:^(NSError * _Nullable error) {
         //当重新唤醒程序时，如果当前有'合法'用户则自动登录上去并添加localusr，否则不做登录（用户退出登录时记得clean usr/resign usr）
         if ([self whetherSystemOperationAbove10]) {
@@ -1026,10 +1023,10 @@ static NSString * const FLK_SIP_USR_KEY_RING                =   @"voip.cfg.key.r
     /* clean sua */
     if (pjsua_get_state() != PJSUA_STATE_NULL) {
         /*
-        status = pjsua_destroy();
-        if (status != PJ_SUCCESS) {
-            NSLog(@"failed to clean pjsua!");
-        }
+         status = pjsua_destroy();
+         if (status != PJ_SUCCESS) {
+         NSLog(@"failed to clean pjsua!");
+         }
          */
     }
     
@@ -1606,13 +1603,13 @@ on_error:
     // we are going to play and record so we pick that category
     NSError *error = nil;
     /*
-    NSString *category;
-    if ([self applicationWhetherForeground]) {
-        category = AVAudioSessionCategoryMultiRoute;
-    } else {
-        category = AVAudioSessionCategoryAmbient;
-    }
-    //*/
+     NSString *category;
+     if ([self applicationWhetherForeground]) {
+     category = AVAudioSessionCategoryMultiRoute;
+     } else {
+     category = AVAudioSessionCategoryAmbient;
+     }
+     //*/
     [sessionInstance setCategory:AVAudioSessionCategoryAmbient error:&error];
     if (error) {
         NSLog(@"failed to set audio session category:%@", error.localizedDescription);
@@ -1706,47 +1703,47 @@ on_error:
     [self excuteBlockEvent:block withCompletion:completion];
     
     /*
-    NSString *sipServer = [self assembleSipServer];
-    pjsua_acc_id acc_id = pjsua_acc_get_default();
-    NSString *targetUri = [NSString stringWithFormat:@"sips:%@@%@",acc,sipServer];
-    NSLog(@"acc_id:%d launched calling to %@",acc_id, acc);
-    //
-    //pjsua_set_null_snd_dev();
-    
-    pj_status_t status;
-    char *tmp_uri = (char *)targetUri.UTF8String;
-    pjsip_check_thread();
-    status = pjsua_verify_url(tmp_uri);
-    if (status != PJ_SUCCESS){
-        NSLog(@"invalid calling uri !");
-        error = [NSError errorWithDomain:@"对方账号不存在！" code:-1 userInfo:nil];
-        if (completion) {
-            completion(error);
-        }
-        return;
-    }
-    pj_str_t dest_uri = pj_str(tmp_uri);
-    
-    // call setting //
-    pjsua_call_setting call_cfg;
-    pjsua_call_setting_default(&call_cfg);
-    call_cfg.aud_cnt = 1;
-    call_cfg.vid_cnt = 0;
-    _callID = PJSUA_INVALID_ID;
-    status = pjsua_call_make_call(acc_id, &dest_uri, &call_cfg, NULL, NULL, &_callID);
-    if (status != PJ_SUCCESS) {
-        char errmsg[PJ_ERR_MSG_SIZE];
-        pj_strerror(status, errmsg, sizeof(errmsg));
-        NSLog(@"calling error:%d---%s",status, errmsg);
-        error = [NSError errorWithDomain:[NSString stringWithFormat:@"%s", errmsg] code:-1 userInfo:nil];
-        if (completion) {
-            completion(error);
-        }
-        return;
-    }
-    if (completion) {
-        completion(nil);
-    }
+     NSString *sipServer = [self assembleSipServer];
+     pjsua_acc_id acc_id = pjsua_acc_get_default();
+     NSString *targetUri = [NSString stringWithFormat:@"sips:%@@%@",acc,sipServer];
+     NSLog(@"acc_id:%d launched calling to %@",acc_id, acc);
+     //
+     //pjsua_set_null_snd_dev();
+     
+     pj_status_t status;
+     char *tmp_uri = (char *)targetUri.UTF8String;
+     pjsip_check_thread();
+     status = pjsua_verify_url(tmp_uri);
+     if (status != PJ_SUCCESS){
+     NSLog(@"invalid calling uri !");
+     error = [NSError errorWithDomain:@"对方账号不存在！" code:-1 userInfo:nil];
+     if (completion) {
+     completion(error);
+     }
+     return;
+     }
+     pj_str_t dest_uri = pj_str(tmp_uri);
+     
+     // call setting //
+     pjsua_call_setting call_cfg;
+     pjsua_call_setting_default(&call_cfg);
+     call_cfg.aud_cnt = 1;
+     call_cfg.vid_cnt = 0;
+     _callID = PJSUA_INVALID_ID;
+     status = pjsua_call_make_call(acc_id, &dest_uri, &call_cfg, NULL, NULL, &_callID);
+     if (status != PJ_SUCCESS) {
+     char errmsg[PJ_ERR_MSG_SIZE];
+     pj_strerror(status, errmsg, sizeof(errmsg));
+     NSLog(@"calling error:%d---%s",status, errmsg);
+     error = [NSError errorWithDomain:[NSString stringWithFormat:@"%s", errmsg] code:-1 userInfo:nil];
+     if (completion) {
+     completion(error);
+     }
+     return;
+     }
+     if (completion) {
+     completion(nil);
+     }
      //*/
     //启动主叫 UI
     [self enableLocalVoipCallFlagWithUUID:nil];
@@ -1755,29 +1752,29 @@ on_error:
 
 #pragma mark -- Call callback Event -
 
-- (void)registerVoipCallbackEventHandler:(_Nullable FLKVoipCallbackBlock)completion {
+- (void)registerVoipCallbackEventHandler:(_Nullable PBVoipCallbackBlock)completion {
     self.voipCallBackBlock = [completion copy];
 }
 
-- (void)registerVoipCallConvertDisplayEventHandler:(FLKVoipConvertDisplayBlock)completion {
+- (void)registerVoipCallConvertDisplayEventHandler:(PBVoipConvertDisplayBlock)completion {
     self.voipCallConvertBlock = [completion copy];
 }
 
-- (void)registerVoipCallProfileShowEventHandler:(FLKVoipCallProfileBlock)completion {
+- (void)registerVoipCallProfileShowEventHandler:(PBVoipCallProfileBlock)completion {
     self.voipCallProfileBlock = [completion copy];
 }
 
-- (void)registerVoipServiceShouldRestartWhenNetworkAvailable:(FLKVoipServiceRestartBlock)completion {
+- (void)registerVoipServiceShouldRestartWhenNetworkAvailable:(PBVoipServiceRestartBlock)completion {
     self.voipServiceRestartBlock = [completion copy];
 }
 
-static NSString * const FLK_VOIPCALL_OTHER_EVENT_BUSY                       =   @"busy";//对方正在通话中
-static NSString * const FLK_VOIPCALL_OTHER_EVENT_CANNOT_CONNECT             =   @"ll";//无法拨通
-static NSString * const FLK_VOIPCALL_OTHER_EVENT_UNACCEPT                   =   @"oo";//无人接听
+static NSString * const PB_VOIPCALL_OTHER_EVENT_BUSY                       =   @"busy";//对方正在通话中
+static NSString * const PB_VOIPCALL_OTHER_EVENT_CANNOT_CONNECT             =   @"ll";//无法拨通
+static NSString * const PB_VOIPCALL_OTHER_EVENT_UNACCEPT                   =   @"oo";//无人接听
 
 /**
  电话挂断是否是其他事件导致
-
+ 
  @param contact 联系人信息
  */
 - (BOOL)whetherOtherEvent4Contact:(NSString *)contact {
@@ -1785,29 +1782,29 @@ static NSString * const FLK_VOIPCALL_OTHER_EVENT_UNACCEPT                   =   
         return false;
     }
     
-    if ([contact rangeOfString:FLK_VOIPCALL_OTHER_EVENT_BUSY].location != NSNotFound
-        ||[contact rangeOfString:FLK_VOIPCALL_OTHER_EVENT_UNACCEPT].location != NSNotFound
-        ||[contact rangeOfString:FLK_VOIPCALL_OTHER_EVENT_CANNOT_CONNECT].location != NSNotFound) {
+    if ([contact rangeOfString:PB_VOIPCALL_OTHER_EVENT_BUSY].location != NSNotFound
+        ||[contact rangeOfString:PB_VOIPCALL_OTHER_EVENT_UNACCEPT].location != NSNotFound
+        ||[contact rangeOfString:PB_VOIPCALL_OTHER_EVENT_CANNOT_CONNECT].location != NSNotFound) {
         return true;
     }
     return false;
 }
 
-- (FLKVoipCallEndState)fetchCallEndState4OtherEventWithContact:(NSString *)contact {
-    FLKVoipCallEndState endState = FLKVoipCallEndStateRemoteUnavaliable;
-    if ([contact rangeOfString:FLK_VOIPCALL_OTHER_EVENT_BUSY].location != NSNotFound) {
-        endState = FLKVoipCallEndStateRemoteBusy;
-    } else if ([contact rangeOfString:FLK_VOIPCALL_OTHER_EVENT_UNACCEPT].location != NSNotFound) {
-        endState = FLKVoipCallEndStateRemoteUnAccept;
-    } else if ([contact rangeOfString:FLK_VOIPCALL_OTHER_EVENT_CANNOT_CONNECT].location != NSNotFound) {
-        endState = FLKVoipCallEndStateRemoteUnavaliable;
+- (PBVoipCallEndState)fetchCallEndState4OtherEventWithContact:(NSString *)contact {
+    PBVoipCallEndState endState = PBVoipCallEndStateRemoteUnavaliable;
+    if ([contact rangeOfString:PB_VOIPCALL_OTHER_EVENT_BUSY].location != NSNotFound) {
+        endState = PBVoipCallEndStateRemoteBusy;
+    } else if ([contact rangeOfString:PB_VOIPCALL_OTHER_EVENT_UNACCEPT].location != NSNotFound) {
+        endState = PBVoipCallEndStateRemoteUnAccept;
+    } else if ([contact rangeOfString:PB_VOIPCALL_OTHER_EVENT_CANNOT_CONNECT].location != NSNotFound) {
+        endState = PBVoipCallEndStateRemoteUnavaliable;
     }
     return endState;
 }
 
-- (FLKVoipCallEndState)fetchVoipCallEndState4Role:(FLKVoipCallRole)role {
+- (PBVoipCallEndState)fetchVoipCallEndState4Role:(PBVoipCallRole)role {
     
-    FLKVoipCallEndState endState = FLKVoipCallEndStateRemoteUnavaliable;
+    PBVoipCallEndState endState = PBVoipCallEndStateRemoteUnavaliable;
     if (_callID == PJSUA_INVALID_ID) {
         return endState;
     }
@@ -1827,10 +1824,10 @@ static NSString * const FLK_VOIPCALL_OTHER_EVENT_UNACCEPT                   =   
                 endState = [self fetchCallEndState4OtherEventWithContact:remoteContact];
             } else {
                 //已经接通 至少有一方主动挂断
-                if (self.whetherHangupByMySelf && role == FLKVoipCallRoleUAC) {
-                    endState = FLKVoipCallEndStateUACHangup;
+                if (self.whetherHangupByMySelf && role == PBVoipCallRoleUAC) {
+                    endState = PBVoipCallEndStateUACHangup;
                 } else {
-                    endState = FLKVoipCallEndStateUASHangup;
+                    endState = PBVoipCallEndStateUASHangup;
                 }
             }
         } else {
@@ -1840,10 +1837,10 @@ static NSString * const FLK_VOIPCALL_OTHER_EVENT_UNACCEPT                   =   
                 endState = [self fetchCallEndState4OtherEventWithContact:remoteContact];
             } else {
                 //至少有一方 主动挂断
-                if (self.whetherHangupByMySelf && role == FLKVoipCallRoleUAC) {
-                    endState = FLKVoipCallEndStateUACCancel;
+                if (self.whetherHangupByMySelf && role == PBVoipCallRoleUAC) {
+                    endState = PBVoipCallEndStateUACCancel;
                 } else {
-                    endState = FLKVoipCallEndStateUASCancel;
+                    endState = PBVoipCallEndStateUASCancel;
                 }
             }
         }
@@ -1868,12 +1865,12 @@ static NSString * const FLK_VOIPCALL_OTHER_EVENT_UNACCEPT                   =   
     pjsip_check_thread();
     if (pjsua_call_get_info(_callID, &info) == PJ_SUCCESS) {
         NSTimeInterval interval = info.connect_duration.sec;
-        FLKVoipCallRole role = FLKVoipCallRoleUAC;
+        PBVoipCallRole role = PBVoipCallRoleUAC;
         if (info.role == PJSIP_ROLE_UAS || info.role == PJSIP_UAS_ROLE) {
-            role = FLKVoipCallRoleUAS;
+            role = PBVoipCallRoleUAS;
         }
-        FLKVoipCallEndState endState = [self fetchVoipCallEndState4Role:role];
-        NSDictionary *info = [NSDictionary dictionaryWithObjectsAndKeys:@(interval), FLK_VOIPCALL_END_KEY_INTERVAL, @(endState), FLK_VOIPCALL_END_KEY_STATE, remoteAcc, FLK_VOIPCALL_END_KEY_ACCOUNT, @(role), FLK_VOIPCALL_END_KEY_ROLE, uuid, FLK_VOIPCALL_END_KEY_UUID, nil];
+        PBVoipCallEndState endState = [self fetchVoipCallEndState4Role:role];
+        NSDictionary *info = [NSDictionary dictionaryWithObjectsAndKeys:@(interval), PB_VOIPCALL_END_KEY_INTERVAL, @(endState), PB_VOIPCALL_END_KEY_STATE, remoteAcc, PB_VOIPCALL_END_KEY_ACCOUNT, @(role), PB_VOIPCALL_END_KEY_ROLE, uuid, PB_VOIPCALL_END_KEY_UUID, nil];
         NSLog(@"通话结束了-------%@", info);
         if (self.voipCallBackBlock) {
             self.voipCallBackBlock(info);
@@ -1954,7 +1951,7 @@ static NSString * const FLK_VOIPCALL_OTHER_EVENT_UNACCEPT                   =   
 
 /**
  DTMF:双音多频，一个DTMF信号由两个频率的音频信号叠加构成
-
+ 
  @param digest :按键
  */
 - (BOOL)sendDTMFDigest:(char)digest {
@@ -2030,10 +2027,10 @@ static NSString * const FLK_VOIPCALL_OTHER_EVENT_UNACCEPT                   =   
         _audioPlayer = nil;
     }
     /*
-    if (_app_cfg.record_id != PJSUA_INVALID_ID && _callID != PJSUA_INVALID_ID) {
-        pjsua_recorder_destroy(_app_cfg.record_id);
-        _app_cfg.record_id = PJSUA_INVALID_ID;
-    }
+     if (_app_cfg.record_id != PJSUA_INVALID_ID && _callID != PJSUA_INVALID_ID) {
+     pjsua_recorder_destroy(_app_cfg.record_id);
+     _app_cfg.record_id = PJSUA_INVALID_ID;
+     }
      */
 }
 
@@ -2074,7 +2071,7 @@ static NSString * const FLK_VOIPCALL_OTHER_EVENT_UNACCEPT                   =   
     pjmedia_snd_port *snd_port;
     //char tmp[10];
     pj_status_t status;
-
+    
     /* Verify cmd line arguments. */
     
     
@@ -2084,60 +2081,60 @@ static NSString * const FLK_VOIPCALL_OTHER_EVENT_UNACCEPT                   =   
     
     /* Must create a pool factory before we can allocate any memory. */
     pj_caching_pool_init(&cp, &pj_pool_factory_default_policy, 0);
-
+    
     /*
-          106  * Initialize media endpoint.
-          107  * This will implicitly initialize PJMEDIA too.
-          108  */
+     106  * Initialize media endpoint.
+     107  * This will implicitly initialize PJMEDIA too.
+     108  */
     status = pjmedia_endpt_create(&cp.factory, NULL, 1, &med_endpt);
     PJ_ASSERT_RETURN(status == PJ_SUCCESS, 1);
-
+    
     /* Create memory pool for our file player */
     pool = pj_pool_create( &cp.factory, /* pool factory */
-                                "app", /* pool name. */
-                                4000, /* init size */
-                                4000, /* increment size */
-                                NULL /* callback on error */
-                                );
+                          "app", /* pool name. */
+                          4000, /* init size */
+                          4000, /* increment size */
+                          NULL /* callback on error */
+                          );
     
     /* Create WAVE file writer port. */
     const char *filename = "/Users/nanhujiaju/Desktop/voip.wav";
     status = pjmedia_wav_writer_port_create( pool, filename,
-                                                CLOCK_RATE,
-                                                NCHANNELS,
-                                                SAMPLES_PER_FRAME,
-                                                BITS_PER_SAMPLE,
-                                                0, 0,
-                                                &file_port);
+                                            CLOCK_RATE,
+                                            NCHANNELS,
+                                            SAMPLES_PER_FRAME,
+                                            BITS_PER_SAMPLE,
+                                            0, 0,
+                                            &file_port);
     if (status != PJ_SUCCESS) {
         printf( "Unable to open WAV file for writing %d", status);
         return 1;
     }
-
+    
     /* Create sound player port. */
     status = pjmedia_snd_port_create_rec(
-                                            pool, /* pool */
-                                            -1, /* use default dev. */
-                                            PJMEDIA_PIA_SRATE(&file_port->info),/* clock rate. */
-                                            PJMEDIA_PIA_CCNT(&file_port->info),/* # of channels. */
-                                            PJMEDIA_PIA_SPF(&file_port->info), /* samples per frame. */
-                                            PJMEDIA_PIA_BITS(&file_port->info),/* bits per sample. */
-                                            0, /* options */
-                                            &snd_port /* returned port */
-                                            );
+                                         pool, /* pool */
+                                         -1, /* use default dev. */
+                                         PJMEDIA_PIA_SRATE(&file_port->info),/* clock rate. */
+                                         PJMEDIA_PIA_CCNT(&file_port->info),/* # of channels. */
+                                         PJMEDIA_PIA_SPF(&file_port->info), /* samples per frame. */
+                                         PJMEDIA_PIA_BITS(&file_port->info),/* bits per sample. */
+                                         0, /* options */
+                                         &snd_port /* returned port */
+                                         );
     if (status != PJ_SUCCESS) {
         printf("Unable to open sound device %d", status);
         return 1;
     }
     
     /* Connect file port to the sound player.
-          150  * Stream playing will commence immediately.
-          151  */
+     150  * Stream playing will commence immediately.
+     151  */
     status = pjmedia_snd_port_connect( snd_port, file_port);
     PJ_ASSERT_RETURN(status == PJ_SUCCESS, 1);
     
     return 1;
-      /** Recording should be started now.*/
+    /** Recording should be started now.*/
 }
 
 /**
@@ -2171,37 +2168,37 @@ static void on_pager(pjsua_call_id call_id, const pj_str_t *from,
                      const pj_str_t *to, const pj_str_t *contact,
                      const pj_str_t *mime_type, const pj_str_t *body){
     @autoreleasepool {
-        [[FLKSipService shared] suaOnPager:call_id from:from to:to contact:contact mimeType:mime_type body:body];
+        [[PBVoipService shared] suaOnPager:call_id from:from to:to contact:contact mimeType:mime_type body:body];
     }
 }
 static void on_reg_state(pjsua_acc_id acc_id) {
     @autoreleasepool {
-        [[FLKSipService shared] suaOnRegisterState4AccountID:acc_id];
+        [[PBVoipService shared] suaOnRegisterState4AccountID:acc_id];
     }
 }
 
 static void on_call_media_state(pjsua_call_id call_id) {
     @autoreleasepool {
-        [[FLKSipService shared] suaOnCallMediaState4CallID:call_id];
+        [[PBVoipService shared] suaOnCallMediaState4CallID:call_id];
     }
 }
 
 static void on_call_state(pjsua_call_id call_id, pjsip_event *e) {
     @autoreleasepool {
-        [[FLKSipService shared] suaOnCallStateWithEvent:e withCallID:call_id];
+        [[PBVoipService shared] suaOnCallStateWithEvent:e withCallID:call_id];
     }
 }
 
 static void on_incoming_call(pjsua_acc_id acc_id, pjsua_call_id call_id, pjsip_rx_data *rdata) {
     @autoreleasepool {
-        [[FLKSipService shared] suaOnIncomingCallWithRData:rdata withCallID:call_id forAccountID:acc_id];
+        [[PBVoipService shared] suaOnIncomingCallWithRData:rdata withCallID:call_id forAccountID:acc_id];
     }
 }
 
 static pjsip_redirect_op on_call_redirected(pjsua_call_id call_id, const pjsip_uri *target, const pjsip_event *e) {
     return PJSIP_REDIRECT_ACCEPT;
     @autoreleasepool {
-        return [[FLKSipService shared] suaOnCallRedirect:call_id withTarget:target withEvent:e];
+        return [[PBVoipService shared] suaOnCallRedirect:call_id withTarget:target withEvent:e];
     }
 }
 
@@ -2236,7 +2233,7 @@ static pjsip_redirect_op on_call_redirected(pjsua_call_id call_id, const pjsip_u
                 dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
                 queue = self.sipServiceQueue;
                 weakify(self)
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(FLK_BACKGROUND_MODE_EXCUTE_INTERVAL * NSEC_PER_SEC)), queue, ^{
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(PB_BACKGROUND_MODE_EXCUTE_INTERVAL * NSEC_PER_SEC)), queue, ^{
                     strongify(self)
                     [self autoStopSipServiceIfNoIncomingCallAfterDelay];
                 });
@@ -2284,23 +2281,23 @@ static pjsip_redirect_op on_call_redirected(pjsua_call_id call_id, const pjsip_u
     
     NSLog(@"call media state changed...");
     /*
-    pjsua_call_media_status call_media_status = info.media_status;
-    if (call_media_status == PJSUA_CALL_MEDIA_ACTIVE ||
-       call_media_status == PJSUA_CALL_MEDIA_REMOTE_HOLD) {
-        //pjsua_recorder_id recorder_id;
-        pj_status_t status;
-        NSString *filePath = [self localPath4File:@"voip.wav"];
-        pj_str_t fileName =pj_str((char *)filePath.UTF8String);
-        status = pjsua_recorder_create(&fileName, 0, NULL, 0, 0, &_app_cfg.record_id);
-        if (status != PJ_SUCCESS) {
-            NSLog(@"failed to create audio recorder!");
-        } else {
-            pjsua_conf_connect(pjsua_call_get_conf_port(cid), pjsua_recorder_get_conf_port(_app_cfg.record_id));
-            pjsua_conf_connect(0, pjsua_recorder_get_conf_port(_app_cfg.record_id));
-            //_app_cfg.record_id = recorder_id;
-            NSLog(@"app record file id:%d", _app_cfg.record_id);
-        }
-    }
+     pjsua_call_media_status call_media_status = info.media_status;
+     if (call_media_status == PJSUA_CALL_MEDIA_ACTIVE ||
+     call_media_status == PJSUA_CALL_MEDIA_REMOTE_HOLD) {
+     //pjsua_recorder_id recorder_id;
+     pj_status_t status;
+     NSString *filePath = [self localPath4File:@"voip.wav"];
+     pj_str_t fileName =pj_str((char *)filePath.UTF8String);
+     status = pjsua_recorder_create(&fileName, 0, NULL, 0, 0, &_app_cfg.record_id);
+     if (status != PJ_SUCCESS) {
+     NSLog(@"failed to create audio recorder!");
+     } else {
+     pjsua_conf_connect(pjsua_call_get_conf_port(cid), pjsua_recorder_get_conf_port(_app_cfg.record_id));
+     pjsua_conf_connect(0, pjsua_recorder_get_conf_port(_app_cfg.record_id));
+     //_app_cfg.record_id = recorder_id;
+     NSLog(@"app record file id:%d", _app_cfg.record_id);
+     }
+     }
      */
 }
 /**
@@ -2339,7 +2336,7 @@ static pjsip_redirect_op on_call_redirected(pjsua_call_id call_id, const pjsip_u
     self.callState = state;
     if (self.delegate && [self.delegate respondsToSelector:@selector(audioCallDidChanged2State:)]) {
         PBMAINDelay(PBANIMATE_DURATION, ^{
-           [self.delegate audioCallDidChanged2State:state];
+            [self.delegate audioCallDidChanged2State:state];
         });
     }
     
@@ -2417,7 +2414,7 @@ static pjsip_redirect_op on_call_redirected(pjsua_call_id call_id, const pjsip_u
             
             dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
             queue = self.sipServiceQueue;
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(FLK_BACKGROUND_MODE_EXCUTE_INTERVAL * NSEC_PER_SEC)), queue, ^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(PB_BACKGROUND_MODE_EXCUTE_INTERVAL * NSEC_PER_SEC)), queue, ^{
                 [[UIApplication sharedApplication] endBackgroundTask:self.taskIdentifier];
             });
         }
@@ -2532,25 +2529,25 @@ static pjsip_redirect_op on_call_redirected(pjsua_call_id call_id, const pjsip_u
     }
     
     /*
-    pj_str_t str_method;
-    pjsip_method method;
-    pjsip_tx_data *tdata;
-    pjsip_endpoint *endpt;
-    //pj_status_t status;
-    
-    endpt = pjsua_get_pjsip_endpt();
-    
-    str_method = pjsip_options_method.name;
-    pjsip_method_init_np(&method, &str_method);
-    
-    status = pjsua_acc_create_request(_accID, &pjsip_options_method, &buddy_uri, &tdata);
-    
-    status = pjsip_endpt_send_request(endpt, tdata, -1, NULL, NULL);
-    if (status != PJ_SUCCESS) {
-        pjsua_perror(THIS_FILE, "Unable to send request", status);
-        return;
-    }
-    //*/
+     pj_str_t str_method;
+     pjsip_method method;
+     pjsip_tx_data *tdata;
+     pjsip_endpoint *endpt;
+     //pj_status_t status;
+     
+     endpt = pjsua_get_pjsip_endpt();
+     
+     str_method = pjsip_options_method.name;
+     pjsip_method_init_np(&method, &str_method);
+     
+     status = pjsua_acc_create_request(_accID, &pjsip_options_method, &buddy_uri, &tdata);
+     
+     status = pjsip_endpt_send_request(endpt, tdata, -1, NULL, NULL);
+     if (status != PJ_SUCCESS) {
+     pjsua_perror(THIS_FILE, "Unable to send request", status);
+     return;
+     }
+     //*/
     
     pj_str_t text;
     const char *msgText = [@"Hello there!" UTF8String];
@@ -2569,9 +2566,9 @@ static pjsip_redirect_op on_call_redirected(pjsua_call_id call_id, const pjsip_u
 
 #pragma mark -- iOS10+ CallKits && PushKits UI Logics--
 
-static NSString * const FLK_SYSTEM_CALL_IDENTIFIER                      =   @"com.flk.mxt.voip-call.identifier";
-static NSString * const FLK_SYSTEM_CALL_TYPE                            =   @"com.flk.mxt.voip-call.type";
-static NSString * const FLK_SYSTEM_CALL_DATE                            =   @"com.flk.mxt.voip-call.date";
+static NSString * const PB_SYSTEM_CALL_IDENTIFIER                      =   @"com.PB.mxt.voip-call.identifier";
+static NSString * const PB_SYSTEM_CALL_TYPE                            =   @"com.PB.mxt.voip-call.type";
+static NSString * const PB_SYSTEM_CALL_DATE                            =   @"com.PB.mxt.voip-call.date";
 - (void)startInComingCallUI {
     NSString *remoteEndia = [self remoteEndiaAccount];
     if ([self applicationWhetherForeground]) {
@@ -2582,7 +2579,7 @@ static NSString * const FLK_SYSTEM_CALL_DATE                            =   @"co
         //start rings
         [self startRingWithSpeaker];
         PBMAINDelay(PBANIMATE_DURATION, ^{
-            [self showCustomProfile4LaunchType:FLKCallLaunchTypeCalled withUsrAccount:remoteEndia];
+            [self showCustomProfile4LaunchType:PBCallLaunchTypeCalled withUsrAccount:remoteEndia];
         });
     } else {
         NSLog(@"ios version:%@", [UIDevice currentDevice].systemVersion);
@@ -2593,25 +2590,25 @@ static NSString * const FLK_SYSTEM_CALL_DATE                            =   @"co
             });
         } else {
             /*
-            UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
-            content.title = [NSString localizedUserNotificationStringForKey:@"来电提醒" arguments:nil];
-            NSString *body = PBFormat(@"您有一个来自%@的加密来电...",remoteEndia);
-            content.body = [NSString localizedUserNotificationStringForKey:body arguments:nil];
-            content.sound = [UNNotificationSound defaultSound];
-            
-            /// 4. update application icon badge number
-            NSUInteger badgeValue = [UIApplication sharedApplication].applicationIconBadgeNumber;
-            content.badge = [NSNumber numberWithInteger:badgeValue + 1];
-            // Deliver the notification in five seconds.
-            UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:.1f repeats:NO];
-            UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:FLK_SYSTEM_CALL_IDENTIFIER content:content trigger:trigger];
-            /// 3. schedule localNotification
-            UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-            [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
-                if (!error) {
-                    NSLog(@"add NotificationRequest succeeded!");
-                }
-            }];
+             UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
+             content.title = [NSString localizedUserNotificationStringForKey:@"来电提醒" arguments:nil];
+             NSString *body = PBFormat(@"您有一个来自%@的加密来电...",remoteEndia);
+             content.body = [NSString localizedUserNotificationStringForKey:body arguments:nil];
+             content.sound = [UNNotificationSound defaultSound];
+             
+             /// 4. update application icon badge number
+             NSUInteger badgeValue = [UIApplication sharedApplication].applicationIconBadgeNumber;
+             content.badge = [NSNumber numberWithInteger:badgeValue + 1];
+             // Deliver the notification in five seconds.
+             UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:.1f repeats:NO];
+             UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:PB_SYSTEM_CALL_IDENTIFIER content:content trigger:trigger];
+             /// 3. schedule localNotification
+             UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+             [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
+             if (!error) {
+             NSLog(@"add NotificationRequest succeeded!");
+             }
+             }];
              //*/
             if (PBIsEmpty(remoteEndia)) {
                 return;
@@ -2621,7 +2618,7 @@ static NSString * const FLK_SYSTEM_CALL_DATE                            =   @"co
             NSString *nick = [self convertAccount2Nick4Account:remoteEndia];
             //local notification
             NSString *body = PBFormat(@"来自%@的加密来电...", PBIsEmpty(nick)?remoteEndia:nick);
-            NSDictionary *info = [NSDictionary dictionaryWithObjectsAndKeys:remoteEndia, FLK_SYSTEM_CALL_IDENTIFIER, @"new", FLK_SYSTEM_CALL_TYPE, self.systemCallFiredDate, FLK_SYSTEM_CALL_DATE, nil];
+            NSDictionary *info = [NSDictionary dictionaryWithObjectsAndKeys:remoteEndia, PB_SYSTEM_CALL_IDENTIFIER, @"new", PB_SYSTEM_CALL_TYPE, self.systemCallFiredDate, PB_SYSTEM_CALL_DATE, nil];
             UILocalNotification *notis = [[UILocalNotification alloc] init];
             notis.repeatInterval = 0;
             notis.alertBody = body;
@@ -2633,7 +2630,7 @@ static NSString * const FLK_SYSTEM_CALL_DATE                            =   @"co
             [[UIApplication sharedApplication] presentLocalNotificationNow:notis];
             //TODO:此处待验证 在后台时已经设置好界面 这里弹出不好 还是在'applicationWillEnterForeground'method中弹出
             //PBMAINDelay(PBANIMATE_DURATION*0.5, ^{
-            //    [self showCustomProfile4LaunchType:FLKCallLaunchTypeCalled withUsrAccount:remoteEndia];
+            //    [self showCustomProfile4LaunchType:PBCallLaunchTypeCalled withUsrAccount:remoteEndia];
             //});
         }
     }
@@ -2641,7 +2638,7 @@ static NSString * const FLK_SYSTEM_CALL_DATE                            =   @"co
 
 - (void)startOutGoingCallUI4Account:(NSString *)acc {
     PBMAINDelay(PBANIMATE_DURATION, ^{
-        [self showCustomProfile4LaunchType:FLKCallLaunchTypeCaller withUsrAccount:acc];
+        [self showCustomProfile4LaunchType:PBCallLaunchTypeCaller withUsrAccount:acc];
     });
 }
 
@@ -2669,18 +2666,18 @@ static NSString * const FLK_SYSTEM_CALL_DATE                            =   @"co
         [self generateUnAcceptLocalNotification4VoipCallAccount:remoteAcc];
     }
     /*
-    FLKVoipCallRole role = FLKVoipCallRoleUAC;
-    if (info.role == PJSIP_ROLE_UAS || info.role == PJSIP_UAS_ROLE) {
-        role = FLKVoipCallRoleUAS;
-    }
-    FLKVoipCallEndState endState = [self fetchVoipCallEndState4Role:role];
-    if (endState & FLKVoipCallEndStateUACCancel) {
-        NSString *acc = [self remoteEndiaAccount];
-        //取消本地通知
-        //[self cancelSystemVoipCallLocalNotification];
-        [self generateUnAcceptLocalNotification4VoipCallAccount:acc];
-    }
-    //*/
+     PBVoipCallRole role = PBVoipCallRoleUAC;
+     if (info.role == PJSIP_ROLE_UAS || info.role == PJSIP_UAS_ROLE) {
+     role = PBVoipCallRoleUAS;
+     }
+     PBVoipCallEndState endState = [self fetchVoipCallEndState4Role:role];
+     if (endState & PBVoipCallEndStateUACCancel) {
+     NSString *acc = [self remoteEndiaAccount];
+     //取消本地通知
+     //[self cancelSystemVoipCallLocalNotification];
+     [self generateUnAcceptLocalNotification4VoipCallAccount:acc];
+     }
+     //*/
 }
 
 - (void)cancelSystemVoipCallLocalNotification {
@@ -2698,9 +2695,9 @@ static NSString * const FLK_SYSTEM_CALL_DATE                            =   @"co
         [UIApplication sharedApplication].scheduledLocalNotifications = nil;
     } else {
         for(UILocalNotification *tmpNoti in localNotis) {
-            NSString *idntifier = [[tmpNoti userInfo] objectForKey:FLK_SYSTEM_CALL_IDENTIFIER];
-            NSString *type = [[tmpNoti userInfo] objectForKey:FLK_SYSTEM_CALL_TYPE];
-            NSDate *date = [[tmpNoti userInfo] objectForKey:FLK_SYSTEM_CALL_DATE];
+            NSString *idntifier = [[tmpNoti userInfo] objectForKey:PB_SYSTEM_CALL_IDENTIFIER];
+            NSString *type = [[tmpNoti userInfo] objectForKey:PB_SYSTEM_CALL_TYPE];
+            NSDate *date = [[tmpNoti userInfo] objectForKey:PB_SYSTEM_CALL_DATE];
             if ([type isEqualToString:@"new"] && [date isEqualToDate:self.systemCallFiredDate] && [idntifier isEqualToString:remote_acc]) {
                 notificationToCancel = tmpNoti;
                 break;
@@ -2721,7 +2718,7 @@ static NSString * const FLK_SYSTEM_CALL_DATE                            =   @"co
     }
     NSString *nick = [self convertAccount2Nick4Account:acc];
     NSString *body = PBFormat(@"来自%@的未接加密来电...",PBIsEmpty(nick)?acc:nick);
-    NSDictionary *info = [NSDictionary dictionaryWithObjectsAndKeys:acc, FLK_SYSTEM_CALL_IDENTIFIER, @"unaccept", FLK_SYSTEM_CALL_TYPE, [NSDate date], FLK_SYSTEM_CALL_DATE, nil];
+    NSDictionary *info = [NSDictionary dictionaryWithObjectsAndKeys:acc, PB_SYSTEM_CALL_IDENTIFIER, @"unaccept", PB_SYSTEM_CALL_TYPE, [NSDate date], PB_SYSTEM_CALL_DATE, nil];
     UILocalNotification *notis = [[UILocalNotification alloc] init];
     notis.repeatInterval = 0;
     notis.alertBody = body;
@@ -2734,13 +2731,13 @@ static NSString * const FLK_SYSTEM_CALL_DATE                            =   @"co
 
 /**
  展示自定义来电、呼叫界面
-
+ 
  @param type 主叫／被叫
  @param acc 账号
  */
-- (void)showCustomProfile4LaunchType:(FLKCallLaunchType)type withUsrAccount:(NSString *)acc {
+- (void)showCustomProfile4LaunchType:(PBCallLaunchType)type withUsrAccount:(NSString *)acc {
     
-    if (type ^ FLKCallLaunchTypeCaller) {
+    if (type ^ PBCallLaunchTypeCaller) {
         /**
          such as:resign firstResponder in old window
          */
@@ -2749,19 +2746,19 @@ static NSString * const FLK_SYSTEM_CALL_DATE                            =   @"co
         }
     }
     [self printlnAudioDevices];
-    FLKVoipCallProfile *profile = [FLKVoipCallProfile call4Uid:acc andWithCallType:type];
+    PBVoipCallProfile *profile = [PBVoipCallProfile call4Uid:acc andWithCallType:type];
     self.voipProfile = profile;
     profile.delegate = self;
     [profile launch];
 }
 
-#pragma mark ==== FLK Screen Lock Notification ===
+#pragma mark ==== PB Screen Lock Notification ===
 
 static void screenLockStateChanged(CFNotificationCenterRef center,void* observer,CFStringRef name,const void* object,CFDictionaryRef userInfo) {
     NSString* lockstate = (__bridge NSString*)name;
-    if ([lockstate isEqualToString:(__bridge  NSString*)FLKSCREEN_LOCK]) {
+    if ([lockstate isEqualToString:(__bridge  NSString*)PBSCREEN_LOCK]) {
         NSLog(@"locked.");
-        [[FLKSipService shared] screenLockEvent];
+        [[PBVoipService shared] screenLockEvent];
     } else {
         NSLog(@"lock state changed.");
     }
@@ -2773,7 +2770,7 @@ static void screenLockStateChanged(CFNotificationCenterRef center,void* observer
     }
 }
 
-#pragma mark ==== FLKVoipCallProfile Delegate ====
+#pragma mark ==== PBVoipCallProfile Delegate ====
 
 - (voipCallQuality)fetchVoipCallQuality {
     voipCallQuality qos = voipCallQualityNone;
@@ -2808,7 +2805,7 @@ static void screenLockStateChanged(CFNotificationCenterRef center,void* observer
 /**
  静音与否
  */
-- (void)profile:(FLKVoipCallProfile *)profile didClickMute:(BOOL)on{
+- (void)profile:(PBVoipCallProfile *)profile didClickMute:(BOOL)on{
     NSError * _Nullable(^block)() = ^(){
         NSError *err;
         [self adjustMicrophoneVolume2:on?0:1];
@@ -2817,7 +2814,7 @@ static void screenLockStateChanged(CFNotificationCenterRef center,void* observer
     [self excuteBlockEvent:block withCompletion:nil];
 }
 
-- (void)profile:(FLKVoipCallProfile *)profile didClickSuspend:(BOOL)on {
+- (void)profile:(PBVoipCallProfile *)profile didClickSuspend:(BOOL)on {
     NSError * _Nullable(^block)() = ^(){
         NSError *err;
         if (on) {
@@ -2830,7 +2827,7 @@ static void screenLockStateChanged(CFNotificationCenterRef center,void* observer
     [self excuteBlockEvent:block withCompletion:nil];
 }
 
-- (void)profile:(FLKVoipCallProfile *)profile didClickHandFree:(BOOL)on {
+- (void)profile:(PBVoipCallProfile *)profile didClickHandFree:(BOOL)on {
     NSError * _Nullable(^block)() = ^(){
         NSError *err;
         [self handsFreeModeEnable:on];
@@ -2839,7 +2836,7 @@ static void screenLockStateChanged(CFNotificationCenterRef center,void* observer
     [self excuteBlockEvent:block withCompletion:nil];
 }
 
-- (void)didTouchAcceptWithProfile:(FLKVoipCallProfile *)profile {
+- (void)didTouchAcceptWithProfile:(PBVoipCallProfile *)profile {
     NSError * _Nullable(^block)() = ^(){
         NSError *err;
         [self answerAudioCall];
@@ -2848,7 +2845,7 @@ static void screenLockStateChanged(CFNotificationCenterRef center,void* observer
     [self excuteBlockEvent:block withCompletion:nil];
 }
 
-- (void)didTouchHangUpWithProfile:(FLKVoipCallProfile *)profile {
+- (void)didTouchHangUpWithProfile:(PBVoipCallProfile *)profile {
     NSError * _Nullable(^block)() = ^(){
         NSError *err;
         
@@ -2860,12 +2857,12 @@ static void screenLockStateChanged(CFNotificationCenterRef center,void* observer
     [self excuteBlockEvent:block withCompletion:nil];
 }
 
-#pragma mark ==== FLKSystem voip CallKit Delegate ====
+#pragma mark ==== PBSystem voip CallKit Delegate ====
 
-- (FLKProviderDelegate *)systemDelegate {
+- (PBProviderDelegate *)systemDelegate {
     if (!_systemDelegate) {
-        FLKCallManager *manager = [[FLKCallManager alloc] init];
-        _systemDelegate = [[FLKProviderDelegate alloc] initWithCallManager:manager];
+        PBCallManager *manager = [[PBCallManager alloc] init];
+        _systemDelegate = [[PBProviderDelegate alloc] initWithCallManager:manager];
         _systemDelegate.delegate = self;
     }
     return _systemDelegate;
@@ -2891,7 +2888,7 @@ static void screenLockStateChanged(CFNotificationCenterRef center,void* observer
 
 /**
  取消／结束 会话
-
+ 
  @param acc 账号
  @param completion callback block
  */
@@ -2911,38 +2908,38 @@ static void screenLockStateChanged(CFNotificationCenterRef center,void* observer
     [self didTouchHangUpWithProfile:nil];
 }
 
-- (void)systemProviderDidUpdateAction:(CXAction *)action withType:(FLKSystemCallActionType)type {
-    if (type & FLKSystemCallActionTypeAnswer) {
+- (void)systemProviderDidUpdateAction:(CXAction *)action withType:(PBSystemCallActionType)type {
+    if (type & PBSystemCallActionTypeAnswer) {
         NSLog(@"选择了接听");
         
         [self didTouchAcceptWithProfile:nil];
         [self startCustomVoipUIWhenConfirmedBySystem];
-    } else if (type & FLKSystemCallActionTypeHold) {
+    } else if (type & PBSystemCallActionTypeHold) {
         CXSetHeldCallAction *holdAction = (CXSetHeldCallAction *)action;
         [self profile:nil didClickSuspend:holdAction.isOnHold];
-    } else if (type & FLKSystemCallActionTypeMute) {
+    } else if (type & PBSystemCallActionTypeMute) {
         CXSetMutedCallAction *muteAction = (CXSetMutedCallAction *)action;
         [self profile:nil didClickMute:muteAction.isMuted];
-    } else if (type & FLKSystemCallActionTypeEnd) {
+    } else if (type & PBSystemCallActionTypeEnd) {
         [self didTouchHangUpWithProfile:nil];
-    } else if (type & FLKSystemCallActionTypeTimeout) {
+    } else if (type & PBSystemCallActionTypeTimeout) {
         [self didTouchHangUpWithProfile:nil];
-    } else if (type & FLKSystemCallActionTypeAudio) {
+    } else if (type & PBSystemCallActionTypeAudio) {
         CXSetMutedCallAction *muteAction = (CXSetMutedCallAction *)action;
         //系统audio session changed
         NSLog(@"系统audio session changed---------------");
         //*
-         NSError * _Nullable(^block)() = ^(){
-             NSError *err;
-             [self setPJSuaAudioDeviceEnable:muteAction.isMuted];
-             return err;
-         };
-         [self excuteBlockEvent:block withCompletion:nil];
-         //*/
+        NSError * _Nullable(^block)() = ^(){
+            NSError *err;
+            [self setPJSuaAudioDeviceEnable:muteAction.isMuted];
+            return err;
+        };
+        [self excuteBlockEvent:block withCompletion:nil];
+        //*/
         
-    } else if (type & FLKSystemCallActionTypeStart) {
+    } else if (type & PBSystemCallActionTypeStart) {
         
-    } else if (type & FLKSystemCallActionTypeCallIncoming) {
+    } else if (type & PBSystemCallActionTypeCallIncoming) {
         CXCallAction *callAction = (CXCallAction *)action;
         [self didObservedSystemIncomingCall4UUIDString:callAction.callUUID.UUIDString];
     }
@@ -2951,11 +2948,11 @@ static void screenLockStateChanged(CFNotificationCenterRef center,void* observer
 - (void)startCustomVoipUIWhenConfirmedBySystem {
     self.whetherCallConfirmedBySystem = true;
     /*
-    NSString *remote_acc = [self remoteEndiaAccount];
-    [self.systemDelegate reportConfirmInComingCallWithHandle:remote_acc withCompletion:^(NSError * _Nullable error) {
-        NSLog(@"accept system call with error:%@", error.localizedDescription);
-    }];
-    //*/
+     NSString *remote_acc = [self remoteEndiaAccount];
+     [self.systemDelegate reportConfirmInComingCallWithHandle:remote_acc withCompletion:^(NSError * _Nullable error) {
+     NSLog(@"accept system call with error:%@", error.localizedDescription);
+     }];
+     //*/
 }
 
 #pragma mark ----- 系统来电事件
@@ -2967,7 +2964,7 @@ static void screenLockStateChanged(CFNotificationCenterRef center,void* observer
     //新的来电 首次记录 下次再来则挂断
     NSString *remoteAcc = [self remoteEndiaAccount];
     BOOL isOutgoing = [self whetherAliceWasCaller];
-    FLKCall *call = [FLKCall callWithUUID:uuid withHandle:remoteAcc whetherOutgoing:isOutgoing];
+    PBCall *call = [PBCall callWithUUID:uuid withHandle:remoteAcc whetherOutgoing:isOutgoing];
     self.systemDelegate.currentCall = call;
 }
 

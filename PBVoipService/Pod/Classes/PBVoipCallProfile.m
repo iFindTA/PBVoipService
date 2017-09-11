@@ -1,15 +1,15 @@
 //
-//  FLKVoipCallProfile.m
-//  voipCall
+//  PBVoipCallProfile.m
+//  PBVoipService
 //
-//  Created by nanhujiaju on 2017/3/15.
+//  Created by nanhujiaju on 2017/9/11.
 //  Copyright © 2017年 nanhujiaju. All rights reserved.
 //
 
-#import "FLKVoipCallProfile.h"
+#import "PBVoipCallProfile.h"
 #import <PBKits/PBKits.h>
 #import <Masonry/Masonry.h>
-#import "FLKSipService.h"
+#import "PBVoipService.h"
 
 void getPermissionFromAppSetting(NSString *title,UIViewController *vc){
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:@"请到手机设置中开启相关权限" preferredStyle:UIAlertControllerStyleAlert];
@@ -47,10 +47,10 @@ typedef NS_ENUM(NSUInteger, callButtonType){
     callButtonTypeAccept            =   1 << 4, // 接听
 };
 
-@interface FLKVoipCallProfile ()<FLKSipServiceDelegate>
+@interface PBVoipCallProfile ()<PBSipServiceDelegate>
 
 @property (nonatomic, copy) NSString                 * uid;
-@property (nonatomic, assign) FLKCallLaunchType      launchType;
+@property (nonatomic, assign) PBCallLaunchType      launchType;
 @property (nonatomic, strong) UILabel                * titleL;
 @property (nonatomic, strong) UILabel                * stateDescribeL;
 @property (nonatomic, strong) UIView                 * buttonBackV;
@@ -59,7 +59,7 @@ typedef NS_ENUM(NSUInteger, callButtonType){
 @property (nonatomic, strong) UIButton               * handFreeBut;  // 免提按钮
 @property (nonatomic, strong) UIButton               * hangUpBut;    // 挂断按钮
 @property (nonatomic, strong) UILabel                * showQualityLabel; // 当前通话质量
-@property (nonatomic, assign) FLKCallViewType        callViewType;   // 当前电话状态
+@property (nonatomic, assign) PBCallViewType        callViewType;   // 当前电话状态
 @property (nonatomic, assign) BOOL                   muteButisSelected;
 @property (nonatomic, assign) BOOL                   suspendButisSelected;
 @property (nonatomic, assign) BOOL                   handFreeButisSelected;
@@ -82,9 +82,10 @@ typedef NS_ENUM(NSUInteger, callButtonType){
 #define margin                                  PBSCREEN_WIDTH * 0.1
 #define buttonW                                 (PBSCREEN_WIDTH -(1.5*margin)*2 - 40) / 3
 
-@implementation FLKVoipCallProfile
--(void)dealloc{
+@implementation PBVoipCallProfile
 
+-(void)dealloc{
+    
 }
 -(void)releaseTimer{
     if (_timer) {
@@ -116,15 +117,15 @@ typedef NS_ENUM(NSUInteger, callButtonType){
     [bgImgView addSubview:toolbar];
     
     // 根据type判断 界面类型
-    self.callViewType = self.launchType&FLKCallLaunchTypeCaller?FLKCallViewTypeAsCaller:FLKCallViewTypeAsCallee;
+    self.callViewType = self.launchType&PBCallLaunchTypeCaller?PBCallViewTypeAsCaller:PBCallViewTypeAsCallee;
     
-    FLKCallViewType viewType;
-    if (self.launchType & FLKCallLaunchTypeCaller) {
-        viewType = FLKCallViewTypeAsCaller;
-    }else if (self.launchType & FLKCallLaunchTypeCalled){
-        viewType = FLKCallViewTypeAsCallee;
-    }else if (self.launchType & FLKCallLaunchTypeTalking){
-        viewType = FLKCallViewTypeTalking;
+    PBCallViewType viewType;
+    if (self.launchType & PBCallLaunchTypeCaller) {
+        viewType = PBCallViewTypeAsCaller;
+    }else if (self.launchType & PBCallLaunchTypeCalled){
+        viewType = PBCallViewTypeAsCallee;
+    }else if (self.launchType & PBCallLaunchTypeTalking){
+        viewType = PBCallViewTypeTalking;
     }
     _callViewType = viewType;
     
@@ -132,11 +133,11 @@ typedef NS_ENUM(NSUInteger, callButtonType){
     [self updateContent];
 }
 
--(instancetype)initwithUid:(NSString *)uid andWithCallType:(FLKCallLaunchType)type{
+-(instancetype)initwithUid:(NSString *)uid andWithCallType:(PBCallLaunchType)type{
     if([super init]){
         self.uid = uid;
         self.launchType = type;
-        FLKSipService *sipServer = [FLKSipService shared];
+        PBVoipService *sipServer = [PBVoipService shared];
         sipServer.delegate = self;
         [self initTipAudio];
         [UIDevice currentDevice].proximityMonitoringEnabled = YES;
@@ -151,8 +152,8 @@ typedef NS_ENUM(NSUInteger, callButtonType){
     CFURLRef soundFileURLRef = (__bridge CFURLRef)soundURL;
     AudioServicesCreateSystemSoundID(soundFileURLRef, &_soundFileObject);
 }
-+ (instancetype)call4Uid:(NSString *)uid andWithCallType:(FLKCallLaunchType)type{
-    FLKVoipCallProfile * profile = [[FLKVoipCallProfile alloc] initwithUid:uid andWithCallType:type];
++ (instancetype)call4Uid:(NSString *)uid andWithCallType:(PBCallLaunchType)type{
+    PBVoipCallProfile * profile = [[PBVoipCallProfile alloc] initwithUid:uid andWithCallType:type];
     return profile;
 }
 - (NSBundle *)sipBundle {
@@ -192,8 +193,8 @@ typedef NS_ENUM(NSUInteger, callButtonType){
     _endTipView = [[UILabel alloc]init];
     _endTipView.backgroundColor = [UIColor blackColor];
     _endTipView.textAlignment = NSTextAlignmentCenter;
-//    _endTipView.textColor = [UIColor whiteColor];
-//    _endTipView.font = [UIFont systemFontOfSize:15.0];
+    //    _endTipView.textColor = [UIColor whiteColor];
+    //    _endTipView.font = [UIFont systemFontOfSize:15.0];
     _endTipView.layer.cornerRadius = 4;
     _endTipView.layer.masksToBounds = YES;
     _endTipView.attributedText = attrInfo;
@@ -212,12 +213,12 @@ typedef NS_ENUM(NSUInteger, callButtonType){
     _hangUpBut.tag = callButtonTypeHangUpOn;
     [_hangUpBut addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
     [_buttonBackV addSubview:_hangUpBut];
-
     
-
+    
+    
     
     _inCommingbottomView = [[UIView alloc]init];
-//    _inCommingbottomView.backgroundColor = [UIColor orangeColor];
+    //    _inCommingbottomView.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:_inCommingbottomView];
     
     
@@ -229,7 +230,7 @@ typedef NS_ENUM(NSUInteger, callButtonType){
     [_refuseButton addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
     [_inCommingbottomView addSubview:_refuseButton];
     
-
+    
     _refuseLabel = [UILabel new];
     [_refuseLabel setTextColor:[UIColor whiteColor]];
     [_refuseLabel setFont:[UIFont systemFontOfSize:16]];
@@ -254,7 +255,7 @@ typedef NS_ENUM(NSUInteger, callButtonType){
     [_acceptLabel setTextAlignment:NSTextAlignmentCenter];
     [_inCommingbottomView addSubview:_acceptLabel];
     
-
+    
     NSArray *imgArr = @[@"mute",@"suspend",@"handFree"];
     NSArray *labArr = @[@"静音",@"暂停",@"免提"];
     for(int j = 0 ;j<imgArr.count;j++) {
@@ -270,8 +271,8 @@ typedef NS_ENUM(NSUInteger, callButtonType){
         }else if (j == 1){
             but.tag = callButtonTypeSuspend;
             _suspendBut = but;
-//            _suspendBut.alpha = 0.2;
-//            _suspendBut.enabled = NO;
+            //            _suspendBut.alpha = 0.2;
+            //            _suspendBut.enabled = NO;
         }else if (j == 2){
             but.tag = callButtonTypeHangFree;
             _handFreeBut = but;
@@ -285,10 +286,10 @@ typedef NS_ENUM(NSUInteger, callButtonType){
         [itemView addSubview:lab];
         [_buttonBackV addSubview:itemView];
         if (j == 1) {
-//            lab.alpha = 0.2;
-//            lab.enabled = NO;
+            //            lab.alpha = 0.2;
+            //            lab.enabled = NO;
         }
-
+        
         [itemView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(_buttonBackV).offset(10);
             make.left.mas_equalTo(j*(buttonW+20));
@@ -436,34 +437,34 @@ typedef NS_ENUM(NSUInteger, callButtonType){
 }
 
 - (void)updateCallDuration:(NSTimer *)timer {
-//    UIColor *redColor =  [UIColor colorWithRed:233.0/255 green:63.0/255 blue:51.0/255 alpha:1];
+    //    UIColor *redColor =  [UIColor colorWithRed:233.0/255 green:63.0/255 blue:51.0/255 alpha:1];
     UIColor *greenColor = [UIColor colorWithRed:90.0/255 green:170.0/255 blue:98.0/255 alpha:1];
     _callDuration++;
     
-   // NSLog(@"---:%@ -------- %d",[NSRunLoop currentRunLoop],_callDuration);
-
-//    if (_callDuration % 5 == 0) {
-//        if ([self.delegate respondsToSelector:@selector(fetchVoipCallQuality)]) {
-//           _currentQuality = [self.delegate fetchVoipCallQuality];
-//            NSAttributedString *qualityString;
-//            if (_currentQuality & voipCallQualityNone) {
-//                qualityString = [[NSAttributedString alloc] initWithString:@"检测中"
-//                                                                attributes:@{NSForegroundColorAttributeName: greenColor}];
-//            } else if (_currentQuality & voipCallQualityHigh) {
-//                qualityString = [[NSAttributedString alloc] initWithString:@"优质"
-//                                                          attributes:@{NSForegroundColorAttributeName:greenColor}];
-//            } else if(_currentQuality & voipCallQualityMedium){
-//                qualityString = [[NSAttributedString alloc] initWithString:@"中等"
-//                                                          attributes:@{NSForegroundColorAttributeName:greenColor}];
-//            }else if (_currentQuality & voipCallQualityLow){
-//                qualityString = [[NSAttributedString alloc] initWithString:@"较差"
-//                                                                attributes:@{NSForegroundColorAttributeName:redColor}];
-//            }
-//            NSMutableAttributedString *as = [[NSMutableAttributedString alloc] initWithString:@"当前网络信号: "];
-//            [as appendAttributedString:qualityString];
-//            _showQualityLabel.attributedText = as;
-//        }
-//    }
+    // NSLog(@"---:%@ -------- %d",[NSRunLoop currentRunLoop],_callDuration);
+    
+    //    if (_callDuration % 5 == 0) {
+    //        if ([self.delegate respondsToSelector:@selector(fetchVoipCallQuality)]) {
+    //           _currentQuality = [self.delegate fetchVoipCallQuality];
+    //            NSAttributedString *qualityString;
+    //            if (_currentQuality & voipCallQualityNone) {
+    //                qualityString = [[NSAttributedString alloc] initWithString:@"检测中"
+    //                                                                attributes:@{NSForegroundColorAttributeName: greenColor}];
+    //            } else if (_currentQuality & voipCallQualityHigh) {
+    //                qualityString = [[NSAttributedString alloc] initWithString:@"优质"
+    //                                                          attributes:@{NSForegroundColorAttributeName:greenColor}];
+    //            } else if(_currentQuality & voipCallQualityMedium){
+    //                qualityString = [[NSAttributedString alloc] initWithString:@"中等"
+    //                                                          attributes:@{NSForegroundColorAttributeName:greenColor}];
+    //            }else if (_currentQuality & voipCallQualityLow){
+    //                qualityString = [[NSAttributedString alloc] initWithString:@"较差"
+    //                                                                attributes:@{NSForegroundColorAttributeName:redColor}];
+    //            }
+    //            NSMutableAttributedString *as = [[NSMutableAttributedString alloc] initWithString:@"当前网络信号: "];
+    //            [as appendAttributedString:qualityString];
+    //            _showQualityLabel.attributedText = as;
+    //        }
+    //    }
     
     NSAttributedString *qualityString;
     qualityString = [[NSAttributedString alloc] initWithString:@"加密通话中..."
@@ -471,7 +472,7 @@ typedef NS_ENUM(NSUInteger, callButtonType){
     NSMutableAttributedString *as = [[NSMutableAttributedString alloc] initWithString:@""];
     [as appendAttributedString:qualityString];
     _showQualityLabel.attributedText = as;
-
+    
     int min, sec, hour;
     min = _callDuration / 60;
     min = min>=60 ? min % 60:min;
@@ -503,16 +504,16 @@ typedef NS_ENUM(NSUInteger, callButtonType){
 }
 
 -(void)updateContent{
-
-    if (_callViewType == FLKCallViewTypeAsCaller || _callViewType == FLKCallViewTypeTalking) {
+    
+    if (_callViewType == PBCallViewTypeAsCaller || _callViewType == PBCallViewTypeTalking) {
         _buttonBackV.hidden = NO;
         _inCommingbottomView.hidden = YES;
-        if (_callViewType == FLKCallViewTypeTalking) {
+        if (_callViewType == PBCallViewTypeTalking) {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(PBANIMATE_DURATION*2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [self timer];
             });
         }
-    }else if(_callViewType == FLKCallViewTypeAsCallee){
+    }else if(_callViewType == PBCallViewTypeAsCallee){
         _buttonBackV.hidden = YES;
         _inCommingbottomView.hidden = NO;
     }
@@ -551,12 +552,12 @@ typedef NS_ENUM(NSUInteger, callButtonType){
     _titleL.text = PBIsEmpty(displayName)?self.uid:displayName;
     
     NSString *displayStr;
-    if (_callViewType == FLKCallViewTypeAsCaller || _callViewType == FLKCallViewTypeAsCallee) {
+    if (_callViewType == PBCallViewTypeAsCaller || _callViewType == PBCallViewTypeAsCallee) {
         displayStr = @"正在协商密钥...";
-    }else if (_callViewType == FLKCallViewTypeTalking){
-//        if (!_willBeDismiss) {
-//            displayStr = @"00:00";
-//        }
+    }else if (_callViewType == PBCallViewTypeTalking){
+        //        if (!_willBeDismiss) {
+        //            displayStr = @"00:00";
+        //        }
     }
     if (displayStr.length != 0) {
         _stateDescribeL.text = displayStr;
@@ -612,13 +613,13 @@ typedef NS_ENUM(NSUInteger, callButtonType){
 }
 
 /**
-     PJSIP_INV_STATE_NULL,                     无状态     0
-     PJSIP_INV_STATE_CALLING,                  播出       1
-     PJSIP_INV_STATE_INCOMING,                 收到       2
-     PJSIP_INV_STATE_EARLY,                    响铃       3
-     PJSIP_INV_STATE_CONNECTING,               正在连接    4
-     PJSIP_INV_STATE_CONFIRMED,                已经连接    5
-     PJSIP_INV_STATE_DISCONNECTED,             断开       6
+ PJSIP_INV_STATE_NULL,                     无状态     0
+ PJSIP_INV_STATE_CALLING,                  播出       1
+ PJSIP_INV_STATE_INCOMING,                 收到       2
+ PJSIP_INV_STATE_EARLY,                    响铃       3
+ PJSIP_INV_STATE_CONNECTING,               正在连接    4
+ PJSIP_INV_STATE_CONFIRMED,                已经连接    5
+ PJSIP_INV_STATE_DISCONNECTED,             断开       6
  */
 #pragma mark === sip server statechange delegate -- update UI
 - (void)audioCallDidChanged2State:(pjsip_inv_state)state{
@@ -626,9 +627,9 @@ typedef NS_ENUM(NSUInteger, callButtonType){
     NSLog(@" ######## state:   %d",state);
     
     if (state == PJSIP_INV_STATE_CALLING) {     // 拨出
-        _callViewType = FLKCallViewTypeAsCaller;
+        _callViewType = PBCallViewTypeAsCaller;
     }else if (state == PJSIP_INV_STATE_INCOMING ) {  // 来电
-        _callViewType = FLKCallViewTypeAsCallee;
+        _callViewType = PBCallViewTypeAsCallee;
     }else if(state == PJSIP_INV_STATE_DISCONNECTED) {  // 挂断
         _willBeDismiss = YES;
         [self playStopCallAudioTip];
@@ -638,7 +639,7 @@ typedef NS_ENUM(NSUInteger, callButtonType){
             [self dismiss];
         });
     }else if (state == PJSIP_INV_STATE_CONFIRMED){
-        _callViewType = FLKCallViewTypeTalking;
+        _callViewType = PBCallViewTypeTalking;
         [self vibrate];
     }
     if (state != PJSIP_INV_STATE_DISCONNECTED) {
@@ -647,4 +648,15 @@ typedef NS_ENUM(NSUInteger, callButtonType){
     // 更新UI状态的方法
     [self updateContent];
 }
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
 @end

@@ -1,13 +1,13 @@
 //
-//  FLKVoipCallProfileDelegate.h
-//  FLKVoipCallPro
+//  PBVoipCallProfileDelegate.h
+//  PBVoipService
 //
-//  Created by nanhujiaju on 2017/3/16.
+//  Created by nanhujiaju on 2017/9/11.
 //  Copyright © 2017年 nanhujiaju. All rights reserved.
 //
 
-#ifndef FLKVoipCallProfileDelegate_h
-#define FLKVoipCallProfileDelegate_h
+#ifndef PBVoipCallProfileDelegate_h
+#define PBVoipCallProfileDelegate_h
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,29 +18,29 @@ typedef NS_ENUM(NSUInteger, voipCallQuality){
     voipCallQualityLow                      = 1 << 3
 };
 
-@class FLKVoipCallProfile;
-@protocol FLKVoipCallProfileDelegate <NSObject>
+@class PBVoipCallProfile;
+@protocol PBVoipCallProfileDelegate <NSObject>
 @optional
 /**
  点击了接通按钮
  */
-- (void)didTouchAcceptWithProfile:(FLKVoipCallProfile * _Nullable)profile;
+- (void)didTouchAcceptWithProfile:(PBVoipCallProfile * _Nullable)profile;
 /**
  点击了挂断按钮
  */
-- (void)didTouchHangUpWithProfile:(FLKVoipCallProfile * _Nullable)profile;
+- (void)didTouchHangUpWithProfile:(PBVoipCallProfile * _Nullable)profile;
 /**
  点击了静音按钮
  */
-- (void)profile:(FLKVoipCallProfile * _Nullable)profile didClickMute:(BOOL)on;
+- (void)profile:(PBVoipCallProfile * _Nullable)profile didClickMute:(BOOL)on;
 /**
  点击了暂停按钮
  */
-- (void)profile:(FLKVoipCallProfile * _Nullable)profile didClickSuspend:(BOOL)on;
+- (void)profile:(PBVoipCallProfile * _Nullable)profile didClickSuspend:(BOOL)on;
 /**
  点击了免提按钮
  */
-- (void)profile:(FLKVoipCallProfile * _Nullable)profile didClickHandFree:(BOOL)on;
+- (void)profile:(PBVoipCallProfile * _Nullable)profile didClickHandFree:(BOOL)on;
 
 /**
  fetch quality from sipserver timely
@@ -64,4 +64,4 @@ typedef NS_ENUM(NSUInteger, voipCallQuality){
 
 NS_ASSUME_NONNULL_END
 
-#endif /* FLKVoipCallProfileDelegate_h */
+#endif /* PBVoipCallProfileDelegate_h */

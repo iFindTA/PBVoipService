@@ -2,20 +2,20 @@ PODS:
   - AFNetworking/Reachability (3.1.0)
   - Masonry (1.0.2)
   - PBKits (1.2.0)
-  - PBPJSip (1.0.0)
+  - PBPJSip (1.1.0)
 
 DEPENDENCIES:
   - AFNetworking/Reachability
   - Masonry
   - PBKits (~> 1.2.0)
-  - PBPJSip (~> 1.0.0)
+  - PBPJSip (~> 1.1.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   PBKits: 0e6c61ae784d960e727b378e91daca5387bf94ab
-  PBPJSip: 4528b71caf1485a6e2e3b0b0ecc20cbcfd8d331a
+  PBPJSip: 0126f250d2d6ede2ddec52162660f40521f33bd0
 
-PODFILE CHECKSUM: 89a9554eecdaca6a153429f24ea336fb0b83e14f
+PODFILE CHECKSUM: 608f1f98119a8b6449caa46af8c9d1e3fd6747f6
 
 COCOAPODS: 1.1.1
